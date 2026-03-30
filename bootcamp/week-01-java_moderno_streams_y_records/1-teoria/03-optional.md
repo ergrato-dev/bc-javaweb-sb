@@ -7,6 +7,8 @@
 
 ---
 
+![Optional como contenedor](../0-assets/optional-container.svg)
+
 ## 1. El Problema con `null`
 
 ```java

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#0d1117"/>
+
+  <!-- ── SECTION 1: Anatomía ─────────────────────────────────── -->
+  <text x="24" y="28" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#6DB33F" letter-spacing="1.5">ANATOMÍA DE UNA LAMBDA</text>
+
+  <!-- Code box -->
+  <rect x="24" y="38" width="752" height="52" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Lambda expression — colored parts (monospace 21px ≈ 12.6px/char) -->
+  <!-- "(a, b)" starts ~x=210, center ~243 -->
+  <!-- "  →  " center ~305 -->
+  <!-- "a.compareTo(b)" center ~435 -->
+  <text font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="21">
+    <tspan x="210" y="72" fill="#ffa657">(a, b)</tspan>
+    <tspan fill="#a5d6ff">  →  </tspan>
+    <tspan fill="#e6edf3">a.compareTo(b)</tspan>
+  </text>
+
+  <!-- Annotation lines -->
+  <line x1="243" y1="90" x2="243" y2="108" stroke="#ffa657" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <rect x="161" y="108" width="164" height="22" rx="4" fill="#1a130a" stroke="#ffa657" stroke-width="1"/>
+  <text x="243" y="124" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#ffa657" text-anchor="middle">parámetros de entrada</text>
+
+  <line x1="338" y1="90" x2="338" y2="108" stroke="#a5d6ff" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <rect x="272" y="108" width="132" height="22" rx="4" fill="#070d19" stroke="#a5d6ff" stroke-width="1"/>
+  <text x="338" y="124" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#a5d6ff" text-anchor="middle">operador lambda →</text>
+
+  <line x1="462" y1="90" x2="462" y2="108" stroke="#7ee787" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <rect x="392" y="108" width="140" height="22" rx="4" fill="#0a1a0a" stroke="#7ee787" stroke-width="1"/>
+  <text x="462" y="124" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#7ee787" text-anchor="middle">expresión / cuerpo</text>
+
+  <!-- Syntax reminder -->
+  <text x="24" y="152" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#6e7681">Sintaxis: </text>
+  <text x="82" y="152" font-family="ui-monospace,monospace" font-size="12" fill="#a5d6ff">(params) → expresión</text>
+  <text x="302" y="152" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#6e7681">  ó  </text>
+  <text x="330" y="152" font-family="ui-monospace,monospace" font-size="12" fill="#a5d6ff">(params) → { bloque; }</text>
+
+  <!-- ── SECTION 2: Antes vs Después ────────────────────────── -->
+  <text x="24" y="178" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#6DB33F" letter-spacing="1.5">ANTES vs DESPUÉS</text>
+
+  <!-- Old: anonymous class -->
+  <rect x="24" y="188" width="355" height="98" rx="6" fill="#161b22" stroke="#3d1a1f" stroke-width="1"/>
+  <text x="40" y="208" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#f85149">❌  Java 7 — clase anónima (9 líneas)</text>
+  <text x="40" y="226" font-family="ui-monospace,monospace" font-size="11" fill="#8b949e">new Comparator&lt;String&gt;() {</text>
+  <text x="40" y="242" font-family="ui-monospace,monospace" font-size="11" fill="#8b949e">  @Override</text>
+  <text x="40" y="258" font-family="ui-monospace,monospace" font-size="11" fill="#8b949e">  public int compare(String a, String b) {</text>
+  <text x="40" y="274" font-family="ui-monospace,monospace" font-size="11" fill="#8b949e">    return a.compareTo(b); } };</text>
+
+  <!-- Arrow -->
+  <text x="400" y="245" font-family="system-ui,-apple-system,sans-serif" font-size="30" fill="#6DB33F" text-anchor="middle">→</text>
+
+  <!-- New: lambda -->
+  <rect x="421" y="188" width="355" height="98" rx="6" fill="#161b22" stroke="#1a3d20" stroke-width="1"/>
+  <text x="437" y="208" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#7ee787">✅  Java 21 — lambda (1 línea)</text>
+  <text x="437" y="255" font-family="ui-monospace,monospace" font-size="15" fill="#a5d6ff">(a, b) -&gt; a.compareTo(b)</text>
+
+  <!-- ── SECTION 3: Functional Interfaces ───────────────────── -->
+  <text x="24" y="312" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#6DB33F" letter-spacing="1.5">INTERFACES FUNCIONALES CLAVE  — @FunctionalInterface</text>
+
+  <!-- Predicate -->
+  <rect x="24" y="322" width="178" height="68" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="113" y="344" font-family="ui-monospace,monospace" font-size="13" font-weight="700" fill="#a5d6ff" text-anchor="middle">Predicate&lt;T&gt;</text>
+  <line x1="40" y1="350" x2="188" y2="350" stroke="#30363d" stroke-width="1"/>
+  <text x="113" y="367" font-family="ui-monospace,monospace" font-size="12" fill="#6e7681" text-anchor="middle">T → boolean</text>
+  <text x="113" y="382" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#6DB33F" text-anchor="middle">filtrar</text>
+
+  <!-- Function -->
+  <rect x="214" y="322" width="178" height="68" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="303" y="344" font-family="ui-monospace,monospace" font-size="13" font-weight="700" fill="#a5d6ff" text-anchor="middle">Function&lt;T,R&gt;</text>
+  <line x1="230" y1="350" x2="378" y2="350" stroke="#30363d" stroke-width="1"/>
+  <text x="303" y="367" font-family="ui-monospace,monospace" font-size="12" fill="#6e7681" text-anchor="middle">T → R</text>
+  <text x="303" y="382" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#6DB33F" text-anchor="middle">transformar tipo</text>
+
+  <!-- Consumer -->
+  <rect x="404" y="322" width="178" height="68" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="493" y="344" font-family="ui-monospace,monospace" font-size="13" font-weight="700" fill="#a5d6ff" text-anchor="middle">Consumer&lt;T&gt;</text>
+  <line x1="420" y1="350" x2="568" y2="350" stroke="#30363d" stroke-width="1"/>
+  <text x="493" y="367" font-family="ui-monospace,monospace" font-size="12" fill="#6e7681" text-anchor="middle">T → void</text>
+  <text x="493" y="382" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#6DB33F" text-anchor="middle">efecto lateral</text>
+
+  <!-- Supplier -->
+  <rect x="594" y="322" width="182" height="68" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="685" y="344" font-family="ui-monospace,monospace" font-size="13" font-weight="700" fill="#a5d6ff" text-anchor="middle">Supplier&lt;T&gt;</text>
+  <line x1="610" y1="350" x2="760" y2="350" stroke="#30363d" stroke-width="1"/>
+  <text x="685" y="367" font-family="ui-monospace,monospace" font-size="12" fill="#6e7681" text-anchor="middle">() → T</text>
+  <text x="685" y="382" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#6DB33F" text-anchor="middle">proveer valor</text>
+
+</svg>

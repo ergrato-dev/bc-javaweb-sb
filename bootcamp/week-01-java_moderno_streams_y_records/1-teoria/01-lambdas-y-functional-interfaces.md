@@ -7,6 +7,8 @@
 
 ---
 
+![Anatomía de una Lambda y Functional Interfaces](../0-assets/lambda-anatomy.svg)
+
 ## 1. ¿Qué es una Lambda?
 
 Una lambda es una función anónima — sin nombre, sin clase. Reemplaza clases anónimas verbosas.

@@ -7,6 +7,8 @@
 
 ---
 
+![Record — lo que el compilador genera automáticamente](../0-assets/record-generated.svg)
+
 ## 1. Records — DTOs Inmutables
 
 Un `record` es una clase de datos inmutable. El compilador genera automáticamente:

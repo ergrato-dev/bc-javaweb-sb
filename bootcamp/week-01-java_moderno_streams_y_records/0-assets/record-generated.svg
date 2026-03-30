@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360">
+
+  <!-- Background -->
+  <rect width="800" height="360" fill="#0d1117"/>
+
+  <!-- Title -->
+  <text x="24" y="28" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#6DB33F" letter-spacing="1.5">RECORD — LO QUE EL COMPILADOR GENERA AUTOMÁTICAMENTE</text>
+
+  <!-- ── LEFT: Record declaration ──────────────────────────── -->
+  <rect x="24" y="40" width="340" height="64" rx="8" fill="#0f2d17" stroke="#6DB33F" stroke-width="2"/>
+  <text x="194" y="62" font-family="system-ui,-apple-system,sans-serif" font-size="13" font-weight="700" fill="#7ee787" text-anchor="middle">✅ Con record (1 línea)</text>
+  <text x="194" y="91" font-family="ui-monospace,monospace" font-size="14" fill="#a5d6ff" text-anchor="middle">public record User(Long id, String email) {}</text>
+
+  <!-- Arrow center -->
+  <text x="400" y="82" font-family="system-ui,-apple-system,sans-serif" font-size="28" fill="#6DB33F" text-anchor="middle">→</text>
+  <text x="400" y="102" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6e7681" text-anchor="middle">genera</text>
+
+  <!-- ── RIGHT: Generated members ──────────────────────────── -->
+  <rect x="436" y="40" width="340" height="160" rx="8" fill="#161b22" stroke="#6DB33F" stroke-width="2"/>
+  <text x="606" y="62" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#7ee787" text-anchor="middle">Compilador genera automáticamente:</text>
+  <line x1="452" y1="68" x2="760" y2="68" stroke="#30363d" stroke-width="1"/>
+
+  <text x="462" y="88" font-family="ui-monospace,monospace" font-size="12" fill="#a5d6ff">User(Long id, String email)</text>
+  <text x="730" y="88" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6e7681" text-anchor="end">constructor</text>
+
+  <text x="462" y="108" font-family="ui-monospace,monospace" font-size="12" fill="#a5d6ff">Long id()</text>
+  <text x="730" y="108" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6e7681" text-anchor="end">accessor (getter)</text>
+
+  <text x="462" y="128" font-family="ui-monospace,monospace" font-size="12" fill="#a5d6ff">String email()</text>
+  <text x="730" y="128" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6e7681" text-anchor="end">accessor (getter)</text>
+
+  <text x="462" y="148" font-family="ui-monospace,monospace" font-size="12" fill="#a5d6ff">boolean equals(Object o)</text>
+  <text x="730" y="148" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6e7681" text-anchor="end">por contenido</text>
+
+  <text x="462" y="168" font-family="ui-monospace,monospace" font-size="12" fill="#a5d6ff">int hashCode()</text>
+  <text x="730" y="168" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6e7681" text-anchor="end">coherente con equals</text>
+
+  <text x="462" y="188" font-family="ui-monospace,monospace" font-size="12" fill="#a5d6ff">String toString()</text>
+  <text x="730" y="188" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6e7681" text-anchor="end">User[id=1, email=…]</text>
+
+  <!-- ── LEFT BOTTOM: Old class comparison ────────────────── -->
+  <rect x="24" y="120" width="340" height="80" rx="8" fill="#161b22" stroke="#3d1a1f" stroke-width="2"/>
+  <text x="194" y="142" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#f85149" text-anchor="middle">❌ Sin record (~40 líneas)</text>
+  <text x="194" y="162" font-family="ui-monospace,monospace" font-size="12" fill="#8b949e" text-anchor="middle">class User {</text>
+  <text x="194" y="178" font-family="ui-monospace,monospace" font-size="12" fill="#8b949e" text-anchor="middle">  private final Long id;</text>
+  <text x="194" y="194" font-family="ui-monospace,monospace" font-size="11" fill="#6e7681" text-anchor="middle">  // + constructor, getters, equals, hashCode, toString…</text>
+
+  <!-- ── What record does NOT have ─────────────────────────── -->
+  <rect x="436" y="214" width="340" height="46" rx="6" fill="#1a1020" stroke="#a371f7" stroke-width="1"/>
+  <text x="606" y="232" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#a371f7" text-anchor="middle">Record NO genera:</text>
+  <text x="462" y="250" font-family="ui-monospace,monospace" font-size="11" fill="#6e7681">setters — los fields son final (inmutable)</text>
+
+  <!-- ── When to use section ──────────────────────────────── -->
+  <text x="24" y="236" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#6DB33F" letter-spacing="1.5">CUÁNDO USAR</text>
+
+  <rect x="24" y="246" width="752" height="100" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Header -->
+  <rect x="24" y="246" width="376" height="24" rx="6" fill="#0f2d17"/>
+  <rect x="400" y="246" width="376" height="24" rx="0" fill="#2d1020"/>
+  <rect x="400" y="246" width="376" height="24" rx="6" fill="#2d0f10"/>
+
+  <text x="212" y="263" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#7ee787" text-anchor="middle">✅ Usar record</text>
+  <text x="588" y="263" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#f85149" text-anchor="middle">❌ No usar record</text>
+  <line x1="400" y1="246" x2="400" y2="346" stroke="#30363d" stroke-width="1"/>
+
+  <text x="40" y="284" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#8b949e">DTOs de request/response en APIs</text>
+  <text x="416" y="284" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#8b949e">Entidades JPA (@Entity requiere setters)</text>
+
+  <text x="40" y="304" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#8b949e">Value Objects inmutables</text>
+  <text x="416" y="304" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#8b949e">Objetos con estado mutable</text>
+
+  <text x="40" y="324" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#8b949e">Resultados de queries (projections)</text>
+  <text x="416" y="324" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#8b949e">Clases con mucha lógica de negocio</text>
+
+  <text x="40" y="344" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#8b949e">Configuración con múltiples campos</text>
+  <text x="416" y="344" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#8b949e">Cuando necesitas herencia (@Extend)</text>
+
+</svg>

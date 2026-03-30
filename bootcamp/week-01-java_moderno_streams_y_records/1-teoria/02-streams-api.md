@@ -7,6 +7,8 @@
 
 ---
 
+![Stream Pipeline — Lazy vs Eager](../0-assets/streams-pipeline.svg)
+
 ## 1. Stream vs Collection
 
 Un `Stream` **no almacena datos** — describe una secuencia de operaciones sobre una fuente.

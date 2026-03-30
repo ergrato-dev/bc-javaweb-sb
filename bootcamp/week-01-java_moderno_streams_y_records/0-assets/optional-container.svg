@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" width="800" height="340">
+
+  <!-- Background -->
+  <rect width="800" height="340" fill="#0d1117"/>
+
+  <!-- Title -->
+  <text x="24" y="28" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#6DB33F" letter-spacing="1.5">OPTIONAL — CONTENEDOR QUE PUEDE ESTAR VACÍO</text>
+
+  <!-- ── Two containers side by side ──────────────────────── -->
+
+  <!-- LEFT: Optional.empty() -->
+  <rect x="24" y="40" width="358" height="160" rx="10" fill="#161b22" stroke="#3d3d3d" stroke-width="2" stroke-dasharray="6,3"/>
+  <!-- Container icon (empty box) -->
+  <rect x="140" y="60" width="120" height="80" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <text x="200" y="108" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#30363d" text-anchor="middle">vacío</text>
+  <!-- Label -->
+  <text x="200" y="175" font-family="ui-monospace,monospace" font-size="14" font-weight="700" fill="#8b949e" text-anchor="middle">Optional.empty()</text>
+  <text x="200" y="193" font-family="ui-monospace,monospace" font-size="12" fill="#6e7681" text-anchor="middle">Optional.ofNullable(null)</text>
+
+  <!-- RIGHT: Optional.of("Spring") -->
+  <rect x="418" y="40" width="358" height="160" rx="10" fill="#161b22" stroke="#6DB33F" stroke-width="2"/>
+  <!-- Container icon (box with value) -->
+  <rect x="534" y="60" width="120" height="80" rx="6" fill="#0d2010" stroke="#6DB33F" stroke-width="2"/>
+  <text x="594" y="104" font-family="ui-monospace,monospace" font-size="14" fill="#7ee787" text-anchor="middle">"Spring"</text>
+  <!-- Label -->
+  <text x="594" y="175" font-family="ui-monospace,monospace" font-size="14" font-weight="700" fill="#7ee787" text-anchor="middle">Optional.of("Spring")</text>
+  <text x="594" y="193" font-family="ui-monospace,monospace" font-size="12" fill="#6e7681" text-anchor="middle">Optional.ofNullable(x)  // x != null</text>
+
+  <!-- ── ofNullable creation (top label) ─────────────────── -->
+  <text x="24" y="38" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6e7681">← isPresent() == false</text>
+  <text x="594" y="38" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6e7681" text-anchor="middle">isPresent() == true →</text>
+
+  <!-- ── Methods section ──────────────────────────────────── -->
+  <text x="24" y="224" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#6DB33F" letter-spacing="1.5">MÉTODOS DE ACCESO SEGUROS</text>
+
+  <!-- Methods table -->
+  <!-- Header row -->
+  <rect x="24" y="234" width="752" height="26" rx="4" fill="#1c2128"/>
+  <text x="180" y="252" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#e6edf3" text-anchor="middle">Método</text>
+  <text x="440" y="252" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#e6edf3" text-anchor="middle">Si está presente</text>
+  <text x="680" y="252" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#e6edf3" text-anchor="middle">Si está vacío</text>
+  <line x1="298" y1="234" x2="298" y2="340" stroke="#30363d" stroke-width="1"/>
+  <line x1="578" y1="234" x2="578" y2="340" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Row 1: orElse -->
+  <line x1="24" y1="260" x2="776" y2="260" stroke="#21262d" stroke-width="1"/>
+  <text x="180" y="275" font-family="ui-monospace,monospace" font-size="12" fill="#a5d6ff" text-anchor="middle">orElse("default")</text>
+  <text x="440" y="275" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#7ee787" text-anchor="middle">retorna el valor</text>
+  <text x="680" y="275" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">retorna "default"</text>
+
+  <!-- Row 2: orElseThrow -->
+  <line x1="24" y1="282" x2="776" y2="282" stroke="#21262d" stroke-width="1"/>
+  <text x="180" y="297" font-family="ui-monospace,monospace" font-size="12" fill="#a5d6ff" text-anchor="middle">orElseThrow()</text>
+  <text x="440" y="297" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#7ee787" text-anchor="middle">retorna el valor</text>
+  <text x="680" y="297" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#f85149" text-anchor="middle">lanza NoSuchElementException</text>
+
+  <!-- Row 3: map -->
+  <line x1="24" y1="304" x2="776" y2="304" stroke="#21262d" stroke-width="1"/>
+  <text x="180" y="319" font-family="ui-monospace,monospace" font-size="12" fill="#a5d6ff" text-anchor="middle">map(String::length)</text>
+  <text x="440" y="319" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#7ee787" text-anchor="middle">aplica la función → Optional&lt;R&gt;</text>
+  <text x="680" y="319" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">retorna Optional.empty()</text>
+
+  <!-- Row 4: ifPresent -->
+  <line x1="24" y1="326" x2="776" y2="326" stroke="#21262d" stroke-width="1"/>
+  <text x="180" y="337" font-family="ui-monospace,monospace" font-size="12" fill="#a5d6ff" text-anchor="middle">ifPresent(log::info)</text>
+  <text x="440" y="337" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#7ee787" text-anchor="middle">ejecuta el Consumer</text>
+  <text x="680" y="337" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">no hace nada</text>
+
+  <!-- Border around table -->
+  <rect x="24" y="234" width="752" height="106" rx="4" fill="none" stroke="#30363d" stroke-width="1"/>
+
+</svg>
