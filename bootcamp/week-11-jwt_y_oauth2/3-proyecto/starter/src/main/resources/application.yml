@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:fintechdb;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    # En producción: variable de entorno JWT_SECRET con al menos 32 caracteres aleatorios
+    secret: ${JWT_SECRET:ZGV2LXNlY3JldC1rZXktYXQtbGVhc3QtMzItY2hhcnMtbG9uZw==}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}  # 24 horas
+
+logging:
+  level:
+    org.springframework.security: WARN
