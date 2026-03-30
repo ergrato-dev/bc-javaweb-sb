@@ -28,6 +28,10 @@
 
 ```
 week-02-spring_core_ioc_di/
+├── 0-assets/
+│   ├── 01-ioc-container.svg
+│   ├── 02-bean-lifecycle.svg
+│   └── 03-properties-binding.svg
 ├── 1-teoria/
 │   ├── 01-ioc-y-dependency-injection.md
 │   ├── 02-beans-ciclo-de-vida-y-escopos.md
@@ -38,6 +42,8 @@ week-02-spring_core_ioc_di/
 ├── 3-proyecto/
 │   ├── README.md
 │   └── starter/
+├── 4-recursos/
+│   └── webgrafia/
 └── 5-glosario/
     └── README.md
 ```
@@ -63,7 +69,7 @@ week-02-spring_core_ioc_di/
 
 ### Proyecto (2.5h)
 
-[📦 Calculadora de Precios con Spring IoC](3-proyecto/README.md) — Sistema de cálculo de descuentos usando múltiples strategies inyectadas por Spring.
+[📦 Library Catalog con IoC/DI](3-proyecto/README.md) — Completa el catálogo de biblioteca: implementa `BookRepository` y `BookService` con constructor injection, `@PostConstruct` y Streams.
 
 ---
 

@@ -1,70 +1,78 @@
-# Proyecto Semana 02 — Sistema de Notificaciones con IoC/DI
+# Proyecto Semana 02 — Library Catalog con IoC/DI
 
 ## 🎯 Descripción
 
-Construye un sistema de notificaciones multi-canal usando el container IoC de Spring. La lógica de negocio debe estar completamente desacoplada del mecanismo de entrega.
+Completa un catálogo de biblioteca implementando la lógica de negocio del `BookService` y `BookRepository`. El container IoC de Spring gestiona todos los beans y sus dependencias.
 
 ## 📋 Escenario
 
-Una plataforma necesita enviar notificaciones a usuarios por distintos canales (email, SMS, push). La implementación concreta del canal puede cambiar sin afectar el código de negocio.
+Una biblioteca digital necesita un sistema para consultar y filtrar su catálogo de libros. El `BookService` aplica lógica de negocio (ordenamiento, búsqueda, resúmenes) sobre los datos que provee el `BookRepository`.
 
-## 🏗️ Interfaces del Dominio
-
-```java
-// Puerto de salida — definido en negocio, implementado en infraestructura
-public interface NotificationSender {
-    void send(String recipient, String subject, String body);
-    String getChannel(); // "EMAIL", "SMS", "PUSH"
-}
-
-// Servicio de negocio
-public interface NotificationService {
-    void notifyUser(Long userId, String event, String message);
-    void notifyAll(List<Long> userIds, String event, String message);
-}
-```
-
-## 📌 Requerimientos
-
-### Funcionales
-- [ ] **R1:** Al menos 2 implementaciones de `NotificationSender`: `EmailSender` y `SmsSender`
-- [ ] **R2:** `NotificationServiceImpl` inyecta lista de `NotificationSender` con `List<NotificationSender>`
-- [ ] **R3:** Seleccionar canal por defecto basado en preferencia del usuario
-- [ ] **R4:** `NotificationLog` — bean singleton que registra todas las notificaciones enviadas
-- [ ] **R5:** `@PostConstruct` en `NotificationServiceImpl` para log de canales disponibles
-- [ ] **R6:** `@Configuration` con `@Bean` para un `NotificationFormatter` (clase de utilidad externa)
-
-### Técnicos
-- [ ] Inyección exclusivamente por constructor (sin `@Autowired` en fields)
-- [ ] Dependencias con `final`
-- [ ] `NotificationService` inyectada como interfaz (no como `NotificationServiceImpl`)
-- [ ] `NotificationLog` con scope singleton y estado compartido
-- [ ] Demo en `CommandLineRunner` que envía 3 notificaciones al arrancar
-
-## 📂 Estructura Sugerida
+## 🏗️ Estructura del Proyecto
 
 ```
 src/main/java/com/bootcamp/
 ├── config/
-│   └── NotificationConfig.java      (@Configuration)
+│   └── LibraryProperties.java       (@ConfigurationProperties)
+├── model/
+│   └── Book.java                    (record — título, ISBN, autor, categoría)
+├── repository/
+│   └── BookRepository.java          (@Repository — in-memory)
 ├── service/
-│   ├── NotificationService.java     (interfaz)
-│   └── NotificationServiceImpl.java (@Service)
-├── sender/
-│   ├── NotificationSender.java      (interfaz)
-│   ├── EmailSender.java             (@Component)
-│   └── SmsSender.java               (@Component)
-└── model/
-    └── NotificationLog.java         (@Component singleton)
+│   └── BookService.java             (@Service — lógica de negocio + TODO)
+└── LibraryCatalogApplication.java   (@SpringBootApplication)
 ```
+
+## 📌 Requerimientos
+
+### BookRepository — implementar los TODOs
+
+- [ ] **R1:** `findAll()` — retorna la lista de todos los libros
+- [ ] **R2:** `findByIsbn(String isbn)` — busca por ISBN usando `stream().filter().findFirst()`
+- [ ] **R3:** `findAvailable()` — filtra libros disponibles con `stream().filter().toList()`
+- [ ] **R4:** `findByCategory(String category)` — filtra por categoría ignorando mayúsculas/minúsculas
+
+### BookService — implementar los TODOs
+
+- [ ] **R5:** Constructor que recibe `BookRepository` (inyección por constructor, campo `final`)
+- [ ] **R6:** `@PostConstruct` que imprime: `"BookService initialized — catalog ready with X books"`
+- [ ] **R7:** `getAllBooksSortedByTitle()` — ordena con `Comparator.comparing(Book::title)`
+- [ ] **R8:** `findByIsbn(String isbn)` — delega al repository
+- [ ] **R9:** `getCatalogSummary()` — usa Streams para calcular: totalBooks, availableCount, categories (distintas, ordenadas)
+
+### Técnicos
+- [ ] Constructor injection en `BookService` (sin `@Autowired` en campo)
+- [ ] Campo `bookRepository` declarado como `final`
+- [ ] `LibraryProperties` bindeado correctamente desde `application.yml`
+- [ ] Todos los tests de `BookServiceTest` pasando
+
+## ▶️ Ejecutar el Proyecto
+
+```bash
+cd 3-proyecto/starter
+mvn spring-boot:run
+```
+
+Al arrancar verás en consola:
+```
+BookService initialized — catalog ready with 6 books
+```
+
+## 🧪 Ejecutar Tests
+
+```bash
+mvn test
+```
+
+Los tests en `BookServiceTest` verifican cada método del servicio.
 
 ## ✅ Criterios de Evaluación
 
 | Criterio | Puntos |
 |----------|--------|
-| R1-R6 implementados y funcionando | 50 |
-| Inyección por constructor en todos los beans | 20 |
-| Sin `new ServiceImpl()` manual | 10 |
-| Aplicación arranca sin errores de DI | 10 |
-| `@PostConstruct` y `@Bean` usados | 10 |
+| R1-R4: BookRepository completo | 20 |
+| R5-R6: Constructor injection + @PostConstruct | 20 |
+| R7-R9: BookService completo | 30 |
+| Todos los tests pasando | 20 |
+| Sin `@Autowired` en campos (solo constructor injection) | 10 |
 | **Total** | **100** |

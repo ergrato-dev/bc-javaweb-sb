@@ -7,6 +7,8 @@
 
 ---
 
+![Bean lifecycle y escopos singleton vs prototype](../0-assets/02-bean-lifecycle.svg)
+
 ## 1. Ciclo de Vida de un Bean
 
 ```

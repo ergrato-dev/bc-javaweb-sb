@@ -7,6 +7,8 @@
 
 ---
 
+![IoC Container vs instanciación manual](../0-assets/01-ioc-container.svg)
+
 ## 1. Inversion of Control (IoC)
 
 En la programación tradicional tu código instancia sus dependencias:

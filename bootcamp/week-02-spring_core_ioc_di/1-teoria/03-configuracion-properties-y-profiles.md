@@ -7,6 +7,8 @@
 
 ---
 
+![Jerarquía de configuración y @Value vs @ConfigurationProperties](../0-assets/03-properties-binding.svg)
+
 ## 1. `application.yml` — Estructura
 
 Spring Boot lee configuración de `src/main/resources/application.yml`:
