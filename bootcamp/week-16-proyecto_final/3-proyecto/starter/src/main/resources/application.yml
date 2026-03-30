@@ -1,0 +1,82 @@
+spring:
+  application:
+    name: task-api
+
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/taskdb}
+    username: ${DATABASE_USER:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+
+  jpa:
+    hibernate:
+      # validate: Flyway gestiona el esquema — Hibernate solo valida
+      # Nunca usar 'create' ni 'create-drop' en producción
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 20
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  # Perfil de test: H2 en memoria (no requiere PostgreSQL)
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  flyway:
+    enabled: false
+
+# -----------------------------------------------
+# Configuración JWT
+# -----------------------------------------------
+# jwt.secret: clave Base64 de al menos 256 bits para HS256
+# Generar con: openssl rand -base64 32
+# En producción: variable de entorno APP_SECURITY_JWT_SECRET
+app:
+  security:
+    jwt:
+      secret: ${APP_SECURITY_JWT_SECRET:dGhpcy1pcy1hLXZlcnktbG9uZy1zZWNyZXQta2V5LWZvci1qd3Q=}
+      expiration-ms: ${APP_SECURITY_JWT_EXPIRATION_MS:3600000}  # 1 hora por defecto
+
+# -----------------------------------------------
+# Spring Boot Actuator
+# -----------------------------------------------
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      show-details: when_authorized
+
+# -----------------------------------------------
+# SpringDoc OpenAPI / Swagger UI
+# -----------------------------------------------
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+  api-docs:
+    path: /v3/api-docs
+
+# -----------------------------------------------
+# Logging
+# -----------------------------------------------
+logging:
+  level:
+    com.bootcamp.taskapi: INFO
+    org.springframework.security: WARN
