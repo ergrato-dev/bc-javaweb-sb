@@ -17,12 +17,11 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @Testcontainers
 abstract class AbstractIntegrationTest {
 
-    // static → un solo contenedor para todos los tests (más eficiente)
-    @Container
-    @ServiceConnection
-    static PostgreSQLContainer<?> postgres =
-        new PostgreSQLContainer<>("postgres:17-alpine")
-            .withDatabaseName("inventorytest")
-            .withUsername("test")
-            .withPassword("test");
+  // static → un solo contenedor para todos los tests (más eficiente)
+  @Container
+  @ServiceConnection
+  static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:17-alpine")
+      .withDatabaseName("inventorytest")
+      .withUsername("test")
+      .withPassword("test");
 }

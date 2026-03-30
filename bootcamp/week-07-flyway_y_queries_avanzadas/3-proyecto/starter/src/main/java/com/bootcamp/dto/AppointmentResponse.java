@@ -9,5 +9,5 @@ public record AppointmentResponse(
     Long patientId, String patientFullName,
     LocalDateTime scheduledAt,
     Status status,
-    String notes
-) {}
+    String notes) {
+}

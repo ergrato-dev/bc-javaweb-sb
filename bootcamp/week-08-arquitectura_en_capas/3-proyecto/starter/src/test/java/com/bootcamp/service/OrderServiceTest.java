@@ -20,78 +20,82 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class OrderServiceTest {
 
-    @Mock OrderRepository orderRepository;
-    @Mock CustomerRepository customerRepository;
-    @Mock ProductRepository productRepository;
+  @Mock
+  OrderRepository orderRepository;
+  @Mock
+  CustomerRepository customerRepository;
+  @Mock
+  ProductRepository productRepository;
 
-    @InjectMocks OrderService orderService;
+  @InjectMocks
+  OrderService orderService;
 
-    @Test
-    void create_shouldThrowCustomerNotFoundException_whenCustomerDoesNotExist() {
-        when(customerRepository.findById(99L)).thenReturn(Optional.empty());
+  @Test
+  void create_shouldThrowCustomerNotFoundException_whenCustomerDoesNotExist() {
+    when(customerRepository.findById(99L)).thenReturn(Optional.empty());
 
-        var request = new OrderCreateRequest(99L, List.of(new OrderItemRequest(1L, 2)), null);
+    var request = new OrderCreateRequest(99L, List.of(new OrderItemRequest(1L, 2)), null);
 
-        assertThatThrownBy(() -> orderService.create(request))
-            .isInstanceOf(CustomerNotFoundException.class)
-            .hasMessageContaining("99");
-    }
+    assertThatThrownBy(() -> orderService.create(request))
+        .isInstanceOf(CustomerNotFoundException.class)
+        .hasMessageContaining("99");
+  }
 
-    @Test
-    void create_shouldThrowProductNotFoundException_whenProductDoesNotExist() {
-        var customer = new Customer("Alice", "alice@example.com", null);
-        when(customerRepository.findById(1L)).thenReturn(Optional.of(customer));
-        when(productRepository.findById(99L)).thenReturn(Optional.empty());
+  @Test
+  void create_shouldThrowProductNotFoundException_whenProductDoesNotExist() {
+    var customer = new Customer("Alice", "alice@example.com", null);
+    when(customerRepository.findById(1L)).thenReturn(Optional.of(customer));
+    when(productRepository.findById(99L)).thenReturn(Optional.empty());
 
-        var request = new OrderCreateRequest(1L, List.of(new OrderItemRequest(99L, 1)), null);
+    var request = new OrderCreateRequest(1L, List.of(new OrderItemRequest(99L, 1)), null);
 
-        assertThatThrownBy(() -> orderService.create(request))
-            .isInstanceOf(ProductNotFoundException.class)
-            .hasMessageContaining("99");
-    }
+    assertThatThrownBy(() -> orderService.create(request))
+        .isInstanceOf(ProductNotFoundException.class)
+        .hasMessageContaining("99");
+  }
 
-    @Test
-    void create_shouldThrowIllegalStateException_whenProductHasInsufficientStock() {
-        var customer = new Customer("Alice", "alice@example.com", null);
-        var product = new Product("Laptop", "desc", BigDecimal.valueOf(1000), 0, "Electronics");
+  @Test
+  void create_shouldThrowIllegalStateException_whenProductHasInsufficientStock() {
+    var customer = new Customer("Alice", "alice@example.com", null);
+    var product = new Product("Laptop", "desc", BigDecimal.valueOf(1000), 0, "Electronics");
 
-        when(customerRepository.findById(1L)).thenReturn(Optional.of(customer));
-        when(productRepository.findById(1L)).thenReturn(Optional.of(product));
+    when(customerRepository.findById(1L)).thenReturn(Optional.of(customer));
+    when(productRepository.findById(1L)).thenReturn(Optional.of(product));
 
-        var request = new OrderCreateRequest(1L, List.of(new OrderItemRequest(1L, 5)), null);
+    var request = new OrderCreateRequest(1L, List.of(new OrderItemRequest(1L, 5)), null);
 
-        assertThatThrownBy(() -> orderService.create(request))
-            .isInstanceOf(IllegalStateException.class);
-    }
+    assertThatThrownBy(() -> orderService.create(request))
+        .isInstanceOf(IllegalStateException.class);
+  }
 
-    @Test
-    void findById_shouldThrowOrderNotFoundException_whenOrderDoesNotExist() {
-        when(orderRepository.findByIdWithDetails(99L)).thenReturn(Optional.empty());
+  @Test
+  void findById_shouldThrowOrderNotFoundException_whenOrderDoesNotExist() {
+    when(orderRepository.findByIdWithDetails(99L)).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> orderService.findById(99L))
-            .isInstanceOf(OrderNotFoundException.class)
-            .hasMessageContaining("99");
-    }
+    assertThatThrownBy(() -> orderService.findById(99L))
+        .isInstanceOf(OrderNotFoundException.class)
+        .hasMessageContaining("99");
+  }
 
-    @Test
-    void cancel_shouldThrowInvalidTransition_whenOrderIsDelivered() {
-        var customer = new Customer("Bob", "bob@example.com", null);
-        var order = new Order(customer, null);
-        order.setStatus(OrderStatus.DELIVERED);
+  @Test
+  void cancel_shouldThrowInvalidTransition_whenOrderIsDelivered() {
+    var customer = new Customer("Bob", "bob@example.com", null);
+    var order = new Order(customer, null);
+    order.setStatus(OrderStatus.DELIVERED);
 
-        when(orderRepository.findById(1L)).thenReturn(Optional.of(order));
+    when(orderRepository.findById(1L)).thenReturn(Optional.of(order));
 
-        assertThatThrownBy(() -> orderService.cancel(1L))
-            .isInstanceOf(InvalidOrderStatusTransitionException.class);
-    }
+    assertThatThrownBy(() -> orderService.cancel(1L))
+        .isInstanceOf(InvalidOrderStatusTransitionException.class);
+  }
 
-    @Test
-    void updateStatus_shouldThrowOrderNotFoundException_whenOrderDoesNotExist() {
-        when(orderRepository.findById(99L)).thenReturn(Optional.empty());
+  @Test
+  void updateStatus_shouldThrowOrderNotFoundException_whenOrderDoesNotExist() {
+    when(orderRepository.findById(99L)).thenReturn(Optional.empty());
 
-        var request = new OrderUpdateRequest(OrderStatus.CONFIRMED, null);
+    var request = new OrderUpdateRequest(OrderStatus.CONFIRMED, null);
 
-        assertThatThrownBy(() -> orderService.updateStatus(99L, request))
-            .isInstanceOf(OrderNotFoundException.class);
-    }
+    assertThatThrownBy(() -> orderService.updateStatus(99L, request))
+        .isInstanceOf(OrderNotFoundException.class);
+  }
 }

@@ -21,44 +21,47 @@ import static org.assertj.core.api.Assertions.assertThat;
 })
 class AppointmentRepositoryTest {
 
-    @Autowired TestEntityManager em;
-    @Autowired AppointmentRepository appointmentRepository;
-    @Autowired DoctorRepository doctorRepository;
-    @Autowired PatientRepository patientRepository;
+  @Autowired
+  TestEntityManager em;
+  @Autowired
+  AppointmentRepository appointmentRepository;
+  @Autowired
+  DoctorRepository doctorRepository;
+  @Autowired
+  PatientRepository patientRepository;
 
-    @Test
-    void flyway_shouldCreateTablesSuccessfully() {
-        // Flyway migrations ran — tables must exist
-        assertThat(doctorRepository.count()).isGreaterThanOrEqualTo(0);
-        assertThat(patientRepository.count()).isGreaterThanOrEqualTo(0);
-    }
+  @Test
+  void flyway_shouldCreateTablesSuccessfully() {
+    // Flyway migrations ran — tables must exist
+    assertThat(doctorRepository.count()).isGreaterThanOrEqualTo(0);
+    assertThat(patientRepository.count()).isGreaterThanOrEqualTo(0);
+  }
 
-    @Test
-    void findAll_withStatusSpec_shouldFilterByStatus() {
-        var doctor  = doctorRepository.findAll().stream().findFirst().orElseThrow();
-        var patient = patientRepository.findAll().stream().findFirst().orElseThrow();
+  @Test
+  void findAll_withStatusSpec_shouldFilterByStatus() {
+    var doctor = doctorRepository.findAll().stream().findFirst().orElseThrow();
+    var patient = patientRepository.findAll().stream().findFirst().orElseThrow();
 
-        var appt = em.persist(new Appointment(doctor, patient,
-                LocalDateTime.now().plusDays(1), "Test appointment"));
-        em.flush();
+    var appt = em.persist(new Appointment(doctor, patient,
+        LocalDateTime.now().plusDays(1), "Test appointment"));
+    em.flush();
 
-        Specification<Appointment> scheduled = (root, q, cb) ->
-                cb.equal(root.get("status"), Status.SCHEDULED);
+    Specification<Appointment> scheduled = (root, q, cb) -> cb.equal(root.get("status"), Status.SCHEDULED);
 
-        var found = appointmentRepository.findAll(scheduled);
-        assertThat(found).isNotEmpty();
-        assertThat(found).allMatch(a -> a.getStatus() == Status.SCHEDULED);
-    }
+    var found = appointmentRepository.findAll(scheduled);
+    assertThat(found).isNotEmpty();
+    assertThat(found).allMatch(a -> a.getStatus() == Status.SCHEDULED);
+  }
 
-    @Test
-    void findByDoctorId_shouldReturnDoctorAppointments() {
-        var doctor  = doctorRepository.findAll().stream().findFirst().orElseThrow();
-        var patient = patientRepository.findAll().stream().findFirst().orElseThrow();
-        em.persist(new Appointment(doctor, patient, LocalDateTime.now().plusDays(2), null));
-        em.flush();
+  @Test
+  void findByDoctorId_shouldReturnDoctorAppointments() {
+    var doctor = doctorRepository.findAll().stream().findFirst().orElseThrow();
+    var patient = patientRepository.findAll().stream().findFirst().orElseThrow();
+    em.persist(new Appointment(doctor, patient, LocalDateTime.now().plusDays(2), null));
+    em.flush();
 
-        var found = appointmentRepository.findByDoctor_IdAndStatus(
-                doctor.getId(), Status.SCHEDULED, PageRequest.of(0, 10));
-        assertThat(found.getContent()).isNotEmpty();
-    }
+    var found = appointmentRepository.findByDoctor_IdAndStatus(
+        doctor.getId(), Status.SCHEDULED, PageRequest.of(0, 10));
+    assertThat(found.getContent()).isNotEmpty();
+  }
 }

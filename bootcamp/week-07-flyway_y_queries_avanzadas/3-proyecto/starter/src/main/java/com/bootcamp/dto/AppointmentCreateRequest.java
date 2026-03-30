@@ -8,5 +8,5 @@ public record AppointmentCreateRequest(
     @NotNull Long doctorId,
     @NotNull Long patientId,
     @NotNull @Future LocalDateTime scheduledAt,
-    String notes
-) {}
+    String notes) {
+}

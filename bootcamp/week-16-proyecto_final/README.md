@@ -120,5 +120,5 @@ week-16-proyecto_final/
 
 | | |
 |---|---|
-| ⬅️ Anterior | [Semana 15 — Docker, CI/CD y Deployment](../week-15-docker_cicd_deployment/README.md) |
+| ⬅️ Anterior | [Semana 15 — Docker y CI/CD](../week-15-docker_cicd/README.md) |
 | 🏠 Inicio | [README del Bootcamp](../../README.md) |

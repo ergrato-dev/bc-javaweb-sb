@@ -11,7 +11,7 @@ import java.util.List;
  */
 @ConfigurationProperties(prefix = "library")
 public record LibraryProperties(
-        String name,
-        int maxBooksPerUser,
-        List<String> allowedCategories
-) {}
+    String name,
+    int maxBooksPerUser,
+    List<String> allowedCategories) {
+}

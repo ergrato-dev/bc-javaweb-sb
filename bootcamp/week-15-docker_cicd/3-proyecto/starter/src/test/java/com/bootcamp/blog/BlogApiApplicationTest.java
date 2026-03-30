@@ -12,8 +12,8 @@ import org.springframework.test.context.ActiveProfiles;
 @ActiveProfiles("test")
 class BlogApiApplicationTest {
 
-    @Test
-    void contextLoads() {
-        // Si este test pasa, la configuración de la aplicación es correcta
-    }
+  @Test
+  void contextLoads() {
+    // Si este test pasa, la configuración de la aplicación es correcta
+  }
 }

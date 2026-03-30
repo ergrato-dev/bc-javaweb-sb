@@ -15,28 +15,33 @@ import java.util.List;
 import java.util.Optional;
 
 public interface AppointmentRepository
-        extends JpaRepository<Appointment, Long>,
-                JpaSpecificationExecutor<Appointment> {
+    extends JpaRepository<Appointment, Long>,
+    JpaSpecificationExecutor<Appointment> {
 
-    // Spring Data generates this from the method name (no implementation needed)
-    Page<Appointment> findByDoctor_IdAndStatus(Long doctorId, Status status, Pageable pageable);
+  // Spring Data generates this from the method name (no implementation needed)
+  Page<Appointment> findByDoctor_IdAndStatus(Long doctorId, Status status, Pageable pageable);
 
-    /**
-     * TODO:
-     *  Find appointments by patient ID with JOIN FETCH for doctor and patient.
-     *  @Query with JOIN FETCH a.doctor and JOIN FETCH a.patient
-     */
+  /**
+   * TODO:
+   * Find appointments by patient ID with JOIN FETCH for doctor and patient.
+   * 
+   * @Query with JOIN FETCH a.doctor and JOIN FETCH a.patient
+   */
 
-    /**
-     * TODO:
-     *  @EntityGraph to find appointment by ID loading doctor and patient in one query.
-     *  Use attributePaths = {"doctor", "patient"}
-     */
+  /**
+   * TODO:
+   * 
+   * @EntityGraph to find appointment by ID loading doctor and patient in one
+   *              query.
+   *              Use attributePaths = {"doctor", "patient"}
+   */
 
-    /**
-     * TODO:
-     *  @Query to find appointments scheduled between two dates, ordered by scheduledAt.
-     *  Parameters: @Param("start") LocalDateTime, @Param("end") LocalDateTime
-     *  Use Text Block (""" ... """) for multi-line JPQL
-     */
+  /**
+   * TODO:
+   * 
+   * @Query to find appointments scheduled between two dates, ordered by
+   *        scheduledAt.
+   *        Parameters: @Param("start") LocalDateTime, @Param("end") LocalDateTime
+   *        Use Text Block (""" ... """) for multi-line JPQL
+   */
 }

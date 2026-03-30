@@ -9,17 +9,18 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler({DoctorNotFoundException.class, PatientNotFoundException.class, AppointmentNotFoundException.class})
-    ProblemDetail handleNotFound(RuntimeException ex) {
-        return ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
-    }
+  @ExceptionHandler({ DoctorNotFoundException.class, PatientNotFoundException.class,
+      AppointmentNotFoundException.class })
+  ProblemDetail handleNotFound(RuntimeException ex) {
+    return ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
+  }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    ProblemDetail handleValidation(MethodArgumentNotValidException ex) {
-        var detail = ProblemDetail.forStatus(HttpStatus.UNPROCESSABLE_ENTITY);
-        detail.setTitle("Validation failed");
-        detail.setProperty("errors", ex.getBindingResult().getFieldErrors()
-                .stream().map(e -> e.getField() + ": " + e.getDefaultMessage()).toList());
-        return detail;
-    }
+  @ExceptionHandler(MethodArgumentNotValidException.class)
+  ProblemDetail handleValidation(MethodArgumentNotValidException ex) {
+    var detail = ProblemDetail.forStatus(HttpStatus.UNPROCESSABLE_ENTITY);
+    detail.setTitle("Validation failed");
+    detail.setProperty("errors", ex.getBindingResult().getFieldErrors()
+        .stream().map(e -> e.getField() + ": " + e.getDefaultMessage()).toList());
+    return detail;
+  }
 }

@@ -5,5 +5,5 @@ import jakarta.validation.constraints.NotNull;
 
 public record OrderUpdateRequest(
     @NotNull OrderStatus status,
-    String notes
-) {}
+    String notes) {
+}

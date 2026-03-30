@@ -15,37 +15,37 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class Article {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @Column(nullable = false)
-    private String title;
+  @Column(nullable = false)
+  private String title;
 
-    @Column(columnDefinition = "text")
-    private String content;
+  @Column(columnDefinition = "text")
+  private String content;
 
-    @Column(nullable = false)
-    private String authorEmail;
+  @Column(nullable = false)
+  private String authorEmail;
 
-    @Column(nullable = false)
-    private String category;
+  @Column(nullable = false)
+  private String category;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private ArticleStatus status;
+  @Enumerated(EnumType.STRING)
+  @Column(nullable = false)
+  private ArticleStatus status;
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
+  @CreationTimestamp
+  private LocalDateTime createdAt;
 
-    private LocalDateTime publishedAt;
+  private LocalDateTime publishedAt;
 
-    public void publish() {
-        this.status = ArticleStatus.PUBLISHED;
-        this.publishedAt = LocalDateTime.now();
-    }
+  public void publish() {
+    this.status = ArticleStatus.PUBLISHED;
+    this.publishedAt = LocalDateTime.now();
+  }
 
-    public void archive() {
-        this.status = ArticleStatus.ARCHIVED;
-    }
+  public void archive() {
+    this.status = ArticleStatus.ARCHIVED;
+  }
 }

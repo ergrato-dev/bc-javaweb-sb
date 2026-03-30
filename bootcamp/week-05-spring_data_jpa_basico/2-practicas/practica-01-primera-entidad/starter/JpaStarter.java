@@ -19,34 +19,37 @@ import java.util.List;
  */
 @SpringBootApplication
 public class JpaStarter {
-    public static void main(String[] args) {
-        SpringApplication.run(JpaStarter.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(JpaStarter.class, args);
+  }
 
-    // ============================================
-    // STEP 4: Guardar datos al iniciar la app
-    // Descomenta este CommandLineRunner:
-    // ============================================
+  // ============================================
+  // STEP 4: Guardar datos al iniciar la app
+  // Descomenta este CommandLineRunner:
+  // ============================================
 
-    // @Bean
-    // CommandLineRunner seedData(ProductRepository repo) {
-    //     return args -> {
-    //         repo.save(new Product("Laptop",        new BigDecimal("999.99"),  10, "Electronics"));
-    //         repo.save(new Product("Wireless Mouse", new BigDecimal("29.99"),   50, "Electronics"));
-    //         repo.save(new Product("Desk Chair",    new BigDecimal("199.99"),   5, "Furniture"));
-    //
-    //         System.out.println("✅ Products saved: " + repo.count());
-    //
-    //         // STEP 5: Consultar por categoría — descomenta:
-    //         // var electronics = repo.findByCategory("Electronics");
-    //         // System.out.println("Electronics products: " + electronics.size());
-    //         // electronics.forEach(p -> System.out.println("  - " + p.getName()));
-    //
-    //         // Probar existsByName:
-    //         // System.out.println("Laptop exists: " + repo.existsByName("Laptop"));
-    //         // System.out.println("Monitor exists: " + repo.existsByName("Monitor"));
-    //     };
-    // }
+  // @Bean
+  // CommandLineRunner seedData(ProductRepository repo) {
+  // return args -> {
+  // repo.save(new Product("Laptop", new BigDecimal("999.99"), 10,
+  // "Electronics"));
+  // repo.save(new Product("Wireless Mouse", new BigDecimal("29.99"), 50,
+  // "Electronics"));
+  // repo.save(new Product("Desk Chair", new BigDecimal("199.99"), 5,
+  // "Furniture"));
+  //
+  // System.out.println("✅ Products saved: " + repo.count());
+  //
+  // // STEP 5: Consultar por categoría — descomenta:
+  // // var electronics = repo.findByCategory("Electronics");
+  // // System.out.println("Electronics products: " + electronics.size());
+  // // electronics.forEach(p -> System.out.println(" - " + p.getName()));
+  //
+  // // Probar existsByName:
+  // // System.out.println("Laptop exists: " + repo.existsByName("Laptop"));
+  // // System.out.println("Monitor exists: " + repo.existsByName("Monitor"));
+  // };
+  // }
 }
 
 // ============================================
@@ -58,36 +61,51 @@ public class JpaStarter {
 // @Table(name = "products")
 class Product {
 
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  // @Id
+  // @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    // @Column(nullable = false)
-    private String name;
+  // @Column(nullable = false)
+  private String name;
 
-    // @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal price;
+  // @Column(nullable = false, precision = 10, scale = 2)
+  private BigDecimal price;
 
-    // @Column(nullable = false)
-    private Integer stock;
+  // @Column(nullable = false)
+  private Integer stock;
 
-    // @Column
-    private String category;
+  // @Column
+  private String category;
 
-    protected Product() {}   // JPA requiere constructor sin args
+  protected Product() {
+  } // JPA requiere constructor sin args
 
-    public Product(String name, BigDecimal price, Integer stock, String category) {
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-        this.category = category;
-    }
+  public Product(String name, BigDecimal price, Integer stock, String category) {
+    this.name = name;
+    this.price = price;
+    this.stock = stock;
+    this.category = category;
+  }
 
-    public Long getId() { return id; }
-    public String getName() { return name; }
-    public BigDecimal getPrice() { return price; }
-    public Integer getStock() { return stock; }
-    public String getCategory() { return category; }
+  public Long getId() {
+    return id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public BigDecimal getPrice() {
+    return price;
+  }
+
+  public Integer getStock() {
+    return stock;
+  }
+
+  public String getCategory() {
+    return category;
+  }
 }
 
 // ============================================
@@ -97,6 +115,6 @@ class Product {
 
 @Repository
 interface ProductRepository extends JpaRepository<Product, Long> {
-    // List<Product> findByCategory(String category);
-    // boolean existsByName(String name);
+  // List<Product> findByCategory(String category);
+  // boolean existsByName(String name);
 }

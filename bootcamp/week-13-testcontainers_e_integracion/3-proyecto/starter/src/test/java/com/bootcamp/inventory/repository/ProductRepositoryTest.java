@@ -17,7 +17,8 @@ import java.math.BigDecimal;
 import static org.assertj.core.api.Assertions.*;
 
 /**
- * ProductRepositoryTest — Tests de repositorio con Testcontainers + @DataJpaTest.
+ * ProductRepositoryTest — Tests de repositorio con Testcontainers
+ * + @DataJpaTest.
  *
  * ¿Por qué @DataJpaTest en lugar de @SpringBootTest?
  * - Carga solo la capa JPA (más rápido)
@@ -35,120 +36,119 @@ import static org.assertj.core.api.Assertions.*;
 @DisplayName("ProductRepository")
 class ProductRepositoryTest {
 
-    // @DataJpaTest usa este contenedor porque @AutoConfigureTestDatabase(replace = NONE)
-    // le dice a Spring que NO substituya el datasource
-    @Container
-    @ServiceConnection
-    static PostgreSQLContainer<?> postgres =
-        new PostgreSQLContainer<>("postgres:17-alpine");
+  // @DataJpaTest usa este contenedor porque @AutoConfigureTestDatabase(replace =
+  // NONE)
+  // le dice a Spring que NO substituya el datasource
+  @Container
+  @ServiceConnection
+  static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:17-alpine");
 
-    @Autowired
-    private TestEntityManager em;
+  @Autowired
+  private TestEntityManager em;
 
-    @Autowired
-    private ProductRepository productRepository;
+  @Autowired
+  private ProductRepository productRepository;
 
-    // Helper — crea y persiste un producto de prueba
-    private Product saveProduct(String name, String sku, String category) {
-        return em.persistAndFlush(
-            new Product(null, name, sku, BigDecimal.valueOf(29.99), 10, category)
-        );
+  // Helper — crea y persiste un producto de prueba
+  private Product saveProduct(String name, String sku, String category) {
+    return em.persistAndFlush(
+        new Product(null, name, sku, BigDecimal.valueOf(29.99), 10, category));
+  }
+
+  // ============================================
+  // findBySku
+  // ============================================
+
+  @Nested
+  @DisplayName("findBySku()")
+  class FindBySku {
+
+    @Test
+    @DisplayName("returns product when sku exists")
+    void returnsProduct() {
+      // TODO: Implementar
+      // 1. Usar saveProduct("Widget", "SKU-001", "ELECTRONICS")
+      // 2. Llamar productRepository.findBySku("SKU-001")
+      // 3. Verificar que está presente y tiene sku == "SKU-001"
     }
 
-    // ============================================
-    // findBySku
-    // ============================================
+    @Test
+    @DisplayName("returns empty when sku does not exist")
+    void returnsEmpty() {
+      // TODO: Implementar
+      // 1. Llamar findBySku("NONEXISTENT")
+      // 2. Verificar que Optional está vacío
+    }
+  }
 
-    @Nested
-    @DisplayName("findBySku()")
-    class FindBySku {
+  // ============================================
+  // existsBySku
+  // ============================================
 
-        @Test
-        @DisplayName("returns product when sku exists")
-        void returnsProduct() {
-            // TODO: Implementar
-            // 1. Usar saveProduct("Widget", "SKU-001", "ELECTRONICS")
-            // 2. Llamar productRepository.findBySku("SKU-001")
-            // 3. Verificar que está presente y tiene sku == "SKU-001"
-        }
+  @Nested
+  @DisplayName("existsBySku()")
+  class ExistsBySku {
 
-        @Test
-        @DisplayName("returns empty when sku does not exist")
-        void returnsEmpty() {
-            // TODO: Implementar
-            // 1. Llamar findBySku("NONEXISTENT")
-            // 2. Verificar que Optional está vacío
-        }
+    @Test
+    @DisplayName("returns true when sku exists")
+    void returnsTrueWhenExists() {
+      // TODO: Implementar
     }
 
-    // ============================================
-    // existsBySku
-    // ============================================
+    @Test
+    @DisplayName("returns false when sku does not exist")
+    void returnsFalseWhenMissing() {
+      // TODO: Implementar
+    }
+  }
 
-    @Nested
-    @DisplayName("existsBySku()")
-    class ExistsBySku {
+  // ============================================
+  // searchByName (custom JPQL query)
+  // ============================================
 
-        @Test
-        @DisplayName("returns true when sku exists")
-        void returnsTrueWhenExists() {
-            // TODO: Implementar
-        }
+  @Nested
+  @DisplayName("searchByName()")
+  class SearchByName {
 
-        @Test
-        @DisplayName("returns false when sku does not exist")
-        void returnsFalseWhenMissing() {
-            // TODO: Implementar
-        }
+    @Test
+    @DisplayName("finds products containing name (case-insensitive)")
+    void findsCaseInsensitive() {
+      // TODO: Implementar — este test verifica la query JPQL custom
+      // 1. saveProduct("Laptop Pro", "LAP-001", "ELECTRONICS")
+      // 2. saveProduct("Desktop PC", "DES-001", "ELECTRONICS")
+      // 3. saveProduct("Laptop Air", "LAP-002", "ELECTRONICS")
+      // 4. Buscar "laptop" (minúsculas)
+      // 5. Verificar que retorna 2 productos (Laptop Pro y Laptop Air)
+      // 6. Verificar que NO incluye Desktop PC
     }
 
-    // ============================================
-    // searchByName (custom JPQL query)
-    // ============================================
-
-    @Nested
-    @DisplayName("searchByName()")
-    class SearchByName {
-
-        @Test
-        @DisplayName("finds products containing name (case-insensitive)")
-        void findsCaseInsensitive() {
-            // TODO: Implementar — este test verifica la query JPQL custom
-            // 1. saveProduct("Laptop Pro", "LAP-001", "ELECTRONICS")
-            // 2. saveProduct("Desktop PC", "DES-001", "ELECTRONICS")
-            // 3. saveProduct("Laptop Air", "LAP-002", "ELECTRONICS")
-            // 4. Buscar "laptop" (minúsculas)
-            // 5. Verificar que retorna 2 productos (Laptop Pro y Laptop Air)
-            // 6. Verificar que NO incluye Desktop PC
-        }
-
-        @Test
-        @DisplayName("returns empty page when no match")
-        void returnsEmptyWhenNoMatch() {
-            // TODO: Implementar
-            // 1. saveProduct("Widget", "W-001", "MISC")
-            // 2. Buscar "nonexistent"
-            // 3. Verificar que la página está vacía
-        }
+    @Test
+    @DisplayName("returns empty page when no match")
+    void returnsEmptyWhenNoMatch() {
+      // TODO: Implementar
+      // 1. saveProduct("Widget", "W-001", "MISC")
+      // 2. Buscar "nonexistent"
+      // 3. Verificar que la página está vacía
     }
+  }
 
-    // ============================================
-    // findByCategory
-    // ============================================
+  // ============================================
+  // findByCategory
+  // ============================================
 
-    @Nested
-    @DisplayName("findByCategory()")
-    class FindByCategory {
+  @Nested
+  @DisplayName("findByCategory()")
+  class FindByCategory {
 
-        @Test
-        @DisplayName("returns only products in given category")
-        void returnsProductsInCategory() {
-            // TODO: Implementar
-            // 1. saveProduct("Widget A", "W-A", "TOOLS")
-            // 2. saveProduct("Widget B", "W-B", "TOOLS")
-            // 3. saveProduct("Laptop", "L-001", "ELECTRONICS")
-            // 4. findByCategory("TOOLS", Pageable.unpaged())
-            // 5. Verificar tamaño == 2 y que ambos son TOOLS
-        }
+    @Test
+    @DisplayName("returns only products in given category")
+    void returnsProductsInCategory() {
+      // TODO: Implementar
+      // 1. saveProduct("Widget A", "W-A", "TOOLS")
+      // 2. saveProduct("Widget B", "W-B", "TOOLS")
+      // 3. saveProduct("Laptop", "L-001", "ELECTRONICS")
+      // 4. findByCategory("TOOLS", Pageable.unpaged())
+      // 5. Verificar tamaño == 2 y que ambos son TOOLS
     }
+  }
 }

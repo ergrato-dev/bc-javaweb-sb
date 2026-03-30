@@ -22,26 +22,28 @@ import java.util.List;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    private final UserRepository userRepository;
+  private final UserRepository userRepository;
 
-    public UserDetailsServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+  public UserDetailsServiceImpl(UserRepository userRepository) {
+    this.userRepository = userRepository;
+  }
 
-    // ============================================
-    // TODO: Implementar loadUserByUsername
-    // ============================================
-    // 1. Buscar el usuario por username con userRepository.findByUsername(username)
-    // 2. Si no existe, lanzar new UsernameNotFoundException("User not found: " + username)
-    // 3. Retornar User.builder() con:
-    //    .username(appUser.getUsername())
-    //    .password(appUser.getPassword())   // ya está hasheado
-    //    .authorities(List.of(new SimpleGrantedAuthority("ROLE_" + appUser.getRole().name())))
-    //    .build()
-    //
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // TODO: implementar
-        throw new UsernameNotFoundException("Not implemented yet");
-    }
+  // ============================================
+  // TODO: Implementar loadUserByUsername
+  // ============================================
+  // 1. Buscar el usuario por username con userRepository.findByUsername(username)
+  // 2. Si no existe, lanzar new UsernameNotFoundException("User not found: " +
+  // username)
+  // 3. Retornar User.builder() con:
+  // .username(appUser.getUsername())
+  // .password(appUser.getPassword()) // ya está hasheado
+  // .authorities(List.of(new SimpleGrantedAuthority("ROLE_" +
+  // appUser.getRole().name())))
+  // .build()
+  //
+  @Override
+  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    // TODO: implementar
+    throw new UsernameNotFoundException("Not implemented yet");
+  }
 }

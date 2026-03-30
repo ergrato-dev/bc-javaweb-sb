@@ -97,5 +97,5 @@ week-09-arquitectura_hexagonal/
 
 | | |
 |---|---|
-| ⬅️ Anterior | [Semana 08 — Arquitectura en Capas Completa](../week-08-arquitectura_capas_service_repository/README.md) |
-| ➡️ Siguiente | [Semana 10 — Spring Security: Auth & Authz](../week-10-spring_security_auth_authz/README.md) |
+| ⬅️ Anterior | [Semana 08 — Arquitectura en Capas](../week-08-arquitectura_en_capas/README.md) |
+| ➡️ Siguiente | [Semana 10 — Spring Security](../week-10-spring_security/README.md) |

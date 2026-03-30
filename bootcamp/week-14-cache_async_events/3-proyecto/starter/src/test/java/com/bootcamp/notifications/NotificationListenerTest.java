@@ -13,8 +13,10 @@ import static org.mockito.Mockito.*;
 /**
  * NotificationListenerTest — Tests del listener de eventos.
  *
- * NOTA: Los event listeners se testean en unidad llamando el método directamente.
- * No necesitamos publicar el evento — solo invocamos onArticleCreated() / onArticlePublished().
+ * NOTA: Los event listeners se testean en unidad llamando el método
+ * directamente.
+ * No necesitamos publicar el evento — solo invocamos onArticleCreated() /
+ * onArticlePublished().
  *
  * Tests a implementar:
  * 1. onArticleCreated() — se llama y no lanza excepciones (smoke test)
@@ -25,29 +27,31 @@ import static org.mockito.Mockito.*;
 @DisplayName("NotificationListener Tests")
 class NotificationListenerTest {
 
-    // Usamos Spy para observar el comportamiento sin mockear completamente
-    @Spy
-    private NotificationListener notificationListener;
+  // Usamos Spy para observar el comportamiento sin mockear completamente
+  @Spy
+  private NotificationListener notificationListener;
 
-    // ============================================
-    // TODO: Implementar — onArticleCreated smoke test
-    // ============================================
-    @Test
-    @DisplayName("onArticleCreated does not throw when called with valid event")
-    void onArticleCreated_doesNotThrow() {
-        // TODO:
-        // given: var event = new ArticleCreatedEvent(1L, "author@test.com", "Test Article");
-        // then: assertThatCode(() -> notificationListener.onArticleCreated(event))
-        //           .doesNotThrowAnyException();
-        // Nota: El método debe estar implementado en NotificationListener para que compile
-    }
+  // ============================================
+  // TODO: Implementar — onArticleCreated smoke test
+  // ============================================
+  @Test
+  @DisplayName("onArticleCreated does not throw when called with valid event")
+  void onArticleCreated_doesNotThrow() {
+    // TODO:
+    // given: var event = new ArticleCreatedEvent(1L, "author@test.com", "Test
+    // Article");
+    // then: assertThatCode(() -> notificationListener.onArticleCreated(event))
+    // .doesNotThrowAnyException();
+    // Nota: El método debe estar implementado en NotificationListener para que
+    // compile
+  }
 
-    // ============================================
-    // TODO: Implementar — onArticlePublished smoke test
-    // ============================================
-    @Test
-    @DisplayName("onArticlePublished does not throw when called with valid event")
-    void onArticlePublished_doesNotThrow() {
-        // TODO: similar al anterior pero con ArticlePublishedEvent
-    }
+  // ============================================
+  // TODO: Implementar — onArticlePublished smoke test
+  // ============================================
+  @Test
+  @DisplayName("onArticlePublished does not throw when called with valid event")
+  void onArticlePublished_doesNotThrow() {
+    // TODO: similar al anterior pero con ArticlePublishedEvent
+  }
 }

@@ -8,7 +8,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {
-    Page<Task> findByOwnerUsername(String ownerUsername, Pageable pageable);
-    Page<Task> findByStatus(TaskStatus status, Pageable pageable);
-    Optional<Task> findByIdAndOwnerUsername(Long id, String ownerUsername);
+  Page<Task> findByOwnerUsername(String ownerUsername, Pageable pageable);
+
+  Page<Task> findByStatus(TaskStatus status, Pageable pageable);
+
+  Optional<Task> findByIdAndOwnerUsername(Long id, String ownerUsername);
 }

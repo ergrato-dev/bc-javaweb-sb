@@ -23,64 +23,61 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableMethodSecurity
 public class SecurityConfig {
 
-    private final JwtAuthenticationFilter jwtFilter;
-    private final UserRepository userRepository;
+  private final JwtAuthenticationFilter jwtFilter;
+  private final UserRepository userRepository;
 
-    public SecurityConfig(JwtAuthenticationFilter jwtFilter,
-                          UserRepository userRepository) {
-        this.jwtFilter = jwtFilter;
-        this.userRepository = userRepository;
-    }
+  public SecurityConfig(JwtAuthenticationFilter jwtFilter,
+      UserRepository userRepository) {
+    this.jwtFilter = jwtFilter;
+    this.userRepository = userRepository;
+  }
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                .anyRequest().authenticated()
-            )
-            // Stateless — NO crear sesiones HTTP
-            .sessionManagement(s ->
-                    s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .csrf(csrf -> csrf.disable())
-            // JWT filter antes del filtro de credenciales estándar
-            .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
-            .exceptionHandling(ex -> ex
-                .authenticationEntryPoint((req, res, e) -> {
-                    res.setContentType("application/json");
-                    res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                    res.getWriter().write("{\"error\": \"Unauthorized\"}");
-                })
-                .accessDeniedHandler((req, res, e) -> {
-                    res.setContentType("application/json");
-                    res.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                    res.getWriter().write("{\"error\": \"Forbidden\"}");
-                })
-            );
+  @Bean
+  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    http
+        .authorizeHttpRequests(auth -> auth
+            .requestMatchers("/api/auth/**").permitAll()
+            .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
+            .anyRequest().authenticated())
+        // Stateless — NO crear sesiones HTTP
+        .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        .csrf(csrf -> csrf.disable())
+        // JWT filter antes del filtro de credenciales estándar
+        .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+        .exceptionHandling(ex -> ex
+            .authenticationEntryPoint((req, res, e) -> {
+              res.setContentType("application/json");
+              res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+              res.getWriter().write("{\"error\": \"Unauthorized\"}");
+            })
+            .accessDeniedHandler((req, res, e) -> {
+              res.setContentType("application/json");
+              res.setStatus(HttpServletResponse.SC_FORBIDDEN);
+              res.getWriter().write("{\"error\": \"Forbidden\"}");
+            }));
 
-        return http.build();
-    }
+    return http.build();
+  }
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return username -> userRepository.findByUsername(username)
-                .map(u -> User.builder()
-                        .username(u.getUsername())
-                        .password(u.getPassword())
-                        .authorities(u.getRole().name())
-                        .build())
-                .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
-    }
+  @Bean
+  public UserDetailsService userDetailsService() {
+    return username -> userRepository.findByUsername(username)
+        .map(u -> User.builder()
+            .username(u.getUsername())
+            .password(u.getPassword())
+            .authorities(u.getRole().name())
+            .build())
+        .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
+  }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+  @Bean
+  public PasswordEncoder passwordEncoder() {
+    return new BCryptPasswordEncoder();
+  }
 
-    @Bean
-    public AuthenticationManager authenticationManager(
-            AuthenticationConfiguration config) throws Exception {
-        return config.getAuthenticationManager();
-    }
+  @Bean
+  public AuthenticationManager authenticationManager(
+      AuthenticationConfiguration config) throws Exception {
+    return config.getAuthenticationManager();
+  }
 }

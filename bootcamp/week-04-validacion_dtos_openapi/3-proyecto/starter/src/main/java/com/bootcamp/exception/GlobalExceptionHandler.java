@@ -17,22 +17,24 @@ import java.util.stream.Collectors;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    record ErrorResponse(int status, String error, String message, String path) {}
+  record ErrorResponse(int status, String error, String message, String path) {
+  }
 
-    // TODO:
-    //  1. Handle EmployeeNotFoundException → 404 Not Found
-    //     return ErrorResponse with status=404, error="Not Found"
+  // TODO:
+  // 1. Handle EmployeeNotFoundException → 404 Not Found
+  // return ErrorResponse with status=404, error="Not Found"
 
-    // TODO:
-    //  2. Handle DuplicateEmailException → 409 Conflict
-    //     return ErrorResponse with status=409, error="Conflict"
+  // TODO:
+  // 2. Handle DuplicateEmailException → 409 Conflict
+  // return ErrorResponse with status=409, error="Conflict"
 
-    // TODO:
-    //  3. Handle MethodArgumentNotValidException → 400 Bad Request
-    //     Build a map of field → error message from getBindingResult().getFieldErrors()
-    //     Return: {"status":400, "error":"Validation Failed", "errors":{...}, "path":"..."}
+  // TODO:
+  // 3. Handle MethodArgumentNotValidException → 400 Bad Request
+  // Build a map of field → error message from getBindingResult().getFieldErrors()
+  // Return: {"status":400, "error":"Validation Failed", "errors":{...},
+  // "path":"..."}
 
-    // TODO:
-    //  4. Catch-all Exception → 500 Internal Server Error
-    //     DO NOT expose internal details
+  // TODO:
+  // 4. Catch-all Exception → 500 Internal Server Error
+  // DO NOT expose internal details
 }

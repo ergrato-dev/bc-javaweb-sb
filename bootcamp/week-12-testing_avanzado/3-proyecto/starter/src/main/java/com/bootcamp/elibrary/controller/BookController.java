@@ -13,39 +13,39 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 @RequestMapping("/api/books")
 public class BookController {
 
-    private final BookService bookService;
+  private final BookService bookService;
 
-    public BookController(BookService bookService) {
-        this.bookService = bookService;
-    }
+  public BookController(BookService bookService) {
+    this.bookService = bookService;
+  }
 
-    @GetMapping
-    public Page<BookResponse> findAll(Pageable pageable) {
-        return bookService.findAll(pageable);
-    }
+  @GetMapping
+  public Page<BookResponse> findAll(Pageable pageable) {
+    return bookService.findAll(pageable);
+  }
 
-    @GetMapping("/{id}")
-    public BookResponse findById(@PathVariable Long id) {
-        return bookService.findById(id);
-    }
+  @GetMapping("/{id}")
+  public BookResponse findById(@PathVariable Long id) {
+    return bookService.findById(id);
+  }
 
-    @PostMapping
-    public ResponseEntity<BookResponse> create(@Valid @RequestBody BookCreateRequest request) {
-        var created = bookService.create(request);
-        var location = ServletUriComponentsBuilder.fromCurrentRequest()
-            .path("/{id}").buildAndExpand(created.id()).toUri();
-        return ResponseEntity.created(location).body(created);
-    }
+  @PostMapping
+  public ResponseEntity<BookResponse> create(@Valid @RequestBody BookCreateRequest request) {
+    var created = bookService.create(request);
+    var location = ServletUriComponentsBuilder.fromCurrentRequest()
+        .path("/{id}").buildAndExpand(created.id()).toUri();
+    return ResponseEntity.created(location).body(created);
+  }
 
-    @PutMapping("/{id}")
-    public BookResponse update(@PathVariable Long id,
-                               @Valid @RequestBody BookUpdateRequest request) {
-        return bookService.update(id, request);
-    }
+  @PutMapping("/{id}")
+  public BookResponse update(@PathVariable Long id,
+      @Valid @RequestBody BookUpdateRequest request) {
+    return bookService.update(id, request);
+  }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
-        bookService.delete(id);
-        return ResponseEntity.noContent().build();
-    }
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Void> delete(@PathVariable Long id) {
+    bookService.delete(id);
+    return ResponseEntity.noContent().build();
+  }
 }

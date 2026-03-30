@@ -9,9 +9,13 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import java.util.Optional;
 
 public interface DoctorRepository extends JpaRepository<Doctor, Long>, JpaSpecificationExecutor<Doctor> {
-    Optional<Doctor> findByEmail(String email);
-    boolean existsByEmail(String email);
-    boolean existsByLicenseNo(String licenseNo);
-    Page<Doctor> findByActiveTrue(Pageable pageable);
-    Page<Doctor> findBySpecialty(String specialty, Pageable pageable);
+  Optional<Doctor> findByEmail(String email);
+
+  boolean existsByEmail(String email);
+
+  boolean existsByLicenseNo(String licenseNo);
+
+  Page<Doctor> findByActiveTrue(Pageable pageable);
+
+  Page<Doctor> findBySpecialty(String specialty, Pageable pageable);
 }

@@ -8,5 +8,5 @@ public record AppointmentFilter(
     Long patientId,
     Status status,
     LocalDateTime fromDate,
-    LocalDateTime toDate
-) {}
+    LocalDateTime toDate) {
+}

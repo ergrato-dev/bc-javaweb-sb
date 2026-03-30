@@ -22,9 +22,9 @@ import java.util.List;
 
 @SpringBootApplication
 public class LayersApp {
-    public static void main(String[] args) {
-        SpringApplication.run(LayersApp.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(LayersApp.class, args);
+  }
 }
 
 // ============================================================
@@ -36,35 +36,35 @@ public class LayersApp {
 // @Entity
 // @Table(name = "tasks")
 // class Task {
-//     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-//     private Long id;
+// @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+// private Long id;
 //
-//     @Column(nullable = false, unique = true)
-//     private String title;
+// @Column(nullable = false, unique = true)
+// private String title;
 //
-//     @Column
-//     private String description;
+// @Column
+// private String description;
 //
-//     @Column(nullable = false)
-//     private boolean completed = false;
+// @Column(nullable = false)
+// private boolean completed = false;
 //
-//     @Column(name = "created_at")
-//     private LocalDateTime createdAt;
+// @Column(name = "created_at")
+// private LocalDateTime createdAt;
 //
-//     protected Task() {}
+// protected Task() {}
 //
-//     Task(String title, String description) {
-//         this.title = title;
-//         this.description = description;
-//         this.createdAt = LocalDateTime.now();
-//     }
+// Task(String title, String description) {
+// this.title = title;
+// this.description = description;
+// this.createdAt = LocalDateTime.now();
+// }
 //
-//     public Long getId() { return id; }
-//     public String getTitle() { return title; }
-//     public String getDescription() { return description; }
-//     public boolean isCompleted() { return completed; }
-//     public LocalDateTime getCreatedAt() { return createdAt; }
-//     public void complete() { this.completed = true; }
+// public Long getId() { return id; }
+// public String getTitle() { return title; }
+// public String getDescription() { return description; }
+// public boolean isCompleted() { return completed; }
+// public LocalDateTime getCreatedAt() { return createdAt; }
+// public void complete() { this.completed = true; }
 // }
 
 // ============================================================
@@ -74,8 +74,8 @@ public class LayersApp {
 // Descomenta las siguientes líneas:
 //
 // interface TaskRepository extends JpaRepository<Task, Long> {
-//     boolean existsByTitle(String title);
-//     List<Task> findByCompleted(boolean completed);
+// boolean existsByTitle(String title);
+// List<Task> findByCompleted(boolean completed);
 // }
 
 // ============================================================
@@ -88,43 +88,46 @@ public class LayersApp {
 // @Transactional(readOnly = true)
 // class TaskService {
 //
-//     private final TaskRepository taskRepository;
+// private final TaskRepository taskRepository;
 //
-//     TaskService(TaskRepository taskRepository) {
-//         this.taskRepository = taskRepository;
-//     }
+// TaskService(TaskRepository taskRepository) {
+// this.taskRepository = taskRepository;
+// }
 //
-//     public List<TaskResponse> findAll() {
-//         return taskRepository.findAll().stream().map(this::toResponse).toList();
-//     }
+// public List<TaskResponse> findAll() {
+// return taskRepository.findAll().stream().map(this::toResponse).toList();
+// }
 //
-//     @Transactional
-//     public TaskResponse create(TaskCreateRequest request) {
-//         if (taskRepository.existsByTitle(request.title())) {
-//             throw new DuplicateTitleException(request.title());
-//         }
-//         var saved = taskRepository.save(new Task(request.title(), request.description()));
-//         return toResponse(saved);
-//     }
+// @Transactional
+// public TaskResponse create(TaskCreateRequest request) {
+// if (taskRepository.existsByTitle(request.title())) {
+// throw new DuplicateTitleException(request.title());
+// }
+// var saved = taskRepository.save(new Task(request.title(),
+// request.description()));
+// return toResponse(saved);
+// }
 //
-//     @Transactional
-//     public TaskResponse complete(Long id) {
-//         var task = taskRepository.findById(id)
-//             .orElseThrow(() -> new TaskNotFoundException(id));
-//         task.complete();
-//         return toResponse(task);
-//     }
+// @Transactional
+// public TaskResponse complete(Long id) {
+// var task = taskRepository.findById(id)
+// .orElseThrow(() -> new TaskNotFoundException(id));
+// task.complete();
+// return toResponse(task);
+// }
 //
-//     private TaskResponse toResponse(Task t) {
-//         return new TaskResponse(t.getId(), t.getTitle(), t.getDescription(), t.isCompleted(), t.getCreatedAt());
-//     }
+// private TaskResponse toResponse(Task t) {
+// return new TaskResponse(t.getId(), t.getTitle(), t.getDescription(),
+// t.isCompleted(), t.getCreatedAt());
+// }
 // }
 //
 // class TaskNotFoundException extends RuntimeException {
-//     TaskNotFoundException(Long id) { super("Task not found: " + id); }
+// TaskNotFoundException(Long id) { super("Task not found: " + id); }
 // }
 // class DuplicateTitleException extends RuntimeException {
-//     DuplicateTitleException(String title) { super("Task already exists: " + title); }
+// DuplicateTitleException(String title) { super("Task already exists: " +
+// title); }
 // }
 
 // ============================================================
@@ -137,36 +140,38 @@ public class LayersApp {
 // @RequestMapping("/api/tasks")
 // class TaskController {
 //
-//     private final TaskService taskService;
+// private final TaskService taskService;
 //
-//     TaskController(TaskService taskService) {
-//         this.taskService = taskService;
-//     }
+// TaskController(TaskService taskService) {
+// this.taskService = taskService;
+// }
 //
-//     @GetMapping
-//     public ResponseEntity<List<TaskResponse>> findAll() {
-//         return ResponseEntity.ok(taskService.findAll());
-//     }
+// @GetMapping
+// public ResponseEntity<List<TaskResponse>> findAll() {
+// return ResponseEntity.ok(taskService.findAll());
+// }
 //
-//     @PostMapping
-//     public ResponseEntity<TaskResponse> create(@Valid @RequestBody TaskCreateRequest request) {
-//         return ResponseEntity.status(HttpStatus.CREATED).body(taskService.create(request));
-//     }
+// @PostMapping
+// public ResponseEntity<TaskResponse> create(@Valid @RequestBody
+// TaskCreateRequest request) {
+// return
+// ResponseEntity.status(HttpStatus.CREATED).body(taskService.create(request));
+// }
 //
-//     @PatchMapping("/{id}/complete")
-//     public ResponseEntity<TaskResponse> complete(@PathVariable Long id) {
-//         return ResponseEntity.ok(taskService.complete(id));
-//     }
+// @PatchMapping("/{id}/complete")
+// public ResponseEntity<TaskResponse> complete(@PathVariable Long id) {
+// return ResponseEntity.ok(taskService.complete(id));
+// }
 //
-//     @ExceptionHandler(TaskNotFoundException.class)
-//     ResponseEntity<String> handleNotFound(TaskNotFoundException ex) {
-//         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-//     }
+// @ExceptionHandler(TaskNotFoundException.class)
+// ResponseEntity<String> handleNotFound(TaskNotFoundException ex) {
+// return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+// }
 //
-//     @ExceptionHandler(DuplicateTitleException.class)
-//     ResponseEntity<String> handleDuplicate(DuplicateTitleException ex) {
-//         return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
-//     }
+// @ExceptionHandler(DuplicateTitleException.class)
+// ResponseEntity<String> handleDuplicate(DuplicateTitleException ex) {
+// return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
+// }
 // }
 
 // ============================================================
@@ -175,9 +180,9 @@ public class LayersApp {
 // Descomenta las siguientes líneas:
 //
 // record TaskCreateRequest(
-//     @NotBlank(message = "Title is required") String title,
-//     String description
+// @NotBlank(message = "Title is required") String title,
+// String description
 // ) {}
 //
 // record TaskResponse(Long id, String title, String description,
-//                     boolean completed, LocalDateTime createdAt) {}
+// boolean completed, LocalDateTime createdAt) {}

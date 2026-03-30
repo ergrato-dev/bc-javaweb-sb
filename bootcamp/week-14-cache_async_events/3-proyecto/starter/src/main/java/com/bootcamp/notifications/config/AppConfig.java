@@ -21,23 +21,23 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class AppConfig {
 
-    @Bean
-    public Executor taskExecutor() {
-        var executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(5);    // threads siempre activos
-        executor.setMaxPoolSize(20);    // máximo en pico de carga
-        executor.setQueueCapacity(100); // cola antes de crear nuevos threads
-        executor.setThreadNamePrefix("async-");
-        executor.initialize();
-        return executor;
-    }
+  @Bean
+  public Executor taskExecutor() {
+    var executor = new ThreadPoolTaskExecutor();
+    executor.setCorePoolSize(5); // threads siempre activos
+    executor.setMaxPoolSize(20); // máximo en pico de carga
+    executor.setQueueCapacity(100); // cola antes de crear nuevos threads
+    executor.setThreadNamePrefix("async-");
+    executor.initialize();
+    return executor;
+  }
 
-    @Bean
-    public CacheManager cacheManager() {
-        var manager = new CaffeineCacheManager();
-        manager.setCaffeine(Caffeine.newBuilder()
-                .expireAfterWrite(5, TimeUnit.MINUTES) // TTL de 5 minutos
-                .maximumSize(500));                     // máximo 500 entradas
-        return manager;
-    }
+  @Bean
+  public CacheManager cacheManager() {
+    var manager = new CaffeineCacheManager();
+    manager.setCaffeine(Caffeine.newBuilder()
+        .expireAfterWrite(5, TimeUnit.MINUTES) // TTL de 5 minutos
+        .maximumSize(500)); // máximo 500 entradas
+    return manager;
+  }
 }

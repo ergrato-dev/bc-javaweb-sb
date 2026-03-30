@@ -97,5 +97,5 @@ week-11-jwt_y_oauth2/
 
 | | |
 |---|---|
-| ⬅️ Anterior | [Semana 10 — Spring Security: Auth & Authz](../week-10-spring_security_auth_authz/README.md) |
-| ➡️ Siguiente | [Semana 12 — Testing con JUnit 5 y Mockito](../week-12-testing_junit5_mockito/README.md) |
+| ⬅️ Anterior | [Semana 10 — Spring Security](../week-10-spring_security/README.md) |
+| ➡️ Siguiente | [Semana 12 — Testing Avanzado](../week-12-testing_avanzado/README.md) |

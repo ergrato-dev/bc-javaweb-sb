@@ -12,5 +12,5 @@ public record OrderResponse(
     BigDecimal total,
     String notes,
     List<OrderItemResponse> items,
-    LocalDateTime createdAt
-) {}
+    LocalDateTime createdAt) {
+}

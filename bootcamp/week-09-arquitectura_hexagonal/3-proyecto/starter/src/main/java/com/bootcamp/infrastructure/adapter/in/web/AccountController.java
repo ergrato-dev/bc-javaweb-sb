@@ -17,28 +17,29 @@ import java.net.URI;
  * Primary adapter — exposes use cases via REST HTTP.
  *
  * TODO:
- *  1. Add @RestController and @RequestMapping("/api/accounts")
- *  2. Add constructor with CreateAccountUseCase, TransferMoneyUseCase, GetAccountUseCase
+ * 1. Add @RestController and @RequestMapping("/api/accounts")
+ * 2. Add constructor with CreateAccountUseCase, TransferMoneyUseCase,
+ * GetAccountUseCase
  *
- *  3. POST /api/accounts
- *     Body: { ownerName, currency, initialBalance }
- *     Delegate to createAccountUseCase.createAccount(command)
- *     Return 201 Created with Location: /api/accounts/{id}
+ * 3. POST /api/accounts
+ * Body: { ownerName, currency, initialBalance }
+ * Delegate to createAccountUseCase.createAccount(command)
+ * Return 201 Created with Location: /api/accounts/{id}
  *
- *  4. GET /api/accounts
- *     Pageable
- *     Delegate to getAccountUseCase.listAccounts(pageable)
- *     Return 200 Page<AccountView>
+ * 4. GET /api/accounts
+ * Pageable
+ * Delegate to getAccountUseCase.listAccounts(pageable)
+ * Return 200 Page<AccountView>
  *
- *  5. GET /api/accounts/{id}
- *     Delegate to getAccountUseCase.getAccount(id)
- *     Return 200 AccountView
+ * 5. GET /api/accounts/{id}
+ * Delegate to getAccountUseCase.getAccount(id)
+ * Return 200 AccountView
  *
- *  6. POST /api/accounts/{sourceId}/transfers
- *     Body: { targetAccountId, amount, currency }
- *     Delegate to transferMoneyUseCase.transfer(command)
- *     Return 200 TransferResult
+ * 6. POST /api/accounts/{sourceId}/transfers
+ * Body: { targetAccountId, amount, currency }
+ * Delegate to transferMoneyUseCase.transfer(command)
+ * Return 200 TransferResult
  */
 public class AccountController {
-    // TODO: Implement
+  // TODO: Implement
 }

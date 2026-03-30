@@ -12,8 +12,8 @@ import org.springframework.test.context.ActiveProfiles;
 @ActiveProfiles("test")
 class TaskApiApplicationTest {
 
-    @Test
-    void contextLoads() {
-        // Si llega aquí, Spring Boot levantó correctamente
-    }
+  @Test
+  void contextLoads() {
+    // Si llega aquí, Spring Boot levantó correctamente
+  }
 }

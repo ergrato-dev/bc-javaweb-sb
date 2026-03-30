@@ -7,5 +7,5 @@ import java.util.List;
 public record OrderCreateRequest(
     @NotNull Long customerId,
     @NotEmpty List<OrderItemRequest> items,
-    String notes
-) {}
+    String notes) {
+}

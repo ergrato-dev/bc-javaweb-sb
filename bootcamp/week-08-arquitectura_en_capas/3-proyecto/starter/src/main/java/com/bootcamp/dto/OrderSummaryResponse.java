@@ -9,5 +9,5 @@ public record OrderSummaryResponse(
     String customerName,
     OrderStatus status,
     BigDecimal total,
-    LocalDateTime createdAt
-) {}
+    LocalDateTime createdAt) {
+}

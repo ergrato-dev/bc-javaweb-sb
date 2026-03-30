@@ -12,31 +12,31 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/users")
 public class UserController {
 
-    private final UserRepository userRepository;
-    private final UserService userService;
+  private final UserRepository userRepository;
+  private final UserService userService;
 
-    public UserController(UserRepository userRepository, UserService userService) {
-        this.userRepository = userRepository;
-        this.userService = userService;
-    }
+  public UserController(UserRepository userRepository, UserService userService) {
+    this.userRepository = userRepository;
+    this.userService = userService;
+  }
 
-    @PostMapping
-    public ResponseEntity<UserResponse> createUser(@RequestBody CreateUserRequest req) {
-        return ResponseEntity.status(201).body(userService.create(req));
-    }
+  @PostMapping
+  public ResponseEntity<UserResponse> createUser(@RequestBody CreateUserRequest req) {
+    return ResponseEntity.status(201).body(userService.create(req));
+  }
 
-    // ============================================
-    // PASO 4: No exponer la entidad JPA
-    // ============================================
-    // ❌ MAL — retorna la entidad con el campo password visible:
-    @GetMapping("/{id}")
-    public ResponseEntity<User> getUserBad(@PathVariable Long id) {
-        return ResponseEntity.ok(userRepository.findById(id).orElseThrow());
-    }
+  // ============================================
+  // PASO 4: No exponer la entidad JPA
+  // ============================================
+  // ❌ MAL — retorna la entidad con el campo password visible:
+  @GetMapping("/{id}")
+  public ResponseEntity<User> getUserBad(@PathVariable Long id) {
+    return ResponseEntity.ok(userRepository.findById(id).orElseThrow());
+  }
 
-    // ✅ BIEN — descomenta y comenta el metodo anterior:
-    // @GetMapping("/{id}")
-    // public ResponseEntity<UserResponse> getUser(@PathVariable Long id) {
-    //     return ResponseEntity.ok(userService.findById(id));
-    // }
+  // ✅ BIEN — descomenta y comenta el metodo anterior:
+  // @GetMapping("/{id}")
+  // public ResponseEntity<UserResponse> getUser(@PathVariable Long id) {
+  // return ResponseEntity.ok(userService.findById(id));
+  // }
 }

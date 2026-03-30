@@ -6,6 +6,6 @@ package com.bootcamp.taskapi.domain;
  * USER: acceso estándar a sus propios recursos.
  */
 public enum Role {
-    ADMIN,
-    USER
+  ADMIN,
+  USER
 }

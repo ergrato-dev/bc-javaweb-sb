@@ -35,15 +35,15 @@ import java.util.Optional;
 // @EnableJpaAuditing
 @SpringBootApplication
 public class TransactionApp {
-    public static void main(String[] args) {
-        SpringApplication.run(TransactionApp.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(TransactionApp.class, args);
+  }
 
-    // STEP 4: Bean para AuditorAware (quién realiza la operación)
-    // @Bean
-    // AuditorAware<String> auditorProvider() {
-    //     return () -> Optional.of("system");
-    // }
+  // STEP 4: Bean para AuditorAware (quién realiza la operación)
+  // @Bean
+  // AuditorAware<String> auditorProvider() {
+  // return () -> Optional.of("system");
+  // }
 }
 
 @Entity
@@ -51,31 +51,50 @@ public class TransactionApp {
 // STEP 4: Agregar @EntityListeners:
 // @EntityListeners(AuditingEntityListener.class)
 class BlogPost {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
-    @Column(nullable = false) private String title;
-    @Column(columnDefinition = "TEXT") private String content;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  @Column(nullable = false)
+  private String title;
+  @Column(columnDefinition = "TEXT")
+  private String content;
 
-    // ============================================
-    // STEP 4: Agregar campos de auditoría
-    // Descomenta:
-    // ============================================
-    // @CreatedDate
-    // @Column(name = "created_at", updatable = false)
-    // private LocalDateTime createdAt;
-    //
-    // @LastModifiedDate
-    // @Column(name = "updated_at")
-    // private LocalDateTime updatedAt;
+  // ============================================
+  // STEP 4: Agregar campos de auditoría
+  // Descomenta:
+  // ============================================
+  // @CreatedDate
+  // @Column(name = "created_at", updatable = false)
+  // private LocalDateTime createdAt;
+  //
+  // @LastModifiedDate
+  // @Column(name = "updated_at")
+  // private LocalDateTime updatedAt;
 
-    protected BlogPost() {}
-    public BlogPost(String title, String content) { this.title = title; this.content = content; }
-    public Long getId() { return id; }
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
+  protected BlogPost() {
+  }
+
+  public BlogPost(String title, String content) {
+    this.title = title;
+    this.content = content;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
 }
 
 @Repository
-interface BlogPostRepo extends JpaRepository<BlogPost, Long> {}
+interface BlogPostRepo extends JpaRepository<BlogPost, Long> {
+}
 
 // ============================================
 // STEP 2: Agregar @Transactional al service
@@ -83,44 +102,54 @@ interface BlogPostRepo extends JpaRepository<BlogPost, Long> {}
 // ============================================
 @Service
 class BlogPostService {
-    private final BlogPostRepo repo;
-    public BlogPostService(BlogPostRepo repo) { this.repo = repo; }
+  private final BlogPostRepo repo;
 
-    public List<BlogPost> findAll() { return repo.findAll(); }
+  public BlogPostService(BlogPostRepo repo) {
+    this.repo = repo;
+  }
 
-    // @Transactional  ← STEP 2
-    public BlogPost create(String title, String content) {
-        var post = repo.save(new BlogPost(title, content));
-        // Simula operación adicional que puede fallar:
-        if (title.contains("fail")) {
-            throw new RuntimeException("Simulated failure after save!");
-        }
-        return post;
+  public List<BlogPost> findAll() {
+    return repo.findAll();
+  }
+
+  // @Transactional ← STEP 2
+  public BlogPost create(String title, String content) {
+    var post = repo.save(new BlogPost(title, content));
+    // Simula operación adicional que puede fallar:
+    if (title.contains("fail")) {
+      throw new RuntimeException("Simulated failure after save!");
     }
+    return post;
+  }
 }
 
 @RestController
 @RequestMapping("/api/posts")
 class BlogPostController {
-    private final BlogPostService service;
-    public BlogPostController(BlogPostService service) { this.service = service; }
+  private final BlogPostService service;
 
-    @GetMapping
-    public List<BlogPost> getAll() { return service.findAll(); }
+  public BlogPostController(BlogPostService service) {
+    this.service = service;
+  }
 
-    @PostMapping
-    public ResponseEntity<BlogPost> create(@RequestBody java.util.Map<String, String> body) {
-        var post = service.create(body.get("title"), body.get("content"));
-        return ResponseEntity.created(URI.create("/api/posts/" + post.getId())).body(post);
+  @GetMapping
+  public List<BlogPost> getAll() {
+    return service.findAll();
+  }
+
+  @PostMapping
+  public ResponseEntity<BlogPost> create(@RequestBody java.util.Map<String, String> body) {
+    var post = service.create(body.get("title"), body.get("content"));
+    return ResponseEntity.created(URI.create("/api/posts/" + post.getId())).body(post);
+  }
+
+  @PostMapping("/fail-test")
+  public String failTest() {
+    try {
+      service.create("fail-title", "content");
+    } catch (RuntimeException e) {
+      return "Exception caught: " + e.getMessage() + ". Check DB for partial data.";
     }
-
-    @PostMapping("/fail-test")
-    public String failTest() {
-        try {
-            service.create("fail-title", "content");
-        } catch (RuntimeException e) {
-            return "Exception caught: " + e.getMessage() + ". Check DB for partial data.";
-        }
-        return "OK";
-    }
+    return "OK";
+  }
 }

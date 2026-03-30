@@ -16,14 +16,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // Descomenta las siguientes anotaciones:
 
 // @SpringBootApplication
-// @EnableAsync        // ← activa @Async en toda la aplicación
-// @EnableScheduling   // ← activa @Scheduled
+// @EnableAsync // ← activa @Async en toda la aplicación
+// @EnableScheduling // ← activa @Scheduled
 @Slf4j
 public class AsyncEventsApp {
 
-    public static void main(String[] args) {
-        SpringApplication.run(AsyncEventsApp.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(AsyncEventsApp.class, args);
+  }
 }
 
 // ============================================
@@ -35,13 +35,13 @@ public class AsyncEventsApp {
 // @Slf4j
 // class NotificationService {
 //
-//     @Async  // ← se ejecuta en un thread del pool dedicado
-//     public void sendEmail(String to, String subject) {
-//         log.info("[Email] Enviando '{}' a {} en thread: {}",
-//                  subject, to, Thread.currentThread().getName());
-//         try { Thread.sleep(2000); } catch (InterruptedException e) {}
-//         log.info("[Email] Enviado a {}", to);
-//     }
+// @Async // ← se ejecuta en un thread del pool dedicado
+// public void sendEmail(String to, String subject) {
+// log.info("[Email] Enviando '{}' a {} en thread: {}",
+// subject, to, Thread.currentThread().getName());
+// try { Thread.sleep(2000); } catch (InterruptedException e) {}
+// log.info("[Email] Enviado a {}", to);
+// }
 // }
 
 // ============================================
@@ -53,16 +53,16 @@ public class AsyncEventsApp {
 // @Slf4j
 // class CleanupTask {
 //
-//     // fixedRate: se ejecuta cada N milisegundos sin importar tiempo de ejecución
-//     @Scheduled(fixedRate = 10_000) // cada 10 segundos
-//     public void cleanExpiredSessions() {
-//         log.info("[Scheduled] Limpiando sesiones expiradas en thread: {}",
-//                  Thread.currentThread().getName());
-//     }
+// // fixedRate: se ejecuta cada N milisegundos sin importar tiempo de ejecución
+// @Scheduled(fixedRate = 10_000) // cada 10 segundos
+// public void cleanExpiredSessions() {
+// log.info("[Scheduled] Limpiando sesiones expiradas en thread: {}",
+// Thread.currentThread().getName());
+// }
 //
-//     // cron: expresión estilo Unix para scheduling avanzado
-//     // @Scheduled(cron = "0 0 8 * * MON-FRI") // lunes a viernes a las 8 AM
-//     // public void dailyReport() { ... }
+// // cron: expresión estilo Unix para scheduling avanzado
+// // @Scheduled(cron = "0 0 8 * * MON-FRI") // lunes a viernes a las 8 AM
+// // public void dailyReport() { ... }
 // }
 
 // ============================================
@@ -77,15 +77,16 @@ public class AsyncEventsApp {
 // @Slf4j
 // class UserService {
 //
-//     private final ApplicationEventPublisher eventPublisher;
+// private final ApplicationEventPublisher eventPublisher;
 //
-//     public String createUser(String email, String name) {
-//         Long fakeId = System.currentTimeMillis(); // simular ID de BD
-//         log.info("Usuario creado para: {}", email);
-//         // Publicar evento — UserService no sabe quién escucha ni cuántos listeners hay
-//         eventPublisher.publishEvent(new UserRegisteredEvent(fakeId, email, name));
-//         return "User-" + fakeId;
-//     }
+// public String createUser(String email, String name) {
+// Long fakeId = System.currentTimeMillis(); // simular ID de BD
+// log.info("Usuario creado para: {}", email);
+// // Publicar evento — UserService no sabe quién escucha ni cuántos listeners
+// hay
+// eventPublisher.publishEvent(new UserRegisteredEvent(fakeId, email, name));
+// return "User-" + fakeId;
+// }
 // }
 
 // ============================================
@@ -97,22 +98,23 @@ public class AsyncEventsApp {
 // @Slf4j
 // class EmailListener {
 //
-//     @Async
-//     @EventListener // ← Spring llama a este método cuando se publica UserRegisteredEvent
-//     public void onUserRegistered(UserRegisteredEvent event) {
-//         log.info("[Email] Enviando bienvenida a {} en thread: {}",
-//                  event.email(), Thread.currentThread().getName());
-//     }
+// @Async
+// @EventListener // ← Spring llama a este método cuando se publica
+// UserRegisteredEvent
+// public void onUserRegistered(UserRegisteredEvent event) {
+// log.info("[Email] Enviando bienvenida a {} en thread: {}",
+// event.email(), Thread.currentThread().getName());
+// }
 // }
 
 // @Component
 // @Slf4j
 // class AuditListener {
 //
-//     @Async
-//     @EventListener
-//     public void onUserRegistered(UserRegisteredEvent event) {
-//         log.info("[Audit] Registrando creación de usuario {} en thread: {}",
-//                  event.userId(), Thread.currentThread().getName());
-//     }
+// @Async
+// @EventListener
+// public void onUserRegistered(UserRegisteredEvent event) {
+// log.info("[Audit] Registrando creación de usuario {} en thread: {}",
+// event.userId(), Thread.currentThread().getName());
+// }
 // }

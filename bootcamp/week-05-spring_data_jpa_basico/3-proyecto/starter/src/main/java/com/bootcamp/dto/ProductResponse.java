@@ -10,5 +10,5 @@ public record ProductResponse(
     BigDecimal price,
     Integer stock,
     String category,
-    LocalDateTime createdAt
-) {}
+    LocalDateTime createdAt) {
+}

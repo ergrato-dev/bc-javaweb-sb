@@ -14,35 +14,34 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class AuthService {
 
-    private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
+  private final UserRepository userRepository;
+  private final PasswordEncoder passwordEncoder;
 
-    public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
+  public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    this.userRepository = userRepository;
+    this.passwordEncoder = passwordEncoder;
+  }
 
-    /**
-     * Registra un nuevo usuario.
-     *
-     * TODO: Implementar
-     * 1. Verificar que el username no esté tomado con existsByUsername()
-     * 2. Si ya existe → lanzar IllegalArgumentException("Username already taken")
-     * 3. Crear AppUser con password hasheado con BCrypt
-     * 4. Role por defecto: Role.ROLE_USER si es null en el request
-     * 5. Guardar y retornar toResponse()
-     */
-    public UserResponse register(RegisterRequest request) {
-        // TODO: Implementar
-        return null;
-    }
+  /**
+   * Registra un nuevo usuario.
+   *
+   * TODO: Implementar
+   * 1. Verificar que el username no esté tomado con existsByUsername()
+   * 2. Si ya existe → lanzar IllegalArgumentException("Username already taken")
+   * 3. Crear AppUser con password hasheado con BCrypt
+   * 4. Role por defecto: Role.ROLE_USER si es null en el request
+   * 5. Guardar y retornar toResponse()
+   */
+  public UserResponse register(RegisterRequest request) {
+    // TODO: Implementar
+    return null;
+  }
 
-    private UserResponse toResponse(AppUser user) {
-        return new UserResponse(
-                user.getId(),
-                user.getUsername(),
-                user.getRole(),
-                user.getCreatedAt()
-        );
-    }
+  private UserResponse toResponse(AppUser user) {
+    return new UserResponse(
+        user.getId(),
+        user.getUsername(),
+        user.getRole(),
+        user.getCreatedAt());
+  }
 }

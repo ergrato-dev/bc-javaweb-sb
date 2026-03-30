@@ -17,56 +17,59 @@ import java.util.Date;
 @Component
 public class JwtService {
 
-    @Value("${app.jwt.secret}")
-    private String secretKey;
+  @Value("${app.jwt.secret}")
+  private String secretKey;
 
-    @Value("${app.jwt.expiration-ms}")
-    private long expirationMs;
+  @Value("${app.jwt.expiration-ms}")
+  private long expirationMs;
 
-    /**
-     * Genera un JWT firmado para el usuario dado.
-     * Incluye username (sub), roles y timestamps de emisión/expiración.
-     */
-    public String generateToken(UserDetails userDetails) {
-        return Jwts.builder()
-                .subject(userDetails.getUsername())
-                .claim("roles", userDetails.getAuthorities().stream()
-                        .map(a -> a.getAuthority())
-                        .toList())
-                .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + expirationMs))
-                .signWith(getSigningKey())
-                .compact();
-    }
+  /**
+   * Genera un JWT firmado para el usuario dado.
+   * Incluye username (sub), roles y timestamps de emisión/expiración.
+   */
+  public String generateToken(UserDetails userDetails) {
+    return Jwts.builder()
+        .subject(userDetails.getUsername())
+        .claim("roles", userDetails.getAuthorities().stream()
+            .map(a -> a.getAuthority())
+            .toList())
+        .issuedAt(new Date())
+        .expiration(new Date(System.currentTimeMillis() + expirationMs))
+        .signWith(getSigningKey())
+        .compact();
+  }
 
-    /** Extrae el username (subject) del JWT. */
-    public String extractUsername(String token) {
-        return getClaims(token).getSubject();
-    }
+  /** Extrae el username (subject) del JWT. */
+  public String extractUsername(String token) {
+    return getClaims(token).getSubject();
+  }
 
-    /** Retorna true si el token es válido (firma correcta, no expirado, username coincide). */
-    public boolean isValid(String token, UserDetails userDetails) {
-        var username = extractUsername(token);
-        return username.equals(userDetails.getUsername()) && !isExpired(token);
-    }
+  /**
+   * Retorna true si el token es válido (firma correcta, no expirado, username
+   * coincide).
+   */
+  public boolean isValid(String token, UserDetails userDetails) {
+    var username = extractUsername(token);
+    return username.equals(userDetails.getUsername()) && !isExpired(token);
+  }
 
-    public long getExpirationMs() {
-        return expirationMs;
-    }
+  public long getExpirationMs() {
+    return expirationMs;
+  }
 
-    private boolean isExpired(String token) {
-        return getClaims(token).getExpiration().before(new Date());
-    }
+  private boolean isExpired(String token) {
+    return getClaims(token).getExpiration().before(new Date());
+  }
 
-    private Claims getClaims(String token) {
-        return Jwts.parser()
-                .verifyWith(getSigningKey())
-                .build()
-                .parseSignedClaims(token)
-                .getPayload();
-    }
+  private Claims getClaims(String token) {
+    return Jwts.parser()
+        .verifyWith(getSigningKey())
+        .build()
+        .parseSignedClaims(token)
+        .getPayload();
+  }
 
-    private SecretKey getSigningKey() {
-        return Keys.hmacShaKeyFor(Decoders.BASE64.decode(secretKey));
-    }
+  private SecretKey getSigningKey() {
+    return Keys.hmacShaKeyFor(Decoders.BASE64.decode(secretKey));
+  }
 }

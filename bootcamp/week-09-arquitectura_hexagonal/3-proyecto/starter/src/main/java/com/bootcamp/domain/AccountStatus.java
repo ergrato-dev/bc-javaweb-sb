@@ -1,3 +1,5 @@
 package com.bootcamp.domain;
 
-public enum AccountStatus { ACTIVE, FROZEN, CLOSED }
+public enum AccountStatus {
+  ACTIVE, FROZEN, CLOSED
+}

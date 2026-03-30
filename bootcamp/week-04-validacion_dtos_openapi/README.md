@@ -98,4 +98,4 @@ week-04-validacion_dtos_openapi/
 | | |
 |---|---|
 | ⬅️ Anterior | [Semana 03 — Spring Boot: Configuración y MVC](../week-03-spring_boot_configuracion_y_mvc/README.md) |
-| ➡️ Siguiente | [Semana 05 — JPA/Hibernate y Repositorios](../week-05-jpa_hibernate_repositories/README.md) |
+| ➡️ Siguiente | [Semana 05 — Spring Data JPA: Entidades y Repositorios](../week-05-spring_data_jpa_basico/README.md) |

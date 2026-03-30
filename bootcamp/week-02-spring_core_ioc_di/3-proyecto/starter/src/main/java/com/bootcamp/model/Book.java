@@ -10,14 +10,15 @@ package com.bootcamp.model;
  * @param available whether the book is available for borrowing
  */
 public record Book(
-        String isbn,
-        String title,
-        String author,
-        String category,
-        boolean available
-) {
-    public Book {
-        if (isbn == null || isbn.isBlank())   throw new IllegalArgumentException("isbn required");
-        if (title == null || title.isBlank()) throw new IllegalArgumentException("title required");
-    }
+    String isbn,
+    String title,
+    String author,
+    String category,
+    boolean available) {
+  public Book {
+    if (isbn == null || isbn.isBlank())
+      throw new IllegalArgumentException("isbn required");
+    if (title == null || title.isBlank())
+      throw new IllegalArgumentException("title required");
+  }
 }

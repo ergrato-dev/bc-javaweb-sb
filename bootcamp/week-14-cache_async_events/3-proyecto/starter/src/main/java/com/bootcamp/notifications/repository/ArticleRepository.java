@@ -8,11 +8,11 @@ import java.util.List;
 
 public interface ArticleRepository extends JpaRepository<Article, Long> {
 
-    List<Article> findByStatus(ArticleStatus status);
+  List<Article> findByStatus(ArticleStatus status);
 
-    List<Article> findByAuthorEmail(String authorEmail);
+  List<Article> findByAuthorEmail(String authorEmail);
 
-    List<Article> findByCategory(String category);
+  List<Article> findByCategory(String category);
 
-    long countByAuthorEmail(String authorEmail);
+  long countByAuthorEmail(String authorEmail);
 }

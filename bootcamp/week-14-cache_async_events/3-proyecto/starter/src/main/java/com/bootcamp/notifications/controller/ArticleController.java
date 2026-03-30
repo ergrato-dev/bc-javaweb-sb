@@ -20,53 +20,53 @@ import java.util.List;
 @Tag(name = "Articles", description = "Article management API")
 public class ArticleController {
 
-    private final ArticleService articleService;
+  private final ArticleService articleService;
 
-    @GetMapping
-    @Operation(summary = "List all articles")
-    public ResponseEntity<List<ArticleResponse>> findAll(
-            @RequestParam(required = false) ArticleStatus status) {
-        var articles = status != null
-                ? articleService.findByStatus(status)
-                : articleService.findAll();
-        return ResponseEntity.ok(articles);
-    }
+  @GetMapping
+  @Operation(summary = "List all articles")
+  public ResponseEntity<List<ArticleResponse>> findAll(
+      @RequestParam(required = false) ArticleStatus status) {
+    var articles = status != null
+        ? articleService.findByStatus(status)
+        : articleService.findAll();
+    return ResponseEntity.ok(articles);
+  }
 
-    @GetMapping("/{id}")
-    @Operation(summary = "Get article by ID")
-    @ApiResponse(responseCode = "200", description = "Article found")
-    @ApiResponse(responseCode = "404", description = "Article not found")
-    public ResponseEntity<ArticleResponse> findById(@PathVariable Long id) {
-        return ResponseEntity.ok(articleService.findById(id));
-    }
+  @GetMapping("/{id}")
+  @Operation(summary = "Get article by ID")
+  @ApiResponse(responseCode = "200", description = "Article found")
+  @ApiResponse(responseCode = "404", description = "Article not found")
+  public ResponseEntity<ArticleResponse> findById(@PathVariable Long id) {
+    return ResponseEntity.ok(articleService.findById(id));
+  }
 
-    @PostMapping
-    @Operation(summary = "Create a new article (starts as DRAFT)")
-    @ApiResponse(responseCode = "201", description = "Article created")
-    public ResponseEntity<ArticleResponse> create(@RequestBody @Valid ArticleCreateRequest req) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(articleService.create(req));
-    }
+  @PostMapping
+  @Operation(summary = "Create a new article (starts as DRAFT)")
+  @ApiResponse(responseCode = "201", description = "Article created")
+  public ResponseEntity<ArticleResponse> create(@RequestBody @Valid ArticleCreateRequest req) {
+    return ResponseEntity.status(HttpStatus.CREATED).body(articleService.create(req));
+  }
 
-    @PutMapping("/{id}")
-    @Operation(summary = "Update article content")
-    public ResponseEntity<ArticleResponse> update(
-            @PathVariable Long id,
-            @RequestBody @Valid ArticleUpdateRequest req) {
-        return ResponseEntity.ok(articleService.update(id, req));
-    }
+  @PutMapping("/{id}")
+  @Operation(summary = "Update article content")
+  public ResponseEntity<ArticleResponse> update(
+      @PathVariable Long id,
+      @RequestBody @Valid ArticleUpdateRequest req) {
+    return ResponseEntity.ok(articleService.update(id, req));
+  }
 
-    @PostMapping("/{id}/publish")
-    @Operation(summary = "Publish a DRAFT article")
-    @ApiResponse(responseCode = "200", description = "Article published")
-    @ApiResponse(responseCode = "409", description = "Article is not in DRAFT status")
-    public ResponseEntity<ArticleResponse> publish(@PathVariable Long id) {
-        return ResponseEntity.ok(articleService.publish(id));
-    }
+  @PostMapping("/{id}/publish")
+  @Operation(summary = "Publish a DRAFT article")
+  @ApiResponse(responseCode = "200", description = "Article published")
+  @ApiResponse(responseCode = "409", description = "Article is not in DRAFT status")
+  public ResponseEntity<ArticleResponse> publish(@PathVariable Long id) {
+    return ResponseEntity.ok(articleService.publish(id));
+  }
 
-    @DeleteMapping("/{id}")
-    @Operation(summary = "Delete an article")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id) {
-        articleService.delete(id);
-    }
+  @DeleteMapping("/{id}")
+  @Operation(summary = "Delete an article")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
+  public void delete(@PathVariable Long id) {
+    articleService.delete(id);
+  }
 }
