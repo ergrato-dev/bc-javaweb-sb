@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: library-catalog
+
+library:
+  name: "Biblioteca Central"
+  max-books-per-user: 3
+  allowed-categories:
+    - Programming
+    - Java
+    - Architecture
+    - Design Patterns
