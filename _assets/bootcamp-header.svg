@@ -1,0 +1,124 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg"
+  font-family="Inter, Roboto, 'Open Sans', system-ui, sans-serif">
+
+  <!-- ─────────────────────────────────────────────────── -->
+  <!-- Background                                         -->
+  <!-- ─────────────────────────────────────────────────── -->
+  <rect width="1200" height="300" fill="#0d1117"/>
+
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="8" height="300" fill="#6DB33F"/>
+
+  <!-- Bottom accent line -->
+  <rect x="8" y="294" width="1192" height="6" fill="#6DB33F" opacity="0.35"/>
+
+  <!-- ─────────────────────────────────────────────────── -->
+  <!-- Spring Leaf Icon                                   -->
+  <!-- ─────────────────────────────────────────────────── -->
+  <g transform="translate(55, 88)">
+    <!-- Outer leaf body -->
+    <path d="M 60,4 C 95,4 116,32 116,66 C 116,101 92,126 60,128
+             C 28,126 4,101 4,66 C 4,32 25,4 60,4 Z"
+          fill="#6DB33F"/>
+
+    <!-- Top-right inner highlight (solid, no gradient) -->
+    <path d="M 60,4 C 88,4 110,26 115,54 C 96,33 74,22 60,4 Z"
+          fill="#7dcc47" opacity="0.40"/>
+
+    <!-- Fern/coil — the iconic Spring inner spiral -->
+    <path d="M 60,128
+             C 60,106 73,92 70,72
+             C 67,52 50,51 52,66
+             C 54,78 66,80 63,98
+             C 60,115 60,128 60,128"
+          fill="none" stroke="white" stroke-width="3.5"
+          stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  </g>
+
+  <!-- ─────────────────────────────────────────────────── -->
+  <!-- Text Block                                         -->
+  <!-- ─────────────────────────────────────────────────── -->
+
+  <!-- "BOOTCAMP" eyebrow label -->
+  <text x="210" y="112"
+        font-size="13" font-weight="700" letter-spacing="6"
+        fill="#6DB33F" opacity="0.90">BOOTCAMP</text>
+
+  <!-- Title line 1 -->
+  <text x="208" y="164"
+        font-size="52" font-weight="800"
+        fill="#e6edf3">Java Web con</text>
+
+  <!-- Title line 2 -->
+  <text x="208" y="218"
+        font-size="52" font-weight="800"
+        fill="#6DB33F">Spring Boot</text>
+
+  <!-- Tagline -->
+  <text x="210" y="250"
+        font-size="16" font-weight="400" letter-spacing="0.5"
+        fill="#8b949e">Zero to Hero  ·  Backend API RESTful  ·  Java 21 + Spring Boot 3.4+</text>
+
+  <!-- ─────────────────────────────────────────────────── -->
+  <!-- Code Decoration (right side, ghosted)              -->
+  <!-- ─────────────────────────────────────────────────── -->
+  <text x="810" y="78"
+        font-family="'Courier New', 'Fira Code', Consolas, monospace"
+        font-size="13" fill="#6DB33F" opacity="0.22">@SpringBootApplication</text>
+  <text x="810" y="102"
+        font-family="'Courier New', 'Fira Code', Consolas, monospace"
+        font-size="13" fill="#e6edf3" opacity="0.11">public class BootcampApp {</text>
+  <text x="810" y="126"
+        font-family="'Courier New', 'Fira Code', Consolas, monospace"
+        font-size="13" fill="#e6edf3" opacity="0.11">  public static void main(</text>
+  <text x="810" y="150"
+        font-family="'Courier New', 'Fira Code', Consolas, monospace"
+        font-size="13" fill="#e6edf3" opacity="0.09">      String[] args) {</text>
+  <text x="810" y="174"
+        font-family="'Courier New', 'Fira Code', Consolas, monospace"
+        font-size="13" fill="#6DB33F" opacity="0.20">    SpringApplication</text>
+  <text x="810" y="198"
+        font-family="'Courier New', 'Fira Code', Consolas, monospace"
+        font-size="13" fill="#6DB33F" opacity="0.20">      .run(App.class, args);</text>
+  <text x="810" y="222"
+        font-family="'Courier New', 'Fira Code', Consolas, monospace"
+        font-size="13" fill="#e6edf3" opacity="0.11">  }</text>
+  <text x="810" y="246"
+        font-family="'Courier New', 'Fira Code', Consolas, monospace"
+        font-size="13" fill="#e6edf3" opacity="0.11">}</text>
+
+  <!-- ─────────────────────────────────────────────────── -->
+  <!-- Badge Row                                          -->
+  <!-- ─────────────────────────────────────────────────── -->
+
+  <!-- Java 21 LTS -->
+  <rect x="210" y="264" width="92" height="22" rx="11" fill="#163b16"/>
+  <text x="256" y="279" font-size="11" font-weight="700"
+        fill="#6DB33F" text-anchor="middle">Java 21 LTS</text>
+
+  <!-- Spring Boot 3.4+ -->
+  <rect x="310" y="264" width="120" height="22" rx="11" fill="#163b16"/>
+  <text x="370" y="279" font-size="11" font-weight="700"
+        fill="#6DB33F" text-anchor="middle">Spring Boot 3.4+</text>
+
+  <!-- 16 Semanas -->
+  <rect x="438" y="264" width="100" height="22" rx="11" fill="#0d2233"/>
+  <text x="488" y="279" font-size="11" font-weight="700"
+        fill="#79c0ff" text-anchor="middle">16 Semanas</text>
+
+  <!-- 128 Horas -->
+  <rect x="546" y="264" width="90" height="22" rx="11" fill="#0d2233"/>
+  <text x="591" y="279" font-size="11" font-weight="700"
+        fill="#79c0ff" text-anchor="middle">128 Horas</text>
+
+  <!-- Backend Only -->
+  <rect x="644" y="264" width="110" height="22" rx="11" fill="#2d1117"/>
+  <text x="699" y="279" font-size="11" font-weight="700"
+        fill="#f85149" text-anchor="middle">Backend Only</text>
+
+  <!-- MIT License -->
+  <rect x="762" y="264" width="86" height="22" rx="11" fill="#2d2600"/>
+  <text x="805" y="279" font-size="11" font-weight="700"
+        fill="#e3b341" text-anchor="middle">MIT License</text>
+
+</svg>

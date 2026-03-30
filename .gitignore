@@ -1,0 +1,153 @@
+# =============================================================
+# Bootcamp Java Web con Spring Boot — .gitignore
+# =============================================================
+
+# ---------------------------------------------------------------
+# ⚠️ SOLUCIONES — Solo para instructores (NUNCA subir al repo)
+# ---------------------------------------------------------------
+**/3-proyecto/solution/
+**/solution/
+_apprentices-only/
+
+# ---------------------------------------------------------------
+# Maven
+# ---------------------------------------------------------------
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.mvn/timing.properties
+
+# ---------------------------------------------------------------
+# Gradle (alternativo)
+# ---------------------------------------------------------------
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ---------------------------------------------------------------
+# Spring Boot
+# ---------------------------------------------------------------
+*.jar
+*.war
+*.ear
+*.class
+spring-shell.log
+*.log
+logs/
+
+# ---------------------------------------------------------------
+# Variables de entorno y configuración sensible
+# ---------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# application-prod.yml con credenciales reales
+**/application-prod.yml
+**/application-production.yml
+**/application-secrets.yml
+
+# ---------------------------------------------------------------
+# Base de datos local
+# ---------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+data/
+h2-data/
+
+# ---------------------------------------------------------------
+# IntelliJ IDEA
+# ---------------------------------------------------------------
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# ---------------------------------------------------------------
+# VS Code
+# ---------------------------------------------------------------
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+# Mantener .vscode/extensions.json (extensiones recomendadas del bootcamp)
+!.vscode/extensions.json
+
+# ---------------------------------------------------------------
+# Eclipse / STS (Spring Tool Suite)
+# ---------------------------------------------------------------
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+# ---------------------------------------------------------------
+# NetBeans
+# ---------------------------------------------------------------
+nbproject/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# ---------------------------------------------------------------
+# Docker
+# ---------------------------------------------------------------
+# No ignorar docker-compose.yml ni Dockerfile (son parte del bootcamp)
+# Solo ignorar overrides locales
+docker-compose.override.yml
+
+# ---------------------------------------------------------------
+# SO — macOS
+# ---------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ---------------------------------------------------------------
+# SO — Windows
+# ---------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ---------------------------------------------------------------
+# SO — Linux
+# ---------------------------------------------------------------
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# ---------------------------------------------------------------
+# Node (por si algún script de utilidad usa npm)
+# ---------------------------------------------------------------
+node_modules/
+npm-debug.log*
+
+# ---------------------------------------------------------------
+# Reportes de tests y cobertura
+# ---------------------------------------------------------------
+**/surefire-reports/
+**/failsafe-reports/
+**/site/jacoco/
+jacoco.exec
+
+# ---------------------------------------------------------------
+# Archivos temporales y caché
+# ---------------------------------------------------------------
+*.tmp
+*.bak
+*.swp
+*.swo
+.cache/
