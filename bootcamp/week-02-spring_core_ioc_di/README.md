@@ -43,6 +43,8 @@ week-02-spring_core_ioc_di/
 │   ├── README.md
 │   └── starter/
 ├── 4-recursos/
+│   ├── ebooks-free/
+│   ├── videografia/
 │   └── webgrafia/
 └── 5-glosario/
     └── README.md
