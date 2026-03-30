@@ -7,7 +7,7 @@
 
 ---
 
-![Anatomía de una Lambda y Functional Interfaces](../0-assets/lambda-anatomy.svg)
+![Anatomía de una Lambda y Functional Interfaces](../0-assets/01-lambda-anatomy.svg)
 
 ## 1. ¿Qué es una Lambda?
 

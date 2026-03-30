@@ -7,7 +7,7 @@
 
 ---
 
-![Optional como contenedor](../0-assets/optional-container.svg)
+![Optional como contenedor](../0-assets/03-optional-container.svg)
 
 ## 1. El Problema con `null`
 

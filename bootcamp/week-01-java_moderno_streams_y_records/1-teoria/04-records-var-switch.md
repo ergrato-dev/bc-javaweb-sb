@@ -7,7 +7,7 @@
 
 ---
 
-![Record — lo que el compilador genera automáticamente](../0-assets/record-generated.svg)
+![Record — lo que el compilador genera automáticamente](../0-assets/04-record-generated.svg)
 
 ## 1. Records — DTOs Inmutables
 

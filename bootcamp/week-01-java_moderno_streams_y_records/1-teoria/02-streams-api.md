@@ -7,7 +7,7 @@
 
 ---
 
-![Stream Pipeline — Lazy vs Eager](../0-assets/streams-pipeline.svg)
+![Stream Pipeline — Lazy vs Eager](../0-assets/02-streams-pipeline.svg)
 
 ## 1. Stream vs Collection
 

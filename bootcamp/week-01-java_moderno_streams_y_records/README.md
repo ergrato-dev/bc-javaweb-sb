@@ -28,6 +28,7 @@
 
 ```
 week-01-java_moderno_streams_y_records/
+├── 0-assets/                 # Diágramas SVG de apoyo visual
 ├── 1-teoria/
 │   ├── 01-lambdas-y-functional-interfaces.md
 │   ├── 02-streams-api.md
@@ -40,6 +41,9 @@ week-01-java_moderno_streams_y_records/
 ├── 3-proyecto/
 │   ├── README.md
 │   └── starter/
+├── 4-recursos/
+│   ├── videografia/
+│   └── webgrafia/
 └── 5-glosario/
     └── README.md
 ```
@@ -67,7 +71,7 @@ week-01-java_moderno_streams_y_records/
 
 ### Proyecto (2.5h)
 
-[📦 Sistema de Procesamiento de Productos](3-proyecto/README.md) — Aplicación de consola que procesa un catálogo de productos usando Streams, Records y Optional.
+[📦 Procesador de Envíos con Java Moderno](3-proyecto/README.md) — Aplicación de consola que procesa envíos de logística usando Streams, Records y Optional. Sin Spring — solo Java 21 puro.
 
 ---
 
@@ -88,7 +92,7 @@ week-01-java_moderno_streams_y_records/
 ## 📌 Entregables
 
 - [ ] Prácticas completadas (código descomentado y funcionando)
-- [ ] Proyecto `ProductCatalogApp` funcionando con Docker
+- [ ] Proyecto `ShipmentProcessor` funcionando con `mvn test`
 - [ ] Sin uso de ciclos `for` donde un Stream sea más apropiado
 - [ ] Sin uso de `null` donde un `Optional` sea más apropiado
 
