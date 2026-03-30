@@ -29,12 +29,11 @@
 week-09-arquitectura_hexagonal/
 ├── 1-teoria/
 │   ├── 01-ports-and-adapters.md
-│   ├── 02-domain-model-y-use-cases.md
-│   └── 03-adaptadores-spring-boot.md
+│   ├── 02-domain-model-y-value-objects.md
+│   └── 03-hexagonal-en-spring-boot.md
 ├── 2-practicas/
-│   ├── practica-01-puertos-y-interfaces/
-│   ├── practica-02-caso-de-uso-puro/
-│   └── practica-03-refactor-a-hexagonal/
+│   ├── practica-01-dominio-puro/
+│   └── practica-02-adaptadores/
 ├── 3-proyecto/
 │   ├── README.md
 │   └── starter/
@@ -51,16 +50,15 @@ week-09-arquitectura_hexagonal/
 | Archivo | Tema |
 |---------|------|
 | [01-ports-and-adapters.md](1-teoria/01-ports-and-adapters.md) | Origen (Alistair Cockburn), hexágono, driving vs driven, ventajas |
-| [02-domain-model-y-use-cases.md](1-teoria/02-domain-model-y-use-cases.md) | Modelo de dominio puro (sin anotaciones Spring/JPA), use cases, application service |
-| [03-adaptadores-spring-boot.md](1-teoria/03-adaptadores-spring-boot.md) | Adaptador REST (`@RestController`), adaptador JPA (`@Repository`), wiring con Spring |
+| [02-domain-model-y-value-objects.md](1-teoria/02-domain-model-y-value-objects.md) | Modelo de dominio puro (sin Spring/JPA), Value Objects, use cases |
+| [03-hexagonal-en-spring-boot.md](1-teoria/03-hexagonal-en-spring-boot.md) | Adaptadores REST + JPA, estructura de paquetes, wiring con Spring |
 
 ### Prácticas (3.5h)
 
 | Práctica | Descripción |
 |----------|-------------|
-| [practica-01-puertos-y-interfaces](2-practicas/practica-01-puertos-y-interfaces/) | Definir `UserRepository` (puerto) vs `JpaUserRepository` (adaptador) |
-| [practica-02-caso-de-uso-puro](2-practicas/practica-02-caso-de-uso-puro/) | `RegisterUserUseCase` sin dependencias de Spring ni JPA |
-| [practica-03-refactor-a-hexagonal](2-practicas/practica-03-refactor-a-hexagonal/) | Migrar API de 3 capas de la semana 08 a hexagonal |
+| [practica-01-dominio-puro](2-practicas/practica-01-dominio-puro/) | Dominio puro sin Spring: entidades, value objects y puertos |
+| [practica-02-adaptadores](2-practicas/practica-02-adaptadores/) | Implementar adaptadores REST + JPA conectados al dominio |
 
 ### Proyecto (2.5h)
 

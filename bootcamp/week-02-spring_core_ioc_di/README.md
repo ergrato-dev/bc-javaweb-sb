@@ -29,13 +29,12 @@
 ```
 week-02-spring_core_ioc_di/
 ├── 1-teoria/
-│   ├── 01-ioc-container.md
-│   ├── 02-beans-y-anotaciones.md
-│   └── 03-ciclo-de-vida-y-scopes.md
+│   ├── 01-ioc-y-dependency-injection.md
+│   ├── 02-beans-ciclo-de-vida-y-escopos.md
+│   └── 03-configuracion-properties-y-profiles.md
 ├── 2-practicas/
-│   ├── practica-01-primer-bean/
-│   ├── practica-02-di-constructor/
-│   └── practica-03-configuracion-java/
+│   ├── practica-01-ioc-beans/
+│   └── practica-02-scopes-lifecycle/
 ├── 3-proyecto/
 │   ├── README.md
 │   └── starter/
@@ -51,17 +50,16 @@ week-02-spring_core_ioc_di/
 
 | Archivo | Tema |
 |---------|------|
-| [01-ioc-container.md](1-teoria/01-ioc-container.md) | ¿Qué es IoC? `ApplicationContext`, Spring vs new |
-| [02-beans-y-anotaciones.md](1-teoria/02-beans-y-anotaciones.md) | `@Component`, `@Service`, `@Repository`, `@Controller`, `@Bean` |
-| [03-ciclo-de-vida-y-scopes.md](1-teoria/03-ciclo-de-vida-y-scopes.md) | `@PostConstruct`, `@PreDestroy`, `@Scope`, singleton vs prototype |
+| [01-ioc-y-dependency-injection.md](1-teoria/01-ioc-y-dependency-injection.md) | ¿Qué es IoC? `ApplicationContext`, DI por constructor |
+| [02-beans-ciclo-de-vida-y-escopos.md](1-teoria/02-beans-ciclo-de-vida-y-escopos.md) | `@Component`, `@Service`, `@Repository`, ciclo de vida, `@Scope` |
+| [03-configuracion-properties-y-profiles.md](1-teoria/03-configuracion-properties-y-profiles.md) | `@Configuration`, `@Bean`, `@Value`, `@ConfigurationProperties`, perfiles |
 
 ### Prácticas (3.5h)
 
 | Práctica | Descripción |
 |----------|-------------|
-| [practica-01-primer-bean](2-practicas/practica-01-primer-bean/) | Registrar y obtener el primer bean del contenedor |
-| [practica-02-di-constructor](2-practicas/practica-02-di-constructor/) | Inyección por constructor vs `@Autowired` |
-| [practica-03-configuracion-java](2-practicas/practica-03-configuracion-java/) | Configuración programática con `@Configuration` y `@Bean` |
+| [practica-01-ioc-beans](2-practicas/practica-01-ioc-beans/) | Registrar beans y explorar el contenedor IoC |
+| [practica-02-scopes-lifecycle](2-practicas/practica-02-scopes-lifecycle/) | Ciclo de vida, `@PostConstruct`, `@PreDestroy`, `@Scope` |
 
 ### Proyecto (2.5h)
 
@@ -73,12 +71,11 @@ week-02-spring_core_ioc_di/
 
 | Actividad | Tiempo |
 |-----------|--------|
-| Teoría: IoC Container | 45min |
-| Teoría: Beans y anotaciones | 45min |
-| Teoría: Ciclo de vida y scopes | 30min |
-| Práctica 01: Primer bean | 45min |
-| Práctica 02: DI por constructor | 1h |
-| Práctica 03: Java Config | 45min |
+| Teoría: IoC y DI | 45min |
+| Teoría: Beans, ciclo de vida y scopes | 45min |
+| Teoría: Configuración y perfiles | 30min |
+| Práctica 01: IoC beans | 1h |
+| Práctica 02: Scopes y lifecycle | 1.5h |
 | Proyecto integrador | 2.5h |
 | **Total** | **8h** |
 

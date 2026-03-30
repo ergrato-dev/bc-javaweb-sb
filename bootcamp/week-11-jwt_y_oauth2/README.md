@@ -28,13 +28,12 @@
 ```
 week-11-jwt_y_oauth2/
 ├── 1-teoria/
-│   ├── 01-jwt-estructura-y-firma.md
-│   ├── 02-jwt-spring-security-integration.md
-│   └── 03-refresh-tokens-y-oauth2.md
+│   ├── 01-jwt-fundamentos.md
+│   ├── 02-jwt-filter-y-spring-security.md
+│   └── 03-refresh-tokens-y-seguridad.md
 ├── 2-practicas/
-│   ├── practica-01-generar-validar-jwt/
-│   ├── practica-02-jwt-filter-chain/
-│   └── practica-03-refresh-tokens/
+│   ├── practica-01-jwt-service/
+│   └── practica-02-refresh-tokens/
 ├── 3-proyecto/
 │   ├── README.md
 │   └── starter/
@@ -50,17 +49,16 @@ week-11-jwt_y_oauth2/
 
 | Archivo | Tema |
 |---------|------|
-| [01-jwt-estructura-y-firma.md](1-teoria/01-jwt-estructura-y-firma.md) | Header.Payload.Signature, claims, `exp`, `sub`, `iat`, firmado con HMAC-SHA256 |
-| [02-jwt-spring-security-integration.md](1-teoria/02-jwt-spring-security-integration.md) | `JwtService`, `JwtAuthenticationFilter`, `OncePerRequestFilter`, `SecurityContextHolder` |
-| [03-refresh-tokens-y-oauth2.md](1-teoria/03-refresh-tokens-y-oauth2.md) | Access token (15min) vs refresh token (7d), rotación, OAuth2 Resource Server |
+| [01-jwt-fundamentos.md](1-teoria/01-jwt-fundamentos.md) | Header.Payload.Signature, claims, `exp`, `sub`, `iat`, firmado con HMAC-SHA256 |
+| [02-jwt-filter-y-spring-security.md](1-teoria/02-jwt-filter-y-spring-security.md) | `JwtService`, `JwtAuthenticationFilter`, `OncePerRequestFilter`, `SecurityContextHolder` |
+| [03-refresh-tokens-y-seguridad.md](1-teoria/03-refresh-tokens-y-seguridad.md) | Access token (15min) vs refresh token (7d), rotación, mejores prácticas de seguridad |
 
 ### Prácticas (3.5h)
 
 | Práctica | Descripción |
 |----------|-------------|
-| [practica-01-generar-validar-jwt](2-practicas/practica-01-generar-validar-jwt/) | `JwtService.generateToken(user)` + `validateToken(token)` con jjwt |
-| [practica-02-jwt-filter-chain](2-practicas/practica-02-jwt-filter-chain/) | `JwtAuthenticationFilter` extrae token del header y autentica la request |
-| [practica-03-refresh-tokens](2-practicas/practica-03-refresh-tokens/) | Tabla `refresh_tokens` en BD; endpoint `POST /auth/refresh` |
+| [practica-01-jwt-service](2-practicas/practica-01-jwt-service/) | `JwtService.generateToken(user)` + `validateToken(token)` con jjwt |
+| [practica-02-refresh-tokens](2-practicas/practica-02-refresh-tokens/) | Tabla `refresh_tokens` en BD; endpoint `POST /auth/refresh` |
 
 ### Proyecto (2.5h)
 

@@ -28,13 +28,12 @@
 ```
 week-04-validacion_dtos_openapi/
 ├── 1-teoria/
-│   ├── 01-bean-validation.md
-│   ├── 02-dtos-y-mapstruct.md
-│   └── 03-exception-handling-y-openapi.md
+    ├── 01-jakarta-bean-validation.md
+    ├── 02-dtos-y-mapstruct.md
+    └── 03-springdoc-openapi-swagger.md
 ├── 2-practicas/
-│   ├── practica-01-bean-validation/
-│   ├── practica-02-dtos-mapstruct/
-│   └── practica-03-exception-handler-swagger/
+│   ├── practica-01-validation/
+│   └── practica-02-openapi/
 ├── 3-proyecto/
 │   ├── README.md
 │   └── starter/
@@ -50,17 +49,16 @@ week-04-validacion_dtos_openapi/
 
 | Archivo | Tema |
 |---------|------|
-| [01-bean-validation.md](1-teoria/01-bean-validation.md) | `@Valid`, `@NotNull`, `@NotBlank`, `@Size`, `@Email`, `@Min`, validadores custom |
+| [01-jakarta-bean-validation.md](1-teoria/01-jakarta-bean-validation.md) | `@Valid`, `@NotNull`, `@NotBlank`, `@Size`, `@Email`, validadores custom |
 | [02-dtos-y-mapstruct.md](1-teoria/02-dtos-y-mapstruct.md) | Por qué DTOs, Records como DTOs, MapStruct `@Mapper` |
-| [03-exception-handling-y-openapi.md](1-teoria/03-exception-handling-y-openapi.md) | `@ExceptionHandler`, `@ControllerAdvice`, `ProblemDetail`, SpringDoc, `@Operation` |
+| [03-springdoc-openapi-swagger.md](1-teoria/03-springdoc-openapi-swagger.md) | SpringDoc OpenAPI, Swagger UI, `@Operation`, `@ApiResponse` |
 
 ### Prácticas (3.5h)
 
 | Práctica | Descripción |
 |----------|-------------|
-| [practica-01-bean-validation](2-practicas/practica-01-bean-validation/) | Validar requests y retornar errores estructurados |
-| [practica-02-dtos-mapstruct](2-practicas/practica-02-dtos-mapstruct/) | Crear Request/Response DTOs y mapear con MapStruct |
-| [practica-03-exception-handler-swagger](2-practicas/practica-03-exception-handler-swagger/) | Handler global de errores + Swagger UI configurado |
+| [practica-01-validation](2-practicas/practica-01-validation/) | Validar requests y retornar errores estructurados |
+| [practica-02-openapi](2-practicas/practica-02-openapi/) | Documentar API con SpringDoc Swagger UI |
 
 ### Proyecto (2.5h)
 

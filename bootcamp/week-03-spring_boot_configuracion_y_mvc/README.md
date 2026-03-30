@@ -29,13 +29,12 @@
 ```
 week-03-spring_boot_configuracion_y_mvc/
 ├── 1-teoria/
-│   ├── 01-spring-boot-autoconfiguration.md
-│   ├── 02-application-yml-y-perfiles.md
-│   └── 03-rest-controller-y-http.md
+│   ├── 01-spring-boot-autoconfig-y-actuator.md
+│   ├── 02-rest-controllers-y-http.md
+│   └── 03-manejo-de-excepciones.md
 ├── 2-practicas/
-│   ├── practica-01-primer-spring-boot-app/
-│   ├── practica-02-configuracion-perfiles/
-│   └── practica-03-rest-endpoints/
+│   ├── practica-01-rest-controller/
+│   └── practica-02-exception-handler/
 ├── 3-proyecto/
 │   ├── README.md
 │   └── starter/
@@ -51,17 +50,16 @@ week-03-spring_boot_configuracion_y_mvc/
 
 | Archivo | Tema |
 |---------|------|
-| [01-spring-boot-autoconfiguration.md](1-teoria/01-spring-boot-autoconfiguration.md) | Starters, auto-config, `@SpringBootApplication`, Actuator |
-| [02-application-yml-y-perfiles.md](1-teoria/02-application-yml-y-perfiles.md) | `application.yml`, `@Value`, `@ConfigurationProperties`, perfiles |
-| [03-rest-controller-y-http.md](1-teoria/03-rest-controller-y-http.md) | `@RestController`, HTTP verbs, `@PathVariable`, `@RequestParam`, `ResponseEntity` |
+| [01-spring-boot-autoconfig-y-actuator.md](1-teoria/01-spring-boot-autoconfig-y-actuator.md) | Starters, auto-config, `@SpringBootApplication`, Actuator |
+| [02-rest-controllers-y-http.md](1-teoria/02-rest-controllers-y-http.md) | `@RestController`, HTTP verbs, `@PathVariable`, `@RequestParam`, `ResponseEntity` |
+| [03-manejo-de-excepciones.md](1-teoria/03-manejo-de-excepciones.md) | `@ExceptionHandler`, `@ControllerAdvice`, `ProblemDetail`, códigos HTTP |
 
 ### Prácticas (3.5h)
 
 | Práctica | Descripción |
 |----------|-------------|
-| [practica-01-primer-spring-boot-app](2-practicas/practica-01-primer-spring-boot-app/) | Crear primer proyecto con Spring Initializr y levantarlo con Docker |
-| [practica-02-configuracion-perfiles](2-practicas/practica-02-configuracion-perfiles/) | Perfiles dev/prod con `application-dev.yml` |
-| [practica-03-rest-endpoints](2-practicas/practica-03-rest-endpoints/) | CRUD básico en memoria sin base de datos |
+| [practica-01-rest-controller](2-practicas/practica-01-rest-controller/) | Primer `@RestController` con todos los verbos HTTP |
+| [practica-02-exception-handler](2-practicas/practica-02-exception-handler/) | `@ControllerAdvice` para manejo global de errores |
 
 ### Proyecto (2.5h)
 

@@ -66,7 +66,7 @@ Los estudiantes aprenden directamente las herramientas y técnicas que usarán e
 | Arquitectura | 8–9 | 16h | Capas, Hexagonal, Patterns |
 | Seguridad | 10–11 | 16h | Spring Security, JWT, OAuth2 |
 | Testing | 12–13 | 16h | JUnit 5, Mockito, Testcontainers |
-| Avanzado | 14 | 8h | Cache, Async, WebSocket |
+| Avanzado | 14 | 8h | Cache, Async, Application Events |
 | Producción | 15 | 8h | Docker, CI/CD, Deployment |
 | Proyecto Final | 16 | 8h | API RESTful backend completa (producción) |
 | **Total** | **16** | **128h** | |
