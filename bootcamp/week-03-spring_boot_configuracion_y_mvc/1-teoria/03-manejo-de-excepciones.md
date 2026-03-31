@@ -1,5 +1,7 @@
 # Manejo Global de Excepciones
 
+![Flujo de manejo global de excepciones con @RestControllerAdvice](../0-assets/03-exception-handler-flow.svg)
+
 ## 🎯 Objetivos
 - Centralizar el manejo de errores con `@ControllerAdvice`
 - Retornar respuestas de error consistentes

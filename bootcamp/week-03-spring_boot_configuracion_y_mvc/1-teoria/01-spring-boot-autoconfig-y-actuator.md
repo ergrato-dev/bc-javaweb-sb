@@ -1,5 +1,7 @@
 # Spring Boot Auto-configuration y Actuator
 
+![Spring Boot Auto-configuracion y Actuator](../0-assets/01-spring-boot-autoconfig.svg)
+
 ## 🎯 Objetivos
 - Entender cómo funciona la auto-configuración
 - Usar Spring Boot Actuator para monitoreo

@@ -1,5 +1,7 @@
 # REST Controllers — @RestController, endpoints y HTTP
 
+![REST Controllers HTTP Methods y ResponseEntity](../0-assets/02-rest-http-cheatsheet.svg)
+
 ## 🎯 Objetivos
 - Crear endpoints REST con `@RestController`
 - Manejar path params, query params y request body

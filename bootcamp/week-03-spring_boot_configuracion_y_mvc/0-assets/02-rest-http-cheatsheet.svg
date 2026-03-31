@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#6DB33F"/>
+    </marker>
+  </defs>
+  <rect width="800" height="460" fill="#0d1117"/>
+  <text x="400" y="32" font-family="system-ui,-apple-system,sans-serif" font-size="16" font-weight="700" fill="#e6edf3" text-anchor="middle">REST Controllers: HTTP Methods, PathVariable y ResponseEntity</text>
+  <text x="30" y="62" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#6DB33F">HTTP Methods y Anotaciones Spring</text>
+  <rect x="30" y="72" width="360" height="172" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="45" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="#8b949e">Metodo HTTP</text>
+  <text x="165" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="#8b949e">Anotacion Spring</text>
+  <text x="300" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="#8b949e">Uso</text>
+  <line x1="38" y1="98" x2="382" y2="98" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="116" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">GET</text>
+  <text x="165" y="116" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@GetMapping</text>
+  <text x="300" y="116" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6b7280">Leer recurso</text>
+  <line x1="38" y1="122" x2="382" y2="122" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="140" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">POST</text>
+  <text x="165" y="140" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@PostMapping</text>
+  <text x="300" y="140" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6b7280">Crear recurso</text>
+  <line x1="38" y1="146" x2="382" y2="146" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="164" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">PUT</text>
+  <text x="165" y="164" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@PutMapping</text>
+  <text x="300" y="164" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6b7280">Reemplazar recurso</text>
+  <line x1="38" y1="170" x2="382" y2="170" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="188" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">PATCH</text>
+  <text x="165" y="188" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@PatchMapping</text>
+  <text x="300" y="188" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6b7280">Actualizar parcialmente</text>
+  <line x1="38" y1="194" x2="382" y2="194" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="212" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">DELETE</text>
+  <text x="165" y="212" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@DeleteMapping</text>
+  <text x="300" y="212" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6b7280">Eliminar recurso</text>
+  <line x1="38" y1="218" x2="382" y2="218" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="232" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#7ee787">Base URL</text>
+  <text x="165" y="232" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@RequestMapping</text>
+  <text x="300" y="232" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6b7280">Ruta base del controller</text>
+  <text x="30" y="268" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#6DB33F">@PathVariable vs @RequestParam</text>
+  <rect x="30" y="278" width="172" height="96" rx="8" fill="#1a2744" stroke="#388bfd" stroke-width="1.5"/>
+  <text x="116" y="296" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" font-weight="600" fill="#a5d6ff" text-anchor="middle">@PathVariable</text>
+  <text x="116" y="314" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#7ee787" text-anchor="middle">/products/{id}</text>
+  <text x="116" y="330" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e6edf3" text-anchor="middle">/products/42</text>
+  <text x="116" y="348" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280" text-anchor="middle">Identifica el recurso</text>
+  <text x="116" y="364" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280" text-anchor="middle">Obligatorio en la URL</text>
+  <text x="214" y="330" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#6DB33F" text-anchor="middle">VS</text>
+  <rect x="218" y="278" width="172" height="96" rx="8" fill="#1a2a1a" stroke="#6DB33F" stroke-width="1.5"/>
+  <text x="304" y="296" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" font-weight="600" fill="#7ee787" text-anchor="middle">@RequestParam</text>
+  <text x="304" y="314" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341" text-anchor="middle">?category=tech</text>
+  <text x="304" y="330" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e6edf3" text-anchor="middle">?page=0&amp;size=10</text>
+  <text x="304" y="348" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280" text-anchor="middle">Filtra o pagina</text>
+  <text x="304" y="364" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280" text-anchor="middle">required=false / default</text>
+  <text x="410" y="62" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#6DB33F">ResponseEntity: codigos HTTP</text>
+  <rect x="410" y="72" width="360" height="148" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="425" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="#8b949e">Metodo</text>
+  <text x="575" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="#8b949e">HTTP</text>
+  <text x="618" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="#8b949e">Cuando usarlo</text>
+  <line x1="418" y1="98" x2="762" y2="98" stroke="#21262d" stroke-width="1"/>
+  <text x="425" y="116" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#7ee787">ResponseEntity.ok(body)</text>
+  <text x="575" y="116" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">200</text>
+  <text x="618" y="116" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6b7280">Lectura exitosa</text>
+  <line x1="418" y1="122" x2="762" y2="122" stroke="#21262d" stroke-width="1"/>
+  <text x="425" y="140" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#7ee787">.created(uri).body(b)</text>
+  <text x="575" y="140" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">201</text>
+  <text x="618" y="140" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6b7280">Recurso creado</text>
+  <line x1="418" y1="146" x2="762" y2="146" stroke="#21262d" stroke-width="1"/>
+  <text x="425" y="164" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#7ee787">.noContent().build()</text>
+  <text x="575" y="164" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">204</text>
+  <text x="618" y="164" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6b7280">DELETE exitoso</text>
+  <line x1="418" y1="170" x2="762" y2="170" stroke="#21262d" stroke-width="1"/>
+  <text x="425" y="188" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72">.badRequest().body(e)</text>
+  <text x="575" y="188" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72">400</text>
+  <text x="618" y="188" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6b7280">Request invalido</text>
+  <line x1="418" y1="194" x2="762" y2="194" stroke="#21262d" stroke-width="1"/>
+  <text x="425" y="212" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72">.notFound().build()</text>
+  <text x="575" y="212" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72">404</text>
+  <text x="618" y="212" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#6b7280">Recurso no existe</text>
+  <text x="410" y="248" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#6DB33F">Ejemplo completo</text>
+  <rect x="410" y="258" width="360" height="130" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="422" y="268" width="336" height="108" rx="5" fill="#0d1117"/>
+  <text x="434" y="286" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@RestController</text>
+  <text x="434" y="302" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@RequestMapping("/api/products")</text>
+  <text x="434" y="318" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72">public class </text>
+  <text x="506" y="318" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">ProductController </text>
+  <text x="618" y="318" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e6edf3">{</text>
+  <text x="434" y="336" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#8b949e">  @GetMapping("/{id}")</text>
+  <text x="434" y="352" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72">  public </text>
+  <text x="478" y="352" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">ResponseEntity&lt;ProductResponse&gt;</text>
+  <text x="434" y="368" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e6edf3">  getById(</text>
+  <text x="480" y="368" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@PathVariable </text>
+  <text x="566" y="368" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">Long </text>
+  <text x="598" y="368" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e6edf3">id) {</text>
+  <text x="434" y="384" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e6edf3">    return ResponseEntity.ok(service.findById(id)); }}</text>
+  <text x="30" y="400" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#6DB33F">Codigos HTTP clave</text>
+  <rect x="30" y="408" width="360" height="40" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="45" y="424" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#7ee787">200</text>
+  <text x="75" y="424" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#7ee787"> 201</text>
+  <text x="110" y="424" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#7ee787"> 204</text>
+  <text x="175" y="424" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72"> 400</text>
+  <text x="210" y="424" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72"> 401</text>
+  <text x="245" y="424" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72"> 403</text>
+  <text x="280" y="424" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72"> 404</text>
+  <text x="315" y="424" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72"> 500</text>
+  <text x="45" y="440" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">OK  Created  No Content  Bad Req  Unauth  Forbidden  Not Found  Server Err</text>
+</svg>
