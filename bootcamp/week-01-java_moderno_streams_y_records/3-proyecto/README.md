@@ -27,8 +27,8 @@ public enum ShipmentStatus { PENDING, IN_TRANSIT, DELIVERED, CANCELLED }
 
 ### Funcionales
 - [ ] **R1:** Filtrar envíos por estado (`filterByStatus(List<Shipment>, ShipmentStatus)`)
-- [ ] **R2:** Calcular peso total de envíos en tránsito
-- [ ] **R3:** Obtener el envío más pesado (retornar `Optional<Shipment>`)
+- [ ] **R2:** Calcular valor declarado total de todos los envíos (`totalDeclaredValue(List<Shipment>)`)
+- [ ] **R3:** Buscar envío por ID (retornar `Optional<Shipment>`)
 - [ ] **R4:** Agrupar envíos por destino (`Map<String, List<Shipment>>`)
 - [ ] **R5:** Generar resumen estadístico por estado (conteo de cada estado)
 - [ ] **R6:** Obtener top 3 envíos con mayor peso
@@ -41,6 +41,8 @@ public enum ShipmentStatus { PENDING, IN_TRANSIT, DELIVERED, CANCELLED }
 - [ ] Usar Records para `Shipment` y para el resultado del resumen R5
 - [ ] Demostrar uso de `var` en al menos 3 variables locales
 - [ ] Usar switch expression (no switch statement) en al menos un lugar
+
+> 💡 **R4** usa `groupByStatus` (Map por estado). **R6** usa `top3MostValuable` (declaredValue desc). **R7** usa `allDelivered` (allMatch).
 
 ## 🧪 Tests Mínimos
 

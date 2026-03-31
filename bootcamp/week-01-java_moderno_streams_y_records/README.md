@@ -40,7 +40,8 @@ week-01-java_moderno_streams_y_records/
 │   └── practica-03-records-optional/
 ├── 3-proyecto/
 │   ├── README.md
-│   └── starter/
+│   ├── starter/
+│   └── solution/            # ⚠️ OCULTA — Solo para instructores
 ├── 4-recursos/
 │   ├── ebooks-free/
 │   ├── videografia/
@@ -98,6 +99,14 @@ week-01-java_moderno_streams_y_records/
 - [ ] Sin uso de `null` donde un `Optional` sea más apropiado
 
 ---
+
+## 🔗 Navegación
+
+| | Semana |
+|---|---|
+| ⬅️ Anterior | *Prerrequisito: Java básico y POO* |
+| ➡️ Siguiente | [Semana 02 — Spring Core: IoC y DI](../week-02-spring_core_ioc_di/README.md) |
+
 
 ## 🔗 Navegación
 
