@@ -28,6 +28,10 @@
 
 ```
 week-05-spring_data_jpa_basico/
+├── 0-assets/
+│   ├── 01-jpa-entity-mapping.svg
+│   ├── 02-repository-methods.svg
+│   └── 03-pagination-flow.svg
 ├── 1-teoria/
 │   ├── 01-entidades-y-repositorios-jpa.md
 │   ├── 02-queries-jpql-y-paginacion.md
@@ -38,8 +42,13 @@ week-05-spring_data_jpa_basico/
 ├── 3-proyecto/
 │   ├── README.md
 │   └── starter/
-└── 5-glosario/
-    └── README.md
+├── 4-recursos/
+│   ├── ebooks-free/
+│   ├── videografia/
+│   └── webgrafia/
+├── 5-glosario/
+│   └── README.md
+└── rubrica-evaluacion.md
 ```
 
 ---

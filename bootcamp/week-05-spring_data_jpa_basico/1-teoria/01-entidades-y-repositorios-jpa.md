@@ -1,5 +1,7 @@
 # Spring Data JPA — Entidades y Repositorios
 
+![Entidad JPA — Mapeo a Tabla SQL](../0-assets/01-jpa-entity-mapping.svg)
+
 ## 🎯 Objetivos
 - Mapear una clase Java como entidad JPA con `@Entity`
 - Usar `JpaRepository<T, ID>` para CRUD sin SQL
@@ -62,6 +64,8 @@ public class Product {
 ---
 
 ## 3. JpaRepository
+
+![JpaRepository — Métodos Disponibles](../0-assets/02-repository-methods.svg)
 
 ```java
 public interface ProductRepository extends JpaRepository<Product, Long> {

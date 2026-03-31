@@ -43,8 +43,7 @@ public class ProductService {
 
   /**
    * TODO:
-   * 1. Use
-   * productRepository.findById(id).orElseThrow(ProductNotFoundException::new)
+   * 1. Use productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException(id))
    * 2. Map Product to ProductResponse with toResponse()
    */
   public ProductResponse findById(Long id) {

@@ -1,5 +1,7 @@
 # Spring Data JPA — Consultas con JPQL y Paginación
 
+![Paginación con Pageable — Flujo Completo](../0-assets/03-pagination-flow.svg)
+
 ## 🎯 Objetivos
 - Escribir consultas custom con `@Query` y JPQL
 - Implementar paginación y ordenamiento con `Pageable`

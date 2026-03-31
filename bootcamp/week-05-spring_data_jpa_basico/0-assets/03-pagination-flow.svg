@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#6DB33F"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="460" fill="#0d1117"/>
+
+  <text x="400" y="30" font-family="system-ui,-apple-system,sans-serif" font-size="15" font-weight="700" fill="#e6edf3" text-anchor="middle">Paginacion con Pageable — Flujo Completo</text>
+
+  <text x="400" y="54" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" fill="#e3b341" text-anchor="middle">GET /api/products?page=0&amp;size=5&amp;sort=price,asc&amp;category=Electronics</text>
+
+  <rect x="20" y="65" width="130" height="78" rx="8" fill="#161b22" stroke="#388bfd" stroke-width="1.5"/>
+  <text x="85" y="88" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#388bfd" text-anchor="middle">Controller</text>
+  <text x="85" y="104" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#e3b341" text-anchor="middle">@GetMapping</text>
+  <text x="85" y="118" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#a5d6ff" text-anchor="middle">Pageable</text>
+  <text x="85" y="132" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#8b949e" text-anchor="middle">auto-inyectado</text>
+
+  <line x1="151" y1="104" x2="178" y2="104" stroke="#6DB33F" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="180" y="65" width="130" height="78" rx="8" fill="#161b22" stroke="#6DB33F" stroke-width="1.5"/>
+  <text x="245" y="88" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#6DB33F" text-anchor="middle">Service</text>
+  <text x="245" y="104" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#e3b341" text-anchor="middle">@Service</text>
+  <text x="245" y="118" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#a5d6ff" text-anchor="middle">Page&lt;Product&gt;</text>
+  <text x="245" y="132" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#8b949e" text-anchor="middle">delega pageable</text>
+
+  <line x1="311" y1="104" x2="338" y2="104" stroke="#6DB33F" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="340" y="65" width="130" height="78" rx="8" fill="#161b22" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="405" y="88" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#e3b341" text-anchor="middle">Repository</text>
+  <text x="405" y="104" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#e3b341" text-anchor="middle">findByCategory</text>
+  <text x="405" y="118" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#e6edf3" text-anchor="middle">(String, Pageable)</text>
+  <text x="405" y="132" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#8b949e" text-anchor="middle">→ Page&lt;Product&gt;</text>
+
+  <line x1="471" y1="104" x2="498" y2="104" stroke="#6DB33F" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="500" y="65" width="130" height="78" rx="8" fill="#161b22" stroke="#ff7b72" stroke-width="1.5"/>
+  <text x="565" y="88" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#ff7b72" text-anchor="middle">Hibernate</text>
+  <text x="565" y="104" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#8b949e" text-anchor="middle">traduce a SQL</text>
+  <text x="565" y="118" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#8b949e" text-anchor="middle">LIMIT / OFFSET</text>
+  <text x="565" y="132" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#8b949e" text-anchor="middle">COUNT(*)</text>
+
+  <line x1="631" y1="104" x2="658" y2="104" stroke="#6DB33F" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="660" y="65" width="120" height="78" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="720" y="88" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#8b949e" text-anchor="middle">Database</text>
+  <text x="720" y="104" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#8b949e" text-anchor="middle">H2 / PostgreSQL</text>
+  <text x="720" y="118" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#8b949e" text-anchor="middle">ejecuta LIMIT</text>
+  <text x="720" y="132" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" fill="#8b949e" text-anchor="middle">y ORDER BY</text>
+
+  <rect x="20" y="162" width="370" height="124" rx="8" fill="#161b22" stroke="#388bfd" stroke-width="1.5"/>
+  <text x="205" y="182" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#388bfd" text-anchor="middle">Codigo en Controller + Service</text>
+
+  <rect x="30" y="190" width="350" height="84" rx="4" fill="#0d1117"/>
+  <text x="42" y="208" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#7ee787">@GetMapping</text>
+  <text x="42" y="224" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#ff7b72">public </text>
+  <text x="82" y="224" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a5d6ff">Page</text>
+  <text x="104" y="224" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">&lt;</text>
+  <text x="110" y="224" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e3b341">ProductResponse</text>
+  <text x="219" y="224" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">&gt; getAll(</text>
+  <text x="42" y="240" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a5d6ff">    @RequestParam</text>
+  <text x="160" y="240" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">(required=false) </text>
+  <text x="270" y="240" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a5d6ff">String </text>
+  <text x="312" y="240" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">category,</text>
+  <text x="42" y="256" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a5d6ff">    Pageable </text>
+  <text x="117" y="256" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">pageable) {</text>
+  <text x="42" y="270" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#ff7b72">  return </text>
+  <text x="92" y="270" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">service.findAll(category, pageable); }</text>
+
+  <rect x="410" y="162" width="370" height="124" rx="8" fill="#161b22" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="595" y="182" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#e3b341" text-anchor="middle">SQL Generado por Hibernate</text>
+
+  <rect x="420" y="190" width="350" height="84" rx="4" fill="#0d1117"/>
+  <text x="432" y="208" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#8b949e">-- Query de datos</text>
+  <text x="432" y="224" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#ff7b72">SELECT </text>
+  <text x="476" y="224" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">* FROM products</text>
+  <text x="432" y="240" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#ff7b72">WHERE </text>
+  <text x="476" y="240" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">category = </text>
+  <text x="548" y="240" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a8ff78">'Electronics'</text>
+  <text x="432" y="256" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#ff7b72">ORDER BY </text>
+  <text x="490" y="256" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a5d6ff">price </text>
+  <text x="522" y="256" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">ASC</text>
+  <text x="432" y="272" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#ff7b72">LIMIT </text>
+  <text x="470" y="272" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e3b341">5 </text>
+  <text x="484" y="272" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#ff7b72">OFFSET </text>
+  <text x="530" y="272" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e3b341">0</text>
+  <text x="548" y="272" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#8b949e">-- + COUNT(*)</text>
+
+  <rect x="20" y="302" width="760" height="138" rx="8" fill="#161b22" stroke="#6DB33F" stroke-width="1.5"/>
+  <text x="400" y="322" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#6DB33F" text-anchor="middle">Respuesta Page&lt;ProductResponse&gt; (JSON)</text>
+
+  <rect x="30" y="330" width="360" height="96" rx="4" fill="#0d1117"/>
+  <text x="42" y="348" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">{</text>
+  <text x="42" y="364" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a8ff78">  "content"</text>
+  <text x="108" y="364" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">: [{...}, {...}, ...],</text>
+  <text x="42" y="380" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a8ff78">  "totalElements"</text>
+  <text x="150" y="380" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">: </text>
+  <text x="162" y="380" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e3b341">42</text>
+  <text x="178" y="380" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">,</text>
+  <text x="42" y="396" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a8ff78">  "totalPages"</text>
+  <text x="130" y="396" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">: </text>
+  <text x="142" y="396" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e3b341">9</text>
+  <text x="150" y="396" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">,</text>
+  <text x="42" y="412" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a8ff78">  "last"</text>
+  <text x="88" y="412" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">: </text>
+  <text x="100" y="412" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#ff7b72">false</text>
+  <text x="125" y="412" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">, </text>
+  <text x="137" y="412" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a8ff78">"first"</text>
+  <text x="183" y="412" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">: </text>
+  <text x="195" y="412" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#7ee787">true</text>
+  <text x="42" y="428" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e6edf3">}</text>
+
+  <rect x="405" y="330" width="365" height="96" rx="4" fill="#0d1117"/>
+  <text x="417" y="348" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="600" fill="#e3b341">Params de Query Aceptados</text>
+  <text x="417" y="366" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a5d6ff">?page=</text>
+  <text x="462" y="366" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e3b341">0</text>
+  <text x="475" y="366" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#8b949e">     primera pagina (base 0)</text>
+  <text x="417" y="382" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a5d6ff">?size=</text>
+  <text x="462" y="382" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e3b341">5</text>
+  <text x="475" y="382" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#8b949e">    elementos por pagina</text>
+  <text x="417" y="398" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a5d6ff">?sort=</text>
+  <text x="462" y="398" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e3b341">price,asc</text>
+  <text x="538" y="398" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#8b949e">  campo,direccion</text>
+  <text x="417" y="414" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#a5d6ff">?sort=</text>
+  <text x="462" y="414" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#e3b341">name,desc</text>
+  <text x="538" y="414" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#8b949e"> multiples sorts posibles</text>
+  <text x="417" y="430" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#6b7280">Spring MVC inyecta Pageable automaticamente</text>
+
+</svg>
