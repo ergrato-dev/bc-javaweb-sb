@@ -62,7 +62,7 @@ week-04-validacion_dtos_openapi/
 
 ### Proyecto (2.5h)
 
-[📦 API de Usuarios con Validación Completa](3-proyecto/README.md) — API con validación de entradas, DTOs separados, manejo de errores consistente y documentación Swagger.
+[📦 API de Gestión de Empleados](3-proyecto/README.md) — API con validación de entradas, manejo de errores consistente (`@ControllerAdvice`) y documentación Swagger.
 
 ---
 
@@ -74,8 +74,8 @@ week-04-validacion_dtos_openapi/
 | Teoría: DTOs + MapStruct | 45min |
 | Teoría: Exception Handling + OpenAPI | 30min |
 | Práctica 01: Validación | 1h |
-| Práctica 02: DTOs + MapStruct | 1.25h |
-| Práctica 03: Errores + Swagger | 1.25h |
+| Práctica 02: OpenAPI + Swagger | 1.25h |
+| Buffer / revisión | 1.25h |
 | Proyecto integrador | 2.5h |
 | **Total** | **8h** |
 
@@ -84,10 +84,10 @@ week-04-validacion_dtos_openapi/
 ## 📌 Entregables
 
 - [ ] Validaciones activas: requests inválidos retornan `400` con mensaje descriptivo
-- [ ] DTOs separados del dominio (`UserCreateRequest`, `UserResponse`)
-- [ ] MapStruct mapeando automáticamente entre clases
-- [ ] `@ControllerAdvice` centralizando todos los errores
+- [ ] DTOs separados del dominio (`EmployeeRequest`, `EmployeeResponse`)
+- [ ] `@ControllerAdvice` centralizando todos los errores (400, 404, 409, 500)
 - [ ] Swagger UI accesible en `/swagger-ui.html`
+- [ ] Endpoints documentados con `@Operation` y `@ApiResponse`
 
 ---
 

@@ -1,5 +1,7 @@
 # SpringDoc OpenAPI — Swagger UI
 
+![Flujo de generación OpenAPI](../0-assets/03-openapi-swagger-flow.svg)
+
 ## 🎯 Objetivos
 - Auto-generar documentación OpenAPI desde el código
 - Agregar descripciones con `@Operation` y `@ApiResponse`

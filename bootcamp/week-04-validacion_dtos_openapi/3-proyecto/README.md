@@ -1,38 +1,34 @@
-# Proyecto Semana 04 — API de Gestión de Productos con Validación y Swagger
+# Proyecto Semana 04 — API de Gestión de Empleados con Validación y Swagger
 
 ## 🎯 Descripción
 
-Extiende la API de tareas (o inicia con productos) aplicando validación completa con Jakarta Bean Validation, DTOs con MapStruct y documentación automática con SpringDoc OpenAPI.
+Construye una API REST para gestionar empleados aplicando validación completa con Jakarta Bean Validation, manejo global de errores con `@ControllerAdvice` y documentación automática con SpringDoc OpenAPI.
 
 ## 📋 Escenario
 
-Una tienda online necesita una API para gestionar su catálogo de productos. Todos los datos de entrada deben validarse. La documentación debe generarse automáticamente.
+Una empresa necesita una API para administrar su directorio de empleados. Todos los datos de entrada deben validarse. Los errores deben retornar respuestas estructuradas. La documentación debe generarse automáticamente con Swagger UI.
 
 ## 🏗️ DTOs
 
 ```java
-// Entrada: crear producto
-public record ProductCreateRequest(
+// Entrada: crear o actualizar empleado
+public record EmployeeRequest(
     @NotBlank @Size(min=2, max=100) String name,
-    @NotBlank @Size(max=500) String description,
-    @NotNull @DecimalMin("0.01") BigDecimal price,
-    @NotNull @Min(0) Integer stock,
-    @NotBlank String category
+    @NotBlank @Email String email,
+    @Min(18) @Max(65) int age,
+    @Positive double salary,
+    @NotBlank String department,
+    @NotBlank String position
 ) {}
 
-// Entrada: actualizar producto
-public record ProductUpdateRequest(
-    @Size(min=2, max=100) String name,
-    @Size(max=500) String description,
-    @DecimalMin("0.01") BigDecimal price,
-    @Min(0) Integer stock
-) {}
-
-// Salida: respuesta
-public record ProductResponse(
-    Long id, String name, String description,
-    BigDecimal price, Integer stock, String category,
-    boolean available
+// Salida: respuesta (no expone salary)
+public record EmployeeResponse(
+    Long id,
+    String name,
+    String email,
+    int age,
+    String department,
+    String position
 ) {}
 ```
 
@@ -41,38 +37,36 @@ public record ProductResponse(
 ### Validación
 - [ ] **R1:** `@Valid` en todos los endpoints que reciben `@RequestBody`
 - [ ] **R2:** `400 Bad Request` con JSON detallando qué campo falló y por qué
-- [ ] **R3:** Validator custom: `@ValidCategory` verifica que la categoría exista en una lista predefinida
-- [ ] **R4:** `@ControllerAdvice` que maneja `MethodArgumentNotValidException` y retorna respuesta estructurada
+- [ ] **R3:** `@ControllerAdvice` que maneja `MethodArgumentNotValidException` y retorna respuesta estructurada
+- [ ] **R4:** `DuplicateEmailException` → `409 Conflict`; `EmployeeNotFoundException` → `404 Not Found`
 
-### MapStruct
-- [ ] **R5:** `ProductMapper` con `@Mapper(componentModel = "spring")` para mapear Request → Entity y Entity → Response
-- [ ] **R6:** Mapear lista `List<Product>` → `List<ProductResponse>` automáticamente
+### Lógica de negocio
+- [ ] **R5:** `GET /api/employees?department=Engineering` — filtro opcional por departamento
+- [ ] **R6:** `POST /api/employees` — valida unicidad de email antes de crear
+- [ ] **R7:** `PUT /api/employees/{id}` — actualiza empleado existente
+- [ ] **R8:** `DELETE /api/employees/{id}` — elimina o retorna 404
 
 ### Documentación
-- [ ] **R7:** Swagger UI en `/swagger-ui.html` con todos los endpoints visibles
-- [ ] **R8:** `@Operation(summary=...)` y `@ApiResponse` en cada endpoint con códigos de respuesta
-- [ ] **R9:** Info del API en `application.yml`: título, versión, descripción
+- [ ] **R9:** Swagger UI en `/swagger-ui.html` con todos los endpoints visibles
+- [ ] **R10:** `@Operation(summary=...)` y `@ApiResponse` en cada endpoint con códigos de respuesta
+- [ ] **R11:** `@Tag(name="Employees")` en el controller
 
-## 📂 Estructura Sugerida
+## 📂 Estructura del Starter
 
 ```
-src/main/java/com/bootcamp/catalog/
+src/main/java/com/bootcamp/
+├── EmployeeApiApplication.java
 ├── controller/
-│   └── ProductController.java
+│   └── EmployeeController.java     ← TODOs del controller
 ├── service/
-│   ├── ProductService.java
-│   └── ProductServiceImpl.java
+│   └── EmployeeService.java        ← TODOs de lógica
 ├── dto/
-│   ├── ProductCreateRequest.java
-│   ├── ProductUpdateRequest.java
-│   └── ProductResponse.java
-├── mapper/
-│   └── ProductMapper.java
-├── validation/
-│   ├── ValidCategory.java         (anotación custom)
-│   └── CategoryValidator.java     (ConstraintValidator)
+│   ├── EmployeeRequest.java        ← constraints ya definidos
+│   └── EmployeeResponse.java
 └── exception/
-    └── GlobalExceptionHandler.java
+    ├── EmployeeNotFoundException.java
+    ├── DuplicateEmailException.java
+    └── GlobalExceptionHandler.java  ← TODOs de handlers
 ```
 
 ## ✅ Criterios de Evaluación
@@ -80,9 +74,8 @@ src/main/java/com/bootcamp/catalog/
 | Criterio | Puntos |
 |----------|--------|
 | Validación con Jakarta Validation (`@Valid`, constraints) | 25 |
-| `400 Bad Request` con detalle de errores | 15 |
-| Validator custom funcional | 15 |
-| MapStruct Request → Response | 20 |
-| Swagger UI con documentación real | 15 |
-| Entidades JPA nunca expuestas (DTOs en toda la cadena) | 10 |
+| `400 Bad Request` con detalle de errores por campo | 20 |
+| `404` y `409` manejados con mensajes claros | 15 |
+| CRUD completo funcionando (`findAll`, `findById`, `create`, `update`, `delete`) | 25 |
+| Swagger UI con documentación real (`@Operation`, `@ApiResponse`) | 15 |
 | **Total** | **100** |

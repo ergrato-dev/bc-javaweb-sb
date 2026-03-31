@@ -1,5 +1,7 @@
 # Jakarta Bean Validation — @Valid y Constraints
 
+![Flujo de validación Bean Validation](../0-assets/01-bean-validation-flow.svg)
+
 ## 🎯 Objetivos
 - Validar inputs de API con anotaciones estándar
 - Crear validadores personalizados

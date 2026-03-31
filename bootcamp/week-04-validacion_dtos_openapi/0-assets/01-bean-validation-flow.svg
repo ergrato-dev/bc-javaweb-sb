@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <rect width="800" height="460" fill="#0d1117"/>
+  <text x="400" y="32" font-family="system-ui,-apple-system,sans-serif" font-size="16" font-weight="700" fill="#e6edf3" text-anchor="middle">Jakarta Bean Validation — Flujo y Constraints</text>
+  <text x="30" y="62" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#6DB33F">Flujo de Validacion</text>
+  <rect x="30" y="72" width="130" height="40" rx="8" fill="#1a2744" stroke="#388bfd" stroke-width="1.5"/>
+  <text x="95" y="88" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff" text-anchor="middle">HTTP POST</text>
+  <text x="95" y="104" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280" text-anchor="middle">JSON body</text>
+  <line x1="160" y1="92" x2="188" y2="92" stroke="#30363d" stroke-width="1.5"/>
+  <polygon points="188,88 196,92 188,96" fill="#30363d"/>
+  <rect x="196" y="72" width="130" height="40" rx="8" fill="#1a2a1a" stroke="#6DB33F" stroke-width="1.5"/>
+  <text x="261" y="88" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#7ee787" text-anchor="middle">@RestController</text>
+  <text x="261" y="104" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341" text-anchor="middle">@Valid @RequestBody</text>
+  <line x1="326" y1="92" x2="354" y2="92" stroke="#30363d" stroke-width="1.5"/>
+  <polygon points="354,88 362,92 354,96" fill="#30363d"/>
+  <rect x="362" y="72" width="130" height="40" rx="8" fill="#2d2000" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="427" y="88" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341" text-anchor="middle">Hibernate Validator</text>
+  <text x="427" y="104" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280" text-anchor="middle">valida cada constraint</text>
+  <line x1="492" y1="92" x2="520" y2="92" stroke="#30363d" stroke-width="1.5"/>
+  <polygon points="520,88 528,92 520,96" fill="#30363d"/>
+  <rect x="528" y="72" width="110" height="40" rx="8" fill="#1a0000" stroke="#ff7b72" stroke-width="1.5"/>
+  <text x="583" y="87" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72" text-anchor="middle">FALLA</text>
+  <text x="583" y="103" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280" text-anchor="middle">throws exception</text>
+  <line x1="638" y1="92" x2="666" y2="92" stroke="#30363d" stroke-width="1.5"/>
+  <polygon points="666,88 674,92 666,96" fill="#30363d"/>
+  <rect x="674" y="72" width="106" height="40" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="727" y="87" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" fill="#8b949e" text-anchor="middle">@ControllerAdvice</text>
+  <text x="727" y="103" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280" text-anchor="middle">400 + errores JSON</text>
+  <line x1="427" y1="112" x2="427" y2="136" stroke="#6DB33F" stroke-width="1.5"/>
+  <polygon points="423,136 427,144 431,136" fill="#6DB33F"/>
+  <text x="437" y="128" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6DB33F">PASA</text>
+  <rect x="327" y="144" width="200" height="30" rx="8" fill="#1a2a1a" stroke="#6DB33F" stroke-width="1.5"/>
+  <text x="427" y="164" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#7ee787" text-anchor="middle">Metodo del controller ejecutado</text>
+  <text x="30" y="208" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#6DB33F">Constraints Comunes</text>
+  <rect x="30" y="218" width="360" height="220" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="45" y="238" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="#8b949e">Anotacion</text>
+  <text x="220" y="238" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="#8b949e">Aplica a</text>
+  <text x="300" y="238" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="#8b949e">Validacion</text>
+  <line x1="38" y1="244" x2="382" y2="244" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="260" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@NotNull</text>
+  <text x="220" y="260" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">todos</text>
+  <text x="300" y="260" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">no es null</text>
+  <line x1="38" y1="266" x2="382" y2="266" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="282" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@NotBlank</text>
+  <text x="220" y="282" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">String</text>
+  <text x="300" y="282" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">no null, no vacio, no espacios</text>
+  <line x1="38" y1="288" x2="382" y2="288" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="304" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@Size(min,max)</text>
+  <text x="220" y="304" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">String, colecciones</text>
+  <text x="300" y="304" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">longitud en rango [min, max]</text>
+  <line x1="38" y1="310" x2="382" y2="310" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="326" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@Email</text>
+  <text x="220" y="326" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">String</text>
+  <text x="300" y="326" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">formato email RFC valido</text>
+  <line x1="38" y1="332" x2="382" y2="332" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="348" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@Min / @Max</text>
+  <text x="220" y="348" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">numeros</text>
+  <text x="300" y="348" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">valor minimo / maximo</text>
+  <line x1="38" y1="354" x2="382" y2="354" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="370" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@Positive</text>
+  <text x="220" y="370" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">numeros</text>
+  <text x="300" y="370" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">mayor estrictamente que 0</text>
+  <line x1="38" y1="376" x2="382" y2="376" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="392" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">@Pattern(regexp)</text>
+  <text x="220" y="392" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">String</text>
+  <text x="300" y="392" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">coincidir con regex Java</text>
+  <line x1="38" y1="398" x2="382" y2="398" stroke="#21262d" stroke-width="1"/>
+  <text x="45" y="414" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#7ee787">@Constraint</text>
+  <text x="220" y="414" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">cualquiera</text>
+  <text x="300" y="414" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#6b7280">validator custom</text>
+  <text x="410" y="208" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#6DB33F">Ejemplo Completo</text>
+  <rect x="410" y="218" width="370" height="220" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="422" y="228" width="346" height="198" rx="5" fill="#0d1117"/>
+  <text x="434" y="248" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#ff7b72">public record </text>
+  <text x="516" y="248" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">EmployeeRequest</text>
+  <text x="634" y="248" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e6edf3">(</text>
+  <text x="434" y="266" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">  @NotBlank </text>
+  <text x="516" y="266" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#8b949e">@Size(min=2,max=100)</text>
+  <text x="434" y="282" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">  String </text>
+  <text x="474" y="282" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e6edf3">name,</text>
+  <text x="434" y="300" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">  @NotBlank @Email</text>
+  <text x="434" y="316" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">  String </text>
+  <text x="474" y="316" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e6edf3">email,</text>
+  <text x="434" y="334" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">  @Min(18) @Max(65)</text>
+  <text x="434" y="350" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">  int </text>
+  <text x="462" y="350" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e6edf3">age,</text>
+  <text x="434" y="368" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e3b341">  @Positive</text>
+  <text x="434" y="384" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#a5d6ff">  double </text>
+  <text x="482" y="384" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" fill="#e6edf3">salary) {}</text>
+  <text x="434" y="416" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#8b949e">// Requiere: spring-boot-starter-validation</text>
+</svg>

@@ -1,5 +1,7 @@
 # DTOs y MapStruct
 
+![DTO Pipeline: Request → Dominio → Response](../0-assets/02-dto-pipeline.svg)
+
 ## 🎯 Objetivos
 - Entender cuándo y por qué usar DTOs
 - Mapear entre entidades y DTOs con MapStruct
