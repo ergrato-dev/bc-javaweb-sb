@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="490" viewBox="0 0 860 490">
+  <rect width="860" height="490" fill="#0d1117"/>
+
+  <!-- Title -->
+  <text x="430" y="36" font-family="Inter,Roboto,sans-serif" font-size="17" font-weight="bold"
+        fill="#ffffff" text-anchor="middle">Auditoría JPA y Spring Data Projections</text>
+
+  <!-- == LEFT: Auditing == -->
+  <text x="50" y="62" font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="bold" fill="#6DB33F">Auditoría Automática</text>
+
+  <!-- Step 1: @EnableJpaAuditing -->
+  <rect x="30" y="72" width="380" height="50" rx="5" fill="#161b22" stroke="#6DB33F" stroke-width="2"/>
+  <text x="44" y="91" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e">1. Clase principal:</text>
+  <text x="44" y="108" font-family="Inter,Roboto,mono,monospace" font-size="11" fill="#6DB33F">@SpringBootApplication @EnableJpaAuditing</text>
+
+  <!-- Step 2: MappedSuperclass -->
+  <rect x="30" y="134" width="380" height="100" rx="5" fill="#161b22" stroke="#6DB33F" stroke-width="1"/>
+  <text x="44" y="152" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e">2. Clase base auditada:</text>
+  <text x="44" y="170" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#a5d6ff">@MappedSuperclass</text>
+  <text x="44" y="186" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#a5d6ff">@EntityListeners(AuditingEntityListener.class)</text>
+  <text x="44" y="202" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#e6edf3">public abstract class AuditableEntity {'{}'}</text>
+  <text x="44" y="218" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#f0883e">  @CreatedDate LocalDateTime createdAt;</text>
+  <text x="44" y="228" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#f0883e">  @LastModifiedDate LocalDateTime updatedAt;</text>
+
+  <!-- Step 3: Entity extends -->
+  <rect x="30" y="244" width="380" height="55" rx="5" fill="#161b22" stroke="#6DB33F" stroke-width="1"/>
+  <text x="44" y="262" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e">3. La entidad extiende:</text>
+  <text x="44" y="280" font-family="Inter,Roboto,mono,monospace" font-size="11" fill="#6DB33F">@Entity  class Post extends AuditableEntity</text>
+  <text x="44" y="295" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e">  createdAt y updatedAt se heredan automáticamente</text>
+
+  <!-- DB result visualization -->
+  <rect x="30" y="312" width="380" height="120" rx="5" fill="#21262d" stroke="#8b949e" stroke-width="1"/>
+  <text x="210" y="330" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="bold"
+        fill="#ffffff" text-anchor="middle">Resultado en DB</text>
+  <text x="44" y="350" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#8b949e">id | title       | created_at          | updated_at</text>
+  <line x1="44" y1="355" x2="396" y2="355" stroke="#30363d" stroke-width="1"/>
+  <text x="44" y="372" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#6DB33F">1  | Spring Boot | 2025-01-15 10:00:00 | 2025-01-15 10:00:00</text>
+  <text x="44" y="389" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#6DB33F">2  | JPA Tips    | 2025-01-16 14:30:00 | 2025-01-17 09:15:00</text>
+  <text x="44" y="408" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#f0883e">↑ INSERT automático            ↑ UPDATE automático</text>
+  <text x="44" y="424" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e">Spring Data setea los timestamps sin código extra</text>
+
+  <!-- == RIGHT: Projections == -->
+  <text x="460" y="62" font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="bold" fill="#a5d6ff">Spring Data Projections</text>
+
+  <!-- Interface Projection -->
+  <rect x="440" y="72" width="390" height="115" rx="5" fill="#161b22" stroke="#a5d6ff" stroke-width="2"/>
+  <text x="454" y="90" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="bold" fill="#a5d6ff">Interface Projection</text>
+  <text x="454" y="108" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#e6edf3">interface PostSummary {'{'}</text>
+  <text x="454" y="124" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#6DB33F">  Long getId();</text>
+  <text x="454" y="140" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#6DB33F">  String getTitle();</text>
+  <text x="454" y="156" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#6DB33F">  LocalDateTime getCreatedAt();</text>
+  <text x="454" y="172" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#e6edf3">{'}'}</text>
+
+  <!-- Repository use -->
+  <rect x="440" y="200" width="390" height="50" rx="5" fill="#161b22" stroke="#a5d6ff" stroke-width="1"/>
+  <text x="454" y="218" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e">Repository: derived method retorna projection</text>
+  <text x="454" y="236" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#6DB33F">List&lt;PostSummary&gt; findByPublishedTrue();</text>
+
+  <!-- SQL generated -->
+  <rect x="440" y="262" width="390" height="70" rx="5" fill="#21262d" stroke="#8b949e" stroke-width="1"/>
+  <text x="454" y="280" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="bold" fill="#f0883e">SQL generado (solo columnas necesarias):</text>
+  <text x="454" y="298" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#8b949e">SELECT p.id, p.title, p.created_at</text>
+  <text x="454" y="314" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#8b949e">FROM posts p WHERE p.published = true</text>
+  <text x="454" y="326" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#8b949e">No carga content (TEXT), author, comments...</text>
+
+  <!-- DTO Projection -->
+  <rect x="440" y="344" width="390" height="110" rx="5" fill="#161b22" stroke="#f0883e" stroke-width="1"/>
+  <text x="454" y="362" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="bold" fill="#f0883e">DTO Projection con @Query (aggregación)</text>
+  <text x="454" y="380" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#e6edf3">record PostStats(String cat, long count) {'{'}'{'}'}</text>
+  <text x="454" y="398" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#6DB33F">@Query("SELECT new com.bootcamp.dto.PostStats(</text>
+  <text x="454" y="414" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#6DB33F">  p.category, COUNT(p)) FROM Post p</text>
+  <text x="454" y="430" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#6DB33F">  GROUP BY p.category")</text>
+  <text x="454" y="448" font-family="Inter,Roboto,mono,monospace" font-size="10" fill="#e6edf3">List&lt;PostStats&gt; findStatsByCategory();</text>
+
+  <!-- Defs -->
+  <defs>
+    <marker id="arrowG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#6DB33F"/>
+    </marker>
+  </defs>
+</svg>

@@ -27,6 +27,12 @@
 
 ```
 week-06-jpa_relaciones_y_transacciones/
+├── README.md
+├── rubrica-evaluacion.md
+├── 0-assets/
+│   ├── 01-jpa-entity-relations.svg
+│   ├── 02-transactional-lifecycle.svg
+│   └── 03-auditing-projections.svg
 ├── 1-teoria/
 │   ├── 01-relaciones-onetomany-manytoone.md
 │   ├── 02-transacciones-y-concurrencia.md
@@ -37,6 +43,10 @@ week-06-jpa_relaciones_y_transacciones/
 ├── 3-proyecto/
 │   ├── README.md
 │   └── starter/
+├── 4-recursos/
+│   ├── webgrafia/
+│   ├── videografia/
+│   └── ebooks-free/
 └── 5-glosario/
     └── README.md
 ```
@@ -63,6 +73,12 @@ week-06-jpa_relaciones_y_transacciones/
 ### Proyecto (2.5h)
 
 [📦 API de Blog con Relaciones](3-proyecto/README.md) — Posts con múltiples comentarios y etiquetas (`@ManyToMany`), operaciones transaccionales, auditoría de fechas y projections para respuestas resumidas.
+
+### Recursos Adicionales
+
+- [Webgrafía](4-recursos/webgrafia/README.md) — Spring Data JPA, Hibernate, Vlad Mihalcea
+- [Videografía](4-recursos/videografia/README.md) — Amigoscode, Daily Code Buffer, Marco Codes
+- [Ebooks Free](4-recursos/ebooks-free/README.md) — Docs oficiales, Baeldung guides
 
 ---
 
@@ -94,5 +110,6 @@ week-06-jpa_relaciones_y_transacciones/
 
 | | |
 |---|---|
+| 📊 Rúbrica | [rubrica-evaluacion.md](rubrica-evaluacion.md) |
 | ⬅️ Anterior | [Semana 05 — Spring Data JPA Básico](../week-05-spring_data_jpa_basico/README.md) |
 | ➡️ Siguiente | [Semana 07 — Flyway y Queries Avanzadas](../week-07-flyway_y_queries_avanzadas/README.md) |

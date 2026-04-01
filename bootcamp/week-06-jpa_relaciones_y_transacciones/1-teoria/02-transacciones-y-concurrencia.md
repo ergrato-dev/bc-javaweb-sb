@@ -1,5 +1,7 @@
 # JPA — Transacciones y Control de Concurrencia
 
+![Ciclo de Vida @Transactional](../0-assets/02-transactional-lifecycle.svg)
+
 ## 🎯 Objetivos
 - Dominar `@Transactional` y sus propiedades
 - Entender propagación y aislamiento

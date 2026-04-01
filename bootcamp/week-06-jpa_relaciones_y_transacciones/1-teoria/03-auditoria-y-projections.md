@@ -1,5 +1,7 @@
 # JPA — Auditoría y Proyecciones
 
+![Auditoría y Projections](../0-assets/03-auditing-projections.svg)
+
 ## 🎯 Objetivos
 - Usar `@CreatedDate`, `@LastModifiedDate` con Spring Data Auditing
 - Extraer solo los campos necesarios con Projections

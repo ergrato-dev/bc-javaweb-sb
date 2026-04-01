@@ -1,5 +1,7 @@
 # JPA Relaciones — @OneToMany y @ManyToOne
 
+![Modelo de Entidades JPA](../0-assets/01-jpa-entity-relations.svg)
+
 ## 🎯 Objetivos
 - Mapear relaciones `@OneToMany` / `@ManyToOne`
 - Entender Lazy vs Eager loading y evitar N+1
