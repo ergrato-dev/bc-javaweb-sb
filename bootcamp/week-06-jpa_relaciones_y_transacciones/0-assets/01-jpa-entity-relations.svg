@@ -1,100 +1,104 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="500" viewBox="0 0 860 500">
-  <rect width="860" height="500" fill="#0d1117"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="530" viewBox="0 0 860 530">
+  <rect width="860" height="530" fill="#0d1117"/>
 
   <!-- Title -->
   <text x="430" y="38" font-family="Inter,Roboto,sans-serif" font-size="17" font-weight="bold"
         fill="#ffffff" text-anchor="middle">Modelo de Entidades — Relaciones JPA</text>
 
-  <!-- AUTHOR box -->
-  <rect x="30" y="60" width="190" height="175" rx="6" fill="#161b22" stroke="#6DB33F" stroke-width="2"/>
+  <!-- AUTHOR box: y=60, h=195 → bottom=255 | last text y=226, margin=29px -->
+  <rect x="30" y="60" width="190" height="195" rx="6" fill="#161b22" stroke="#6DB33F" stroke-width="2"/>
   <rect x="30" y="60" width="190" height="32" rx="6" fill="#6DB33F"/>
   <rect x="30" y="86" width="190" height="6" fill="#6DB33F"/>
   <text x="125" y="82" font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="bold"
         fill="#0d1117" text-anchor="middle">@Entity Author</text>
-  <text x="44" y="115" font-family="Inter,Roboto,mono,monospace" font-size="11" fill="#58a6ff">🔑 id: Long</text>
-  <text x="44" y="134" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">name: String</text>
-  <text x="44" y="153" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">email: String (unique)</text>
-  <text x="44" y="172" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">bio: String</text>
-  <text x="44" y="191" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">@CreatedDate createdAt</text>
-  <text x="44" y="210" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">posts: List&lt;Post&gt;</text>
+  <text x="44" y="112" font-family="Inter,Roboto,mono,monospace" font-size="11" fill="#58a6ff">&#128273; id: Long</text>
+  <text x="44" y="131" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">name: String</text>
+  <text x="44" y="150" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">email: String (unique)</text>
+  <text x="44" y="169" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">bio: String</text>
+  <text x="44" y="188" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">@CreatedDate createdAt</text>
+  <text x="44" y="207" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">posts: List&lt;Post&gt;</text>
   <text x="44" y="226" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#f0883e">@OneToMany(cascade=ALL)</text>
 
-  <!-- POST box (center) -->
-  <rect x="320" y="60" width="220" height="235" rx="6" fill="#161b22" stroke="#6DB33F" stroke-width="2"/>
-  <rect x="320" y="60" width="220" height="32" rx="6" fill="#6DB33F"/>
-  <rect x="320" y="86" width="220" height="6" fill="#6DB33F"/>
-  <text x="430" y="82" font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="bold"
+  <!-- POST box: y=60, h=240 → bottom=300 | last text y=267, margin=33px -->
+  <rect x="310" y="60" width="230" height="240" rx="6" fill="#161b22" stroke="#6DB33F" stroke-width="2"/>
+  <rect x="310" y="60" width="230" height="32" rx="6" fill="#6DB33F"/>
+  <rect x="310" y="86" width="230" height="6" fill="#6DB33F"/>
+  <text x="425" y="82" font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="bold"
         fill="#0d1117" text-anchor="middle">@Entity Post</text>
-  <text x="334" y="115" font-family="Inter,Roboto,mono,monospace" font-size="11" fill="#58a6ff">🔑 id: Long</text>
-  <text x="334" y="134" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">title: String</text>
-  <text x="334" y="153" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">content: TEXT</text>
-  <text x="334" y="172" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">published: boolean</text>
-  <text x="334" y="191" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#f0883e">@ManyToOne author</text>
-  <text x="334" y="210" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#f0883e">@OneToMany comments</text>
-  <text x="334" y="229" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#a5d6ff">@ManyToMany tags</text>
-  <text x="334" y="248" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">@CreatedDate createdAt</text>
-  <text x="334" y="267" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">@LastModifiedDate updatedAt</text>
+  <text x="324" y="112" font-family="Inter,Roboto,mono,monospace" font-size="11" fill="#58a6ff">&#128273; id: Long</text>
+  <text x="324" y="131" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">title: String</text>
+  <text x="324" y="150" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">content: TEXT</text>
+  <text x="324" y="169" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">published: boolean</text>
+  <text x="324" y="188" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#f0883e">@ManyToOne author</text>
+  <text x="324" y="207" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#f0883e">@OneToMany comments</text>
+  <text x="324" y="226" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#a5d6ff">@ManyToMany tags</text>
+  <text x="324" y="245" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">@CreatedDate createdAt</text>
+  <text x="324" y="264" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">@LastModifiedDate updatedAt</text>
 
-  <!-- COMMENT box -->
-  <rect x="640" y="60" width="190" height="175" rx="6" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <!-- COMMENT box: y=60, h=185 → bottom=245 | last text y=216, margin=29px -->
+  <rect x="640" y="60" width="190" height="185" rx="6" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
   <rect x="640" y="60" width="190" height="32" rx="6" fill="#58a6ff"/>
   <rect x="640" y="86" width="190" height="6" fill="#58a6ff"/>
   <text x="735" y="82" font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="bold"
         fill="#0d1117" text-anchor="middle">@Entity Comment</text>
-  <text x="654" y="115" font-family="Inter,Roboto,mono,monospace" font-size="11" fill="#58a6ff">🔑 id: Long</text>
-  <text x="654" y="134" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">content: String(1000)</text>
-  <text x="654" y="153" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">authorName: String</text>
-  <text x="654" y="172" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#f0883e">@ManyToOne post</text>
-  <text x="654" y="191" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">@CreatedDate createdAt</text>
-  <text x="654" y="216" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">(JoinColumn: post_id)</text>
+  <text x="654" y="112" font-family="Inter,Roboto,mono,monospace" font-size="11" fill="#58a6ff">&#128273; id: Long</text>
+  <text x="654" y="131" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">content: String(1000)</text>
+  <text x="654" y="150" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">authorName: String</text>
+  <text x="654" y="169" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#f0883e">@ManyToOne post</text>
+  <text x="654" y="188" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">@CreatedDate createdAt</text>
+  <text x="654" y="210" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">(JoinColumn: post_id)</text>
 
-  <!-- TAG box -->
-  <rect x="320" y="330" width="220" height="140" rx="6" fill="#161b22" stroke="#a5d6ff" stroke-width="2"/>
-  <rect x="320" y="330" width="220" height="32" rx="6" fill="#a5d6ff"/>
-  <rect x="320" y="356" width="220" height="6" fill="#a5d6ff"/>
-  <text x="430" y="352" font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="bold"
+  <!-- TAG box: y=365, h=140 → bottom=505 | last text y=487, margin=18px -->
+  <rect x="310" y="365" width="230" height="140" rx="6" fill="#161b22" stroke="#a5d6ff" stroke-width="2"/>
+  <rect x="310" y="365" width="230" height="32" rx="6" fill="#a5d6ff"/>
+  <rect x="310" y="391" width="230" height="6" fill="#a5d6ff"/>
+  <text x="425" y="387" font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="bold"
         fill="#0d1117" text-anchor="middle">@Entity Tag</text>
-  <text x="334" y="381" font-family="Inter,Roboto,mono,monospace" font-size="11" fill="#58a6ff">🔑 id: Long</text>
-  <text x="334" y="400" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">name: String (unique)</text>
-  <text x="334" y="419" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#a5d6ff">@ManyToMany posts</text>
-  <text x="334" y="438" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">(mappedBy = "tags")</text>
-  <text x="334" y="458" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">tabla: post_tags</text>
+  <text x="324" y="416" font-family="Inter,Roboto,mono,monospace" font-size="11" fill="#58a6ff">&#128273; id: Long</text>
+  <text x="324" y="435" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#e6edf3">name: String (unique)</text>
+  <text x="324" y="454" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#a5d6ff">@ManyToMany posts</text>
+  <text x="324" y="473" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">(mappedBy = "tags")</text>
+  <text x="324" y="490" font-family="Inter,Roboto,sans-serif" font-size="11" fill="#8b949e">tabla: post_tags</text>
 
-  <!-- Arrow Author -> Post (@ManyToOne / @OneToMany) -->
-  <line x1="220" y1="148" x2="318" y2="148" stroke="#f0883e" stroke-width="2" marker-end="url(#arrowOrange)"/>
-  <text x="232" y="143" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#f0883e">1</text>
-  <text x="298" y="143" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#f0883e">N</text>
-  <text x="245" y="162" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#f0883e">@OneToMany</text>
+  <!-- Arrow Author -> Post (horizontal at mid-height) -->
+  <line x1="220" y1="155" x2="308" y2="155" stroke="#f0883e" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <text x="232" y="150" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#f0883e">1</text>
+  <text x="290" y="150" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#f0883e">N</text>
+  <text x="237" y="169" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#f0883e">@OneToMany</text>
 
-  <!-- Arrow Post -> Comment (@OneToMany) -->
-  <line x1="540" y1="148" x2="638" y2="148" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
-  <text x="548" y="143" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#58a6ff">1</text>
-  <text x="619" y="143" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#58a6ff">N</text>
-  <text x="554" y="162" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#58a6ff">cascade=ALL</text>
+  <!-- Arrow Post -> Comment (horizontal) -->
+  <line x1="540" y1="155" x2="638" y2="155" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="552" y="150" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#58a6ff">1</text>
+  <text x="619" y="150" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#58a6ff">N</text>
+  <text x="554" y="169" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#58a6ff">cascade=ALL</text>
 
-  <!-- Arrow Post <-> Tag (@ManyToMany) -->
-  <line x1="430" y1="295" x2="430" y2="328" stroke="#a5d6ff" stroke-width="2" marker-end="url(#arrowAqua)"/>
-  <text x="435" y="316" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#a5d6ff">@ManyToMany</text>
-  <text x="412" y="308" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#a5d6ff">N</text>
-  <text x="412" y="340" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#a5d6ff">M</text>
+  <!-- Arrow Post -> Tag (vertical down) | Post bottom=300, Tag top=365 → 65px gap -->
+  <line x1="425" y1="300" x2="425" y2="363" stroke="#a5d6ff" stroke-width="2" marker-end="url(#arrowAqua)"/>
+  <!-- "N" label near Post bottom, outside any box -->
+  <text x="407" y="316" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#a5d6ff">N</text>
+  <!-- "@ManyToMany" label in the middle of the gap -->
+  <text x="433" y="333" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#a5d6ff">@ManyToMany</text>
+  <!-- "M" label near Tag top, 8px above box (y=357 < 365) -->
+  <text x="407" y="357" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#a5d6ff">M</text>
 
-  <!-- Table post_tags visual -->
-  <rect x="490" y="370" width="140" height="70" rx="4" fill="#21262d" stroke="#a5d6ff" stroke-width="1"/>
-  <text x="560" y="388" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="bold"
+  <!-- post_tags table: to the RIGHT of Tag box (Tag box ends x=540) -->
+  <rect x="566" y="385" width="145" height="75" rx="4" fill="#21262d" stroke="#a5d6ff" stroke-width="1"/>
+  <text x="638" y="404" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="bold"
         fill="#a5d6ff" text-anchor="middle">tabla: post_tags</text>
-  <text x="560" y="404" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">post_id (FK)</text>
-  <text x="560" y="420" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">tag_id (FK)</text>
-  <line x1="540" y1="440" x2="540" y2="370" stroke="#a5d6ff" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="638" y="421" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">post_id (FK)</text>
+  <text x="638" y="438" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">tag_id (FK)</text>
+  <!-- Connector: from Tag box right edge to post_tags left edge -->
+  <line x1="540" y1="435" x2="566" y2="422" stroke="#a5d6ff" stroke-width="1" stroke-dasharray="4,3"/>
 
-  <!-- Auditing note -->
-  <rect x="30" y="350" width="258" height="70" rx="5" fill="#161b22" stroke="#3fb950" stroke-width="1" stroke-dasharray="5,3"/>
-  <text x="159" y="369" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="bold"
+  <!-- Auditing note: below Author box (Author bottom=255) -->
+  <rect x="30" y="272" width="260" height="88" rx="5" fill="#161b22" stroke="#3fb950" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="160" y="291" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="bold"
         fill="#3fb950" text-anchor="middle">@EnableJpaAuditing</text>
-  <text x="44" y="388" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e">@CreatedDate → INSERT automático</text>
-  <text x="44" y="404" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e">@LastModifiedDate → UPDATE automático</text>
-  <text x="44" y="420" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e">@EntityListeners(AuditingEntityListener)</text>
+  <text x="44" y="310" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e">@CreatedDate → INSERT automático</text>
+  <text x="44" y="327" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e">@LastModifiedDate → UPDATE automático</text>
+  <text x="44" y="344" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#8b949e">@EntityListeners(AuditingEntityListener)</text>
 
-  <!-- Arrows defs -->
+  <!-- Arrow defs -->
   <defs>
     <marker id="arrowOrange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
       <path d="M0,0 L0,6 L8,3 z" fill="#f0883e"/>
