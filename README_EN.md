@@ -1,10 +1,9 @@
 ![Bootcamp Java Web with Spring Boot](_assets/bootcamp-header.svg)
 
-![License MIT](https://img.shields.io/badge/License-MIT-green.svg)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 ![16 Weeks](https://img.shields.io/badge/Duration-16%20Weeks-blue.svg)
 ![128 Hours](https://img.shields.io/badge/Hours-128h-orange.svg)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4%2B-brightgreen.svg)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 [Versión en Español](README.md)
 
@@ -106,18 +105,18 @@ bootcamp/week-XX-main_topic/
 | Technology | Version | Role |
 |------------|---------|------|
 | Java | 21 LTS | Primary language |
-| Spring Boot | 3.4+ | Web framework |
+| Spring Boot | 3.4.13 | Web framework |
 | Spring Data JPA | 3.4+ | ORM (repositories) |
 | Spring Security | 6.4+ | Authentication & authorization |
 | Hibernate | 6.6+ | JPA implementation |
 | PostgreSQL | 17+ | Production database |
 | H2 | 2.x | Development/testing database |
 | Flyway | 10+ | Database migrations |
-| MapStruct | 1.6+ | DTO mapping |
-| SpringDoc OpenAPI | 2.x | Swagger documentation |
-| JUnit 5 | 5.11+ | Unit testing |
+| MapStruct | 1.6.3 | DTO mapping |
+| SpringDoc OpenAPI | 2.8.16 | Swagger documentation |
+| JUnit 5 | 5.11.4 | Unit testing |
 | Mockito | 5+ | Mocking |
-| Testcontainers | 1.20+ | Integration testing |
+| Testcontainers | 1.20.6 | Integration testing |
 | Docker | 27+ | Containerization |
 | Docker Compose | 2.32+ | Orchestration |
 | Maven | 3.9+ | Build tool |
@@ -195,31 +194,6 @@ Each week includes three types of evidence:
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! This is an open-source educational project.
-
-### How to Contribute
-
-1. Read the [Contributing Guide](CONTRIBUTING.md)
-2. Review the [Code of Conduct](CODE_OF_CONDUCT.md)
-3. Fork the repository
-4. Create your branch (`git checkout -b feature/new-feature`)
-5. Commit with [Conventional Commits](https://www.conventionalcommits.org/) (`git commit -m 'feat: add new exercise'`)
-6. Push to the branch (`git push origin feature/new-feature`)
-7. Open a Pull Request
-
-### 📋 Contribution Areas
-
-- ✨ Additional exercises
-- 📚 Documentation improvements
-- 🐛 Bug fixes
-- 🎨 Visual resources (SVG diagrams)
-- 🌐 Translations
-- 📹 Video tutorials
-
----
-
 ## 📞 Support
 
 - 💬 **Discussions:** [GitHub Discussions](https://github.com/ergrato-dev/bc-javaweb-sb/discussions)
@@ -242,7 +216,9 @@ This repository is an educational resource created for learning purposes. By usi
 
 ## 📄 License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is licensed under **CC BY-NC-SA 4.0** (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International) — see the [LICENSE](LICENSE) file for details.
+
+You are free to share and adapt the material for educational purposes, as long as you give credit, do not use it for commercial purposes, and distribute adaptations under the same license.
 
 ---
 
@@ -260,8 +236,6 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 ## 📚 Additional Documentation
 
 - [🤖 Copilot Instructions](.github/copilot-instructions.md)
-- [🤝 Contributing Guide](CONTRIBUTING.md)
-- [📜 Code of Conduct](CODE_OF_CONDUCT.md)
 - [🔒 Security Policy](SECURITY.md)
 
 ---
@@ -269,6 +243,6 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 🎓 **Bootcamp Java Web with Spring Boot — Zero to Hero**
 _From prerequisites to backend developer in 4 months_
 
-[Start Week 1](bootcamp/week-01-java_moderno_streams_y_records) • [View Docs](_docs) • [Report Issue](https://github.com/ergrato-dev/bc-javaweb-sb/issues) • [Contribute](CONTRIBUTING.md)
+[Start Week 1](bootcamp/week-01-java_moderno_streams_y_records) • [View Docs](_docs) • [Report Issue](https://github.com/ergrato-dev/bc-javaweb-sb/issues)
 
 _Made with ❤️ for the developer community_

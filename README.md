@@ -1,10 +1,9 @@
 ![Bootcamp Java Web con Spring Boot](_assets/bootcamp-header.svg)
 
-![License MIT](https://img.shields.io/badge/License-MIT-green.svg)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 ![16 Semanas](https://img.shields.io/badge/Duración-16%20Semanas-blue.svg)
 ![128 Horas](https://img.shields.io/badge/Horas-128h-orange.svg)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4%2B-brightgreen.svg)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 [English Version](README_EN.md)
 
@@ -106,18 +105,18 @@ bootcamp/week-XX-tema_principal/
 | Tecnología | Versión | Rol |
 |------------|---------|-----|
 | Java | 21 LTS | Lenguaje principal |
-| Spring Boot | 3.4+ | Framework web |
+| Spring Boot | 3.4.13 | Framework web |
 | Spring Data JPA | 3.4+ | ORM (repositorios) |
 | Spring Security | 6.4+ | Autenticación y autorización |
 | Hibernate | 6.6+ | Implementación JPA |
 | PostgreSQL | 17+ | Base de datos producción |
 | H2 | 2.x | Base de datos desarrollo/testing |
 | Flyway | 10+ | Migraciones de BD |
-| MapStruct | 1.6+ | Mapeo DTO |
-| SpringDoc OpenAPI | 2.x | Documentación Swagger |
-| JUnit 5 | 5.11+ | Testing unitario |
+| MapStruct | 1.6.3 | Mapeo DTO |
+| SpringDoc OpenAPI | 2.8.16 | Documentación Swagger |
+| JUnit 5 | 5.11.4 | Testing unitario |
 | Mockito | 5+ | Mocking |
-| Testcontainers | 1.20+ | Tests de integración |
+| Testcontainers | 1.20.6 | Tests de integración |
 | Docker | 27+ | Containerización |
 | Docker Compose | 2.32+ | Orquestación |
 | Maven | 3.9+ | Build tool |
@@ -195,31 +194,6 @@ Cada semana incluye tres tipos de evidencias:
 
 ---
 
-## 🤝 Contribuir
-
-¡Las contribuciones son bienvenidas! Este es un proyecto educativo de código abierto.
-
-### Cómo Contribuir
-
-1. Lee la [Guía de Contribución](CONTRIBUTING.md)
-2. Revisa el [Código de Conducta](CODE_OF_CONDUCT.md)
-3. Fork del repositorio
-4. Crea tu rama (`git checkout -b feature/nueva-funcionalidad`)
-5. Commit con [Conventional Commits](https://www.conventionalcommits.org/) (`git commit -m 'feat: add new exercise'`)
-6. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-7. Abre un Pull Request
-
-### 📋 Áreas de Contribución
-
-- ✨ Ejercicios adicionales
-- 📚 Mejoras en documentación
-- 🐛 Corrección de errores
-- 🎨 Recursos visuales (diagramas SVG)
-- 🌐 Traducciones
-- 📹 Videos tutoriales
-
----
-
 ## 📞 Soporte
 
 - 💬 **Discussions:** [GitHub Discussions](https://github.com/ergrato-dev/bc-javaweb-sb/discussions)
@@ -242,7 +216,9 @@ Este repositorio es un recurso educativo creado con fines de aprendizaje. Al uti
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT — ver el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la Licencia **CC BY-NC-SA 4.0** (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International) — ver el archivo [LICENSE](LICENSE) para más detalles.
+
+Puedes compartir y adaptar el material con fines educativos, siempre que des crédito, no lo uses con fines comerciales y distribuyas las adaptaciones bajo la misma licencia.
 
 ---
 
@@ -260,8 +236,6 @@ Este proyecto está bajo la Licencia MIT — ver el archivo [LICENSE](LICENSE) p
 ## 📚 Documentación Adicional
 
 - [🤖 Instrucciones de Copilot](.github/copilot-instructions.md)
-- [🤝 Guía de Contribución](CONTRIBUTING.md)
-- [📜 Código de Conducta](CODE_OF_CONDUCT.md)
 - [🔒 Política de Seguridad](SECURITY.md)
 
 ---
@@ -269,6 +243,6 @@ Este proyecto está bajo la Licencia MIT — ver el archivo [LICENSE](LICENSE) p
 🎓 **Bootcamp Java Web con Spring Boot — Zero to Hero**
 _De prerrequisitos a desarrollador backend en 4 meses_
 
-[Comenzar Semana 1](bootcamp/week-01-java_moderno_streams_y_records) • [Ver Documentación](_docs) • [Reportar Issue](https://github.com/ergrato-dev/bc-javaweb-sb/issues) • [Contribuir](CONTRIBUTING.md)
+[Comenzar Semana 1](bootcamp/week-01-java_moderno_streams_y_records) • [Ver Documentación](_docs) • [Reportar Issue](https://github.com/ergrato-dev/bc-javaweb-sb/issues)
 
 _Hecho con ❤️ para la comunidad de desarrolladores_

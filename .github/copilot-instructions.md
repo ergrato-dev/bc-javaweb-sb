@@ -14,7 +14,7 @@ con conocimientos previos de Java básico y OOP a desarrollador backend junior c
 - **Nivel de salida:** Desarrollador Backend Junior (Spring Boot)
 - **Alcance:** ⚠️ **Exclusivamente backend — API RESTful** (sin frontend, sin HTML/CSS/JS)
 - **Enfoque:** Spring Boot moderno con Java 21 LTS
-- **Stack:** Spring Boot 3.4+, Spring Data JPA 3.4+, Spring Security 6.4+, Hibernate 6.6+, PostgreSQL 17+, H2, Flyway 10+, MapStruct 1.6+, SpringDoc OpenAPI 2.x, JUnit 5, Mockito 5+, Testcontainers 1.20+, Docker 27+, Maven 3.9+
+- **Stack:** Spring Boot 3.4.13, Spring Data JPA 3.4+, Spring Security 6.4+, Hibernate 6.6+, PostgreSQL 17+, H2, Flyway 10+, MapStruct 1.6.3, SpringDoc OpenAPI 2.8.16, JUnit 5.11.4, Mockito 5+, Testcontainers 1.20.6, Docker 27+, Maven 3.9+
 
 ### 🗺️ Ecosistema de Bootcamps
 
