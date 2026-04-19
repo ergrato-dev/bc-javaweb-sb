@@ -1,4 +1,4 @@
-![Bootcamp Java Web con Spring Boot](_assets/bootcamp-header.svg)
+![Bootcamp Java Web con Spring Boot](assets/bootcamp-header.svg)
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 ![16 Semanas](https://img.shields.io/badge/Duración-16%20Semanas-blue.svg)
@@ -243,6 +243,6 @@ Puedes compartir y adaptar el material con fines educativos, siempre que des cr�
 🎓 **Bootcamp Java Web con Spring Boot — Zero to Hero**
 _De prerrequisitos a desarrollador backend en 4 meses_
 
-[Comenzar Semana 1](bootcamp/week-01-java_moderno_streams_y_records) • [Ver Documentación](_docs) • [Reportar Issue](https://github.com/ergrato-dev/bc-javaweb-sb/issues)
+[Comenzar Semana 1](bootcamp/week-01-java_moderno_streams_y_records) • [Ver Documentación](docs) • [Reportar Issue](https://github.com/ergrato-dev/bc-javaweb-sb/issues)
 
 _Hecho con ❤️ para la comunidad de desarrolladores_
